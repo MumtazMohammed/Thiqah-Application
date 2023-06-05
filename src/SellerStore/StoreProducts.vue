@@ -256,7 +256,7 @@ export default {
     }
   }
   .PriceAfter {
-    font-size: 18px !important;
+    font-size: 17px !important;
     color: $fontcolor;
     font-weight: 600 !important;
     font-family: sans-serif !important;

@@ -2,7 +2,13 @@
   <v-sheet
     class="wrap"
     :color="
-      model == 0 ? '#F5F5F5' : '#eee' && model == 1 ? '#d0dce5' : '#009688'
+      model == 0
+        ? '#F5F5F5'
+        : '#eee' && model == 1
+        ? '#d0dce5'
+        : '#eee' && model == 2
+        ? '#009688'
+        : '#ffb702'
     "
   >
     <!-- advertisement  -->
@@ -136,7 +142,7 @@
             <div class="swiper-pagination" slot="pagination"></div>
           </swiper> -->
           <v-carousel
-            delimiter-icon="mdi-circle-small"
+            delimiter-icon="mdi-circle-medium"
             :interval="4000"
             cycle
             height="auto"
@@ -261,6 +267,10 @@ export default {
           src: "https://cdn.pixabay.com/photo/2018/01/04/11/51/design-3060480_1280.jpg",
           color: "#009688",
         },
+        {
+          src: "https://www.shutterstock.com/image-photo/contemporary-art-collage-stylish-man-600w-2159890271.jpg",
+          color: "#ffb702",
+        },
       ],
       swiperOption: {
         initialSlide: 0,
@@ -358,9 +368,10 @@ export default {
 ::v-deep .v-btn--icon.v-size--small {
   width: 20px;
   height: 20px;
+  margin: 0 3px;
 }
-::v-deep i.v-icon.notranslate.mdi.mdi-circle-small.theme--dark {
-  font-size: 23px !important;
+::v-deep i.v-icon.notranslate.mdi.mdi-circle-medium.theme--dark {
+  font-size: 25px !important;
   opacity: 1 !important;
 }
 ::v-deep .theme--dark.v-btn--active:before {

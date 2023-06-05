@@ -5,7 +5,7 @@
       <p class="title pa-3 mb-0">سيارة هواند أكسنت للبيع في آب</p>
       <v-row no-gutters class="">
         <!-- here is the filtration -->
-        <v-col cols="12" class="pa-1 ">
+        <v-col cols="12" class="pa-1">
           <v-btn-toggle borderless tile v-model="toggle_filter" dense>
             <v-menu v-model="menu" bottom offset-y>
               <template v-slot:activator="{ on, attrs }">

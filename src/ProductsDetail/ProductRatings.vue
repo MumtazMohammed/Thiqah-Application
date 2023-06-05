@@ -48,12 +48,7 @@
       </v-col>
       <!--  rating  -->
       <v-col cols="12" class="pa-2">
-        <v-card
-          flat
-          color="#f0faff"
-          height="auto"
-          class="comment pa-2"
-        >
+        <v-card flat color="#f0faff" height="auto" class="comment pa-2">
           <v-card-actions class="pa-0">
             <div class="">
               <v-card-text class="pa-0 Customer-name"> محمد أمين </v-card-text>
