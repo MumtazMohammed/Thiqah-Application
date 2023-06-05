@@ -1,5 +1,5 @@
 <template>
-  <div class="DailyOffer">
+  <div class="DailyOffer pa-1">
     <v-container class="pa-0">
       <v-card-text class="pa-2 pb-4 font-weight-bold tital">
         أفضل المختارات من المتجر
@@ -142,8 +142,8 @@ export default {
             slidesPerGroup: 3,
           },
           250: {
-            slidesPerView: 3,
-            slidesPerGroup: 3,
+            slidesPerView: 2,
+            slidesPerGroup: 2,
           },
         },
       },

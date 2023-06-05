@@ -1,11 +1,11 @@
 <template>
-  <div class="ContactSeller grey lighten-5">
+  <div class="ContactSeller grey lighten-4">
     <TheNavBar />
     <v-container class="py-1 px-2">
       <p class="title pa-3 mb-0">سيارة هواند أكسنت للبيع في آب</p>
       <v-row no-gutters class="">
         <!-- here is the filtration -->
-        <v-col cols="12" class="pa-1 pr-3">
+        <v-col cols="12" class="pa-1 ">
           <v-btn-toggle borderless tile v-model="toggle_filter" dense>
             <v-menu v-model="menu" bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
@@ -228,7 +228,7 @@ export default {
 }
 p.title {
   font-family: $fontfamliy3 !important;
-  color: $fontcolor !important;
+  color: #1e88e5 !important;
   font-weight: 400;
   letter-spacing: 0 !important;
   font-size: 23px !important;

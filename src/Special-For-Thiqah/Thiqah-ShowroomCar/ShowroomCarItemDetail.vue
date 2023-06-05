@@ -1,5 +1,5 @@
 <template>
-  <div class="ContactSeller">
+  <div class="ContactSeller grey lighten-4">
     <TheNavBar />
     <v-container class="pa-1">
       <v-row no-gutters>
@@ -126,9 +126,9 @@
               </v-row>
             </v-card>
             <v-row no-gutters>
-              <v-col cols="4">
-                <v-card flat width="100%" class="mt-2">
-                  <v-list-item two-line class="px-1 py-0">
+              <v-col cols="12" md="4" lg="4" sm="4">
+                <v-card tile flat width="100%" class="">
+                  <v-list-item class="px-1 py-0">
                     <v-icon color="green accent-4" size="22">
                       mdi-shield-check
                     </v-icon>
@@ -143,9 +143,9 @@
                   </v-list-item>
                 </v-card>
               </v-col>
-              <v-col cols="4">
-                <v-card flat width="100%" class="mt-2">
-                  <v-list-item two-line class="px-1 py-0">
+              <v-col cols="12" md="4" lg="4" sm="4">
+                <v-card flat width="100%" tile>
+                  <v-list-item class="px-1 py-0">
                     <v-icon color="deep-orange darken-1" size="22">
                       mdi-map-marker-radius
                     </v-icon>
@@ -160,9 +160,9 @@
                   </v-list-item>
                 </v-card>
               </v-col>
-              <v-col cols="4" class="">
-                <v-card flat width="100%" class="mt-2">
-                  <v-list-item two-line class="px-1 py-0">
+              <v-col cols="12" md="4" lg="4" sm="4">
+                <v-card flat width="100%" tile>
+                  <v-list-item class="px-1 py-0">
                     <v-icon color="yellow darken-1" size="22">
                       mdi-credit-card
                     </v-icon>
@@ -425,7 +425,7 @@
           cols="6"
           md="3"
           sm="4"
-          lg="3"
+          lg="2"
           class="pa-1"
           v-for="Product in GetCarData"
           :key="Product.id"
@@ -445,7 +445,6 @@
                 :elevation="hover ? 3 : 0"
                 min-height="290"
                 width="100%"
-                color="grey lighten-5"
                 style="overflow: hidden; position: relative"
                 tile
               >
@@ -640,6 +639,9 @@ p {
   letter-spacing: 0 !important;
   color: $fontcolor !important;
   line-height: 1.6;
+  @media (max-width: 600px) {
+    font-size: 13.5px !important;
+  }
 }
 .promotion-card {
   position: relative;
@@ -649,6 +651,10 @@ p {
   font-family: $fontfamliy3 !important;
   letter-spacing: 0 !important;
   line-height: 1.7 !important;
+  @media (max-width: 600px) {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
 }
 .Guarantee-text-tow {
   font-family: $fontfamliy3 !important;

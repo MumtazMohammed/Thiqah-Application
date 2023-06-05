@@ -50,7 +50,7 @@
       <v-col cols="12" class="pa-2">
         <v-card
           flat
-          color="light-blue lighten-5"
+          color="#f0faff"
           height="auto"
           class="comment pa-2"
         >

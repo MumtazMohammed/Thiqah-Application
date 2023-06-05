@@ -23,26 +23,26 @@
               <v-btn depressed>المزيد</v-btn>
             </v-card-title>
             <v-card
+              flat
               exact-path
               to="/SellerStorePage"
-              class="pa-1 mx-2"
-              flat
-              tile
+              class="mx-2 px-1 overflow-hidden"
             >
               <v-row no-gutters align="center">
-                <v-img
-                  max-width="50"
-                  height="64"
-                  src="https://picsum.photos/510/300?random"
-                  alt="alt"
-                ></v-img>
+                <v-avatar size="50">
+                  <v-img
+                    class="grey darken-4"
+                    src="https://picsum.photos/510/300?random"
+                    alt="alt"
+                  ></v-img>
+                </v-avatar>
                 <!-- Store name and Ad by and total followers -->
                 <v-col>
-                  <v-list-item class="py-0" two-line>
-                    <v-list-item-content class="card-text">
+                  <v-list-item class="py-0 px-2" two-line>
+                    <v-list-item-content class="card-text py-1">
                       <v-list-item-title> عنوان الاعلان </v-list-item-title>
                       <v-list-item-subtitle
-                        class="grey--text mt-1 text--darken-2"
+                        class="grey--text mt-0 text--darken-2"
                         style="line-height: 1.5 !important"
                       >
                         برعاية <span>أسم المتجر</span>
@@ -105,11 +105,7 @@
                   :elevation="hover ? 3 : 0"
                   min-height="315"
                   width="100%"
-                  style="
-                    overflow: hidden;
-                    background-color: #fff;
-                    position: relative;
-                  "
+                  style="overflow: hidden; position: relative"
                   rounded="lg"
                 >
                   <div v-if="Product.discountPercent" class="best-price-tag">
@@ -446,7 +442,7 @@ export default {
 .Products {
   width: 100%;
   min-height: 70vh;
-  background-color: #fafafa;
+  background-color: #f5f5f5;
   padding-bottom: 10px;
   @media (max-width: 600px) {
     margin-bottom: 50px;

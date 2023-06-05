@@ -4,7 +4,7 @@
       <v-card tile color="transparent" flat>
         <div class="pa-2 align-center d-flex font-weight-bold tital">
           عروضات
-          <strong class="mx-1">مجنونه</strong>
+          <!-- <strong class="mx-1">مجنونه</strong> -->
           <v-icon right color="#fc624d">mdi-flash</v-icon>
           <!-- بأفضل
           <strong class="mx-1">الأسعار</strong> -->
@@ -82,7 +82,7 @@
                   </v-card-text>
                 </v-row>
                 <!-- Price  -->
-                <v-card-actions class="py-1 justify-center">
+                <v-card-actions class="py-0 justify-center">
                   <strong class="PriceAfter text-truncate">
                     {{ Product.payment }}
                     <v-icon color="grey darken-3" size="20">
@@ -95,19 +95,22 @@
                   المتبقي
                   <span class="mr-1 deep-orange--text">14</span>
                 </v-card-text>
-                <div style="position: relative">
+                <v-card
+                  class="mx-auto"
+                  style="position: relative; width: fit-content"
+                >
                   <v-icon class="v-icon-most-sel">mdi-fire</v-icon>
                   <v-sheet
                     style="position: relative; overflow: hidden"
                     class="my-2 mx-auto text-center"
-                    width="80%"
+                    width="150px"
                     color="#FFCCBC"
                     rounded="lg"
                     height="10"
                   >
                     <span class="progress"></span>
                   </v-sheet>
-                </div>
+                </v-card>
               </v-card>
             </div>
           </swiper-slide>
@@ -123,9 +126,9 @@
               <v-card-text class="text-center py-1 card-text-seeMore">
                 الكل
               </v-card-text>
-              <v-icon size="17" class="deep-orange--text text--darken-1">
-                mdi-plus</v-icon
-              >
+              <v-icon size="23" class="deep-orange--text text--darken-1">
+                mdi-plus
+              </v-icon>
             </v-card>
           </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
@@ -296,7 +299,8 @@ export default {
   font-family: $fontfamliy3;
   letter-spacing: 0;
   font-size: 16px;
-  color: $fontcolorlinks !important;
+  font-weight: 600;
+  color: $fontcolor !important;
 }
 // Products
 .sold-info {
@@ -421,11 +425,11 @@ export default {
 }
 .v-icon-most-sel {
   position: absolute !important;
-  top: -9px;
-  right: 11px;
-  font-size: 22px !important;
+  top: -15px;
+  right: -5px;
+  font-size: 29px !important;
   color: #ffc400 !important;
-  z-index: 10;
+  z-index: 800;
 }
 .Countdown {
   width: 27px !important;

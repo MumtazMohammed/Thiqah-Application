@@ -137,7 +137,7 @@
           </swiper> -->
           <v-carousel
             delimiter-icon="mdi-circle-small"
-            interval
+            :interval="4000"
             cycle
             height="auto"
             v-model="model"
@@ -168,7 +168,16 @@
                 flat
               >
               </v-card>
-              <v-img contain :src="item.src" :lazy-src="item.src"> </v-img>
+              <v-img contain max-height="360" :src="item.src">
+                <v-row
+                  class="fill-height"
+                  align="center"
+                  justify="center"
+                  no-gutters
+                >
+                  <span class="adv-text"> إعلان ({{ i + 1 }}) </span>
+                </v-row>
+              </v-img>
             </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
           </swiper>

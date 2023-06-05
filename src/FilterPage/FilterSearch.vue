@@ -20,9 +20,9 @@
               ></v-icon>
             </v-btn>
           </template>
-          <v-list class="py-0">
+          <v-list dense class="py-1">
             <v-list-item>
-              <v-icon size="23" color="light-blue" right>
+              <v-icon size="23" color="#fc624d" right>
                 mdi-swap-vertical
               </v-icon>
               <v-list-item-title class="filtertion-list">
@@ -30,7 +30,7 @@
               </v-list-item-title>
             </v-list-item>
             <v-list-item>
-              <v-icon size="23" color="light-blue" right>
+              <v-icon size="23" color="#fc624d" right>
                 mdi-swap-vertical mdi-flip-h
               </v-icon>
               <v-list-item-title class="filtertion-list">
@@ -58,7 +58,7 @@
           </template>
           <v-list class="py-0">
             <v-card-actions class="justify-center">
-              <v-chip label class="filtertion-list">
+              <v-chip color="blue-grey lighten-5" class="filtertion-list">
                 <v-icon size="20" color="light-blue" left>
                   mdi-map-marker-radius
                 </v-icon>
@@ -66,19 +66,18 @@
               </v-chip>
             </v-card-actions>
             <v-sheet
-              color="grey lighten-4"
               max-height="200"
               min-height="150"
               style="overflow-y: scroll"
             >
-              <v-chip-group column class="justify-center">
+              <v-chip-group column>
                 <v-chip
                   filter
-                  color="grey lighten-2"
+                  color="blue-grey lighten-5"
                   v-for="i in 50"
                   :key="i"
-                  label
-                  class="filtertion-list ma-1"
+                  style="min-width: 96px"
+                  class="filtertion-list justify-center ma-1"
                 >
                   تعز
                 </v-chip>
@@ -436,7 +435,7 @@ export default {
 }
 .filtertion-btn {
   letter-spacing: 0 !important;
-  font-size: 13.5px !important;
+  font-size: 14px !important;
   font-family: $fontfamliy3;
   // font-weight: 600;
   color: $fontcolor !important;
@@ -445,8 +444,9 @@ export default {
   letter-spacing: 0 !important;
   font-size: 14px !important;
   font-family: $fontfamliy3;
-  font-weight: 600;
-  color: #616161 !important;
+  // font-weight: 600;
+  color: $fontcolor !important;
+  line-height: 1.4 !important;
 }
 .btn {
   letter-spacing: 0 !important;
@@ -516,9 +516,7 @@ export default {
   font-family: $fontfamliy3;
   letter-spacing: 0 !important;
 }
-::v-deep .v-slide-group__content {
-  justify-content: center;
-}
+
 ::v-deep .v-navigation-drawer__content {
   z-index: 21 !important;
 }
