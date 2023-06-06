@@ -113,17 +113,17 @@
       <ShareSaveReport />
     </v-row>
     <!-- here are the Promotions -->
-    <v-sheet color="#fff" class="py-md-1 py-lg-1 pt-2">
-      <v-menu max-width="700" bottom left>
+    <v-sheet color="#fff" class="py-md-1 py-lg-1 pt-0">
+      <v-menu max-width="700" center left>
         <template v-slot:activator="{ on, attrs }">
           <v-card style="width: fit-content" flat tile v-bind="attrs" v-on="on">
             <v-row no-gutters class="fill-height" align="center">
               <span class="text-for-all mx-2">العروض :</span>
-              <v-col class="pa-1 px-2" v-for="i in 3" :key="i">
+              <v-col class="pa-1 px-1" v-for="i in 3" :key="i">
                 <v-sheet
                   dark
                   rounded="sm"
-                  class="px-3"
+                  class="px-2"
                   color="orange promotion lighten-2"
                 >
                   <v-card-text class="pa-0 coupons">
@@ -136,13 +136,13 @@
           </v-card>
         </template>
         <v-sheet
-          style="overflow-y: auto"
+          style="overflow-x: hidden"
           height="300"
           class="pa-2"
           color="grey lighten-5"
         >
           <v-row no-gutters>
-            <v-col class="pa-1 px-1" cols="4" v-for="n in 3" :key="n">
+            <v-col class="pa-1 px-1" cols="6" md="4" sm="4" lg="4" v-for="n in 3" :key="n">
               <v-card
                 style="border: 1px dashed #ffab40"
                 color="#FFF3E0"

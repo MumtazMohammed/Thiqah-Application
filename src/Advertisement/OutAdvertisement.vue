@@ -158,7 +158,10 @@
                   justify="center"
                   no-gutters
                 >
-                  <span class="adv-text"> إعلان ({{ i + 1 }}) </span>
+                  <span class="adv-text">
+                    إعلان <br />
+                    ( {{ i + 1 }} )
+                  </span>
                 </v-row>
               </v-img>
             </v-carousel-item>
@@ -181,7 +184,10 @@
                   justify="center"
                   no-gutters
                 >
-                  <span class="adv-text"> إعلان ({{ i + 1 }}) </span>
+                  <span class="adv-text">
+                    إعلان <br />
+                    ( {{ i + 1 }} )
+                  </span>
                 </v-row>
               </v-img>
             </swiper-slide>
@@ -422,9 +428,14 @@ export default {
 .adv-text {
   font-family: $fontfamliy3;
   font-size: 20px;
-  background-color: #eee;
-  padding: 3px 14px;
-  border-radius: 10px;
-  color: #424242;
+  background-color: #fc624d;
+  padding: 32px 40px;
+  border-radius: 50%;
+  color: #f3f3f3;
+  text-align: center;
+  @media (max-width: 700px) {
+    font-size: 17px;
+    padding: 22px 30px;
+  }
 }
 </style>

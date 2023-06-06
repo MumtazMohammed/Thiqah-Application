@@ -121,4 +121,7 @@ export default {
 .example::-webkit-scrollbar {
   display: none;
 }
+::v-deep .theme--light.v-btn:focus:before{
+  opacity: 0 !important;
+}
 </style>

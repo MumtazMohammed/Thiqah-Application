@@ -3,7 +3,7 @@
     <TheNavBar />
     <v-sheet class="support"></v-sheet>
     <v-sheet color="grey lighten-5">
-      <v-container class="py-1 px-2">
+      <v-container class="py-0 px-2">
         <ShowroomCarSearch />
         <ShowroomCarItem />
       </v-container>

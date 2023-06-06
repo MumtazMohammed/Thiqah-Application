@@ -1,24 +1,23 @@
 <template>
   <div class="StoreVoucher white pa-2" style="overflow: hidden">
     <v-card-title class="titel pa-2"> قسائم المتجر </v-card-title>
+
     <v-row no-gutters>
-      <v-col
-        class="pa-1 px-2"
-        md="4"
-        lg="4"
-        sm="4"
-        cols="6"
-        v-for="n in 2"
-        :key="n"
-      >
-        <v-card disabled flat class="pb-1 px-4 promotion-card amber lighten-5">
+      <v-col class="pa-1 px-1" cols="6" md="4" sm="4" lg="4">
+        <v-card
+          style="border: 1px dashed #ffab40"
+          color="#FFF3E0"
+          flat
+          rounded="lg"
+          class="pb-1 pl-5 px-3 StoreVoucher"
+        >
           <v-row no-gutters justify="center" class="main">
-            <v-col class="pr-1" cols="12" sm="8" md="8" lg="8">
-              <v-card-text no-gutters class="text pa-0 align-center">
+            <v-col class="pr-1" cols="12" sm="9" md="9" lg="9">
+              <v-card-text class="pa-0 text">
                 خصم
-                <span class="mx-1 amber--text text--accent-4"
-                  ><span>20</span>%</span
-                >
+                <span class="mx-1 amber--text text--accent-4">
+                  <span>20</span>%
+                </span>
               </v-card-text>
               <v-card-text class="pa-0 text">
                 أنفق
@@ -32,16 +31,14 @@
                 <span>10/2/2020</span>
               </v-card-text>
             </v-col>
-            <v-col class="pt-1" cols="12" sm="4" md="4" lg="4">
+            <v-col cols="3">
               <v-row
                 align="center"
                 style="height: 100%"
                 justify="center"
                 no-gutters
               >
-                <v-btn small tile text class="btn" elevation="0">
-                  أحصل عليها
-                </v-btn>
+                <v-btn tile text class="btn" small> أحصل عليها </v-btn>
               </v-row>
             </v-col>
           </v-row>
@@ -51,31 +48,21 @@
       </div> -->
         </v-card>
       </v-col>
-      <v-col
-        class="pa-1 px-2"
-        md="4"
-        lg="4"
-        sm="4"
-        cols="6"
-        v-for="n in 2"
-        :key="n"
-      >
-        <v-card flat class="py-1 px-4 promotion-card amber lighten-5">
-          <v-row no-gutters align="center" class="main">
-            <!-- <v-col class="pr-1" cols="auto">
-              <v-avatar size="40" color="white">
-                <v-img
-                  
-                  src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"
-                ></v-img>
-              </v-avatar>
-            </v-col> -->
-            <v-col class="pr-3" cols="12" sm="7" md="7" lg="7">
-              <v-card-text no-gutters class="text pa-0 align-center">
+      <v-col class="pa-1 px-1" cols="6" md="4" sm="4" lg="4">
+        <v-card
+          style="border: 1px dashed #ffab40"
+          color="#FFF3E0"
+          flat disabled
+          rounded="lg"
+          class="pb-1 pl-5 px-3 StoreVoucher"
+        >
+          <v-row no-gutters justify="center" class="main">
+            <v-col class="pr-1" cols="12" sm="9" md="9" lg="9">
+              <v-card-text class="pa-0 text">
                 خصم
-                <span class="mx-1 amber--text text--accent-4"
-                  ><span>20</span>%</span
-                >
+                <span class="mx-1 amber--text text--accent-4">
+                  <span>20</span>%
+                </span>
               </v-card-text>
               <v-card-text class="pa-0 text">
                 أنفق
@@ -89,17 +76,14 @@
                 <span>10/2/2020</span>
               </v-card-text>
             </v-col>
-            <v-spacer></v-spacer>
-            <v-col class="pt-1" cols="12" sm="auto" md="auto" lg="auto">
+            <v-col cols="3">
               <v-row
                 align="center"
                 style="height: 100%"
                 justify="center"
                 no-gutters
               >
-                <v-btn small tile text class="btn" elevation="0">
-                  أحصل عليها
-                </v-btn>
+                <v-btn tile text class="btn" small> أحصل عليها </v-btn>
               </v-row>
             </v-col>
           </v-row>
@@ -251,69 +235,28 @@ export default {
     }
   }
 }
-
-// .card::after {
-//   position: absolute;
-//   content: "";
-//   height: 20px;
-//   right: -10px;
-//   border-radius: 40px;
-//   z-index: 1;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   background-color: #f8f9fa;
-//   width: 20px;
-//   // border-left-width: 3px !important;
-//   // border-left-style: solid !important;
-//   // border-left-color: #ff7043 !important;
-//   box-shadow: inset 3px 0 0 0px #81d4fa;
-// }
-
-// .card::before {
-//   position: absolute;
-//   content: "";
-//   height: 20px;
-//   left: -10px;
-//   border-radius: 40px;
-//   z-index: 1;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   background-color: #f8f9fa;
-//   width: 20px;
-//   // border: 2px dashed #ff7043 !important;
-//   // border-right-width: 2px !important;
-//   // border-left-style: dashed !important;
-//   // border-left-color: #ff7043 !important;
-//   box-shadow: inset -3px 0 0 0px #81d4fa;
-// }
-
-.vertical {
-  border-left: 2px dashed #81d4fa;
-  height: 100%;
-}
-.promotion-card {
-  position: relative;
-}
-.promotion-card::after {
+.StoreVoucher::after {
   content: "";
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
-  left: -10px;
+  width: 27px;
+  height: 27px;
+  background-color: #fafafa;
+  left: -16px;
   top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;
+  border-right: 1.5px dashed #ff9800;
 }
-.promotion-card::before {
+.StoreVoucher::before {
   content: "";
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
-  right: -10px;
+  width: 27px;
+  height: 27px;
+  background-color: #fafafa;
+  right: -16px;
   top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;
+  border-left: 1.5px dashed #ff9800;
 }
 </style>

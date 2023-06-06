@@ -35,8 +35,8 @@
         </v-card-title>
       </v-col>
       <v-col class="" cols="12" v-for="i in 5" :key="i">
-        <v-card flat tile class="transparent overflow-hidden">
-          <v-row class="mb-1" align="center" no-gutters>
+        <v-card flat tile class="my-1 overflow-hidden">
+          <v-row class="mb-2" align="center" no-gutters>
             <div class="pl-5 font-weight-bold tital">
               <v-avatar class="ml-1" tile size="50">
                 <v-img
@@ -47,8 +47,8 @@
             </div>
             <v-spacer></v-spacer>
             <v-chip
-              text-color="grey darken-3"
-              color="grey lighten-4"
+              text-color="white"
+              color="red "
               class="ml-2 text-all"
             >
               المتجر
@@ -91,19 +91,27 @@
                     </v-col>
                     <!--  product name  -->
                     <v-col cols="12" class="ma-auto">
-                      <v-card-title class="card-text py-0 pa-2">
+                      <v-card-text
+                        style="
+                          display: -webkit-box;
+                          -webkit-line-clamp: 2;
+                          -webkit-box-orient: vertical;
+                          overflow: hidden;
+                        "
+                        class="card-text py-0 pa-0"
+                      >
                         <!-- if this product at thiqah mall  -->
-                        <span class="white--text ml-1"> ثـقـة مـول </span>
+                        <span class="ribbon-2 pa-1 pl-2">ثـقـة مـول</span>
                         {{ Product.name }} {{ Product.company }}
-                        {{ Product.name }}
-                        {{ Product.company }}
-                        {{ Product.name }}
-                      </v-card-title>
+                        {{ Product.company }} {{ Product.name }}
+                      </v-card-text>
                     </v-col>
                     <v-col cols="12" class="ma-auto">
-                      <strong class="PriceAfter py-0 pt-0 pa-2 text-truncate">
+                      <strong class="PriceAfter py-0 pa-2 text-truncate">
                         {{ Product.payment }}
-                        <small class="text-truncate">ريال</small>
+                        <v-icon color="grey darken-2" size="19">
+                          mdi-currency-rial
+                        </v-icon>
                       </strong>
                     </v-col>
                     <!-- how many sold and rating  -->
@@ -217,8 +225,8 @@ export default {
 
         breakpoints: {
           1024: {
-            slidesPerView: 5,
-            slidesPerGroup: 5,
+            slidesPerView: 6,
+            slidesPerGroup: 6,
           },
           768: {
             slidesPerView: 5,
@@ -287,10 +295,10 @@ export default {
     transform: translateX(-50%);
     border-radius: 10px;
     overflow: hidden;
-    background-color: #fafafa;
+    background-color: #F5F5F5;
 
     span.swiper-pagination-progressbar-fill {
-      background-color: #eeeeee;
+      background-color: #f44336;
     }
   }
   .v-sheet {
@@ -315,19 +323,17 @@ export default {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    line-height: 1.5;
     span {
       background-color: #ff3d00;
-      border-radius: 0px;
+      border-radius: 3px;
       font-weight: 600;
       font-size: 12px;
       padding: 1px;
-      padding: 3px !important;
     }
   }
   .tital {
     clip-path: polygon(7% 0, 100% 0%, 100% 100%, 0 100%);
-    background-color: #fff;
+    background-color: #F5F5F5;
     width: fit-content;
     font-family: $fontfamliy3;
     font-size: 18px;
@@ -391,7 +397,7 @@ export default {
 }
 .PriceAfter {
   font-size: 17px !important;
-  color: $color-2;
+  color: $fontcolor;
   font-weight: 600 !important;
   font-family: sans-serif !important;
 }
@@ -491,5 +497,12 @@ export default {
 }
 ::v-deep .v-slide-group__next.v-slide-group__next--disabled {
   display: none !important;
+}
+.ribbon-2 {
+  font-size: 11px !important;
+  clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
+  background: #e53935;
+  color: #fff;
+  border-radius: 0px !important;
 }
 </style>
