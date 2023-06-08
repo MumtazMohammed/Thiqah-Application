@@ -1,7 +1,7 @@
 <template>
   <div class="client-store">
     <!-- client Card -->
-    <v-card flat class="mx-auto" tile color="grey lighten-5">
+    <v-card flat class="mx-auto" tile color="">
       <v-container>
         <!-- client Card -->
         <v-row align="center" no-gutters class="fill-height">
@@ -146,9 +146,9 @@
         </v-row>
       </v-container>
     </v-card>
-    <v-container class="pa-0">
+    <v-container class="pa-0 pt-1">
       <!-- order  -->
-      <v-card dark tile flat color="deep-orange lighten-5" class="pa-2">
+      <v-card tile flat color="" class="pa-2">
         <!-- <v-card-text class="pt-0 pa-4 card-titel"> طلبياتي </v-card-text> -->
         <v-row
           align="center"
@@ -191,10 +191,10 @@
         </v-row>
       </v-card>
       <!-- row for cart and other  -->
-      <v-card rounded="lg" flat class="pa-2 transparent">
+      <v-card rounded="lg" flat class="pa-2 my-1">
         <v-row align="center" no-gutters class="fill-height">
           <!-- cart btn  -->
-          <v-col cols="3" class="pa-2">
+          <v-col cols="3" class="pa-1">
             <v-card
               flat
               :to="{
@@ -214,7 +214,7 @@
             </v-card>
           </v-col>
           <!-- thiqah mall btn  -->
-          <v-col cols="3" class="pa-2">
+          <v-col cols="3" class="pa-1">
             <v-card
               flat
               :to="{
@@ -256,7 +256,7 @@
             </v-card>
           </v-col> -->
           <!-- open your store btn  -->
-          <v-col cols="3" class="pa-2">
+          <v-col cols="3" class="pa-1">
             <v-card
               flat
               :to="{
@@ -274,7 +274,7 @@
             </v-card>
           </v-col>
           <!-- My comments  -->
-          <v-col cols="3" class="pa-2">
+          <v-col cols="3" class="pa-1">
             <v-card
               flat
               :to="{
@@ -300,7 +300,7 @@
           <!-- Others  -->
           <v-col
             cols="3"
-            class="pa-2"
+            class="pa-1"
             v-for="(Fift, i) in FifthhAccess"
             :key="i"
           >
@@ -313,25 +313,37 @@
               >{{ Fift.title }}
             </v-card-text>
           </v-col>
+          <!-- Sell Your Car  -->
+          <v-col cols="" class="pa-1">
+            <v-btn depressed block class="btn blue-grey lighten-5">
+              <v-icon
+                color="grey darken-2"
+                style="transform: scaleX(-1)"
+                class="ml-1"
+              >
+                mdi-train-car-flatbed-car
+              </v-icon>
+              إعلن سـيـارتـك
+            </v-btn>
+          </v-col>
+          <v-col cols="" class="pa-1">
+            <v-btn depressed flat block class="btn blue-grey lighten-5">
+              <v-icon color="grey darken-2" class="ml-">
+                mdi-home-modern
+              </v-icon>
+              إعلن عـقـارك
+            </v-btn>
+          </v-col>
         </v-row>
       </v-card>
       <!-- wallet  -->
-      <v-card tile flat class="pa-2 py-3 green lighten-5">
-        <v-card-title class="pt-0 pa-4 pl-0 card-titel">
+      <v-card flat tile class="pa-2 mb-1">
+        <v-card-title class="py-0 px-4 pl-0 card-titel">
           رصيدي
           <!-- <v-icon size="22" color="#fc624d" class="mr-1">mdi-wallet</v-icon> -->
           <v-spacer></v-spacer>
-          <v-btn
-            dark
-            small
-            depressed
-            class="text mx-1 white--text"
-            color="green "
-          >
-            تحويل
-          </v-btn>
-          <v-btn dark depressed small class="text white--text" color="green ">
-            إيداع
+          <v-btn height="48" width="48" fab class="text wallet white--text">
+            <v-icon color="white" size="30">mdi-wallet</v-icon>
           </v-btn>
         </v-card-title>
         <v-row
@@ -458,7 +470,7 @@ export default {
 @import "@/scss/virables";
 @import "@/scss/mixin";
 .client-store {
-  background-color: #fff;
+  background-color: #eceff1;
   width: 100%;
   min-height: 100vh;
   @media (max-width: 960px) {
@@ -479,13 +491,20 @@ export default {
 .text {
   letter-spacing: 0 !important;
   font-family: $fontfamliy3 !important;
-  font-weight: 600;
+  // font-weight: 600;
   font-size: 13.5px !important;
   color: $fontcolor !important;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+.btn {
+  letter-spacing: 0 !important;
+  font-family: $fontfamliy3 !important;
+  // font-weight: 600;
+  font-size: 13.5px !important;
+  color: $fontcolor !important;
 }
 
 .card-titel {
@@ -522,5 +541,9 @@ export default {
   @media (max-width: 600px) {
     font-size: 20px !important;
   }
+}
+
+.wallet {
+  background: linear-gradient(160deg, #f4511e 50%, #ffab91 100%);
 }
 </style>
