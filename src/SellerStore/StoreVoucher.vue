@@ -1,5 +1,5 @@
 <template>
-  <div class="StoreVoucher white pa-2" style="overflow: hidden">
+  <div class="Store-Voucher white pa-2" style="overflow: hidden">
     <v-card-title class="titel pa-2"> قسائم المتجر </v-card-title>
 
     <v-row no-gutters>
@@ -52,7 +52,8 @@
         <v-card
           style="border: 1px dashed #ffab40"
           color="#FFF3E0"
-          flat disabled
+          flat
+          disabled
           rounded="lg"
           class="pb-1 pl-5 px-3 StoreVoucher"
         >
@@ -165,7 +166,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/scss/virables";
 @import "@/scss/mixin";
-.StoreVoucher {
+.Store-Voucher {
   // background-color: $color-background;
   .titel {
     letter-spacing: 0 !important;

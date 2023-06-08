@@ -1,15 +1,12 @@
 <template>
-  <div class="DailyOffer my-2">
+  <div class="DailyOffer my-2 lime lighten-5">
     <v-container class="pa-0">
       <p class="ma-0 pa-2 d-flex font-weight-bold tital">
-        <v-icon right size="28" color="amber accent-1">mdi-tag</v-icon>
+        <v-icon right size="28" color="amber accent-2">mdi-tag</v-icon>
         صفقة مع البيعة
       </p>
       <!-- big screen  -->
-      <v-sheet
-        :height="SeeMore ? `auto` : `215`"
-        class="overflow-y-hidden transparent"
-      >
+      <v-sheet class="overflow-y-hidden hidden-xs-only transparent">
         <v-row no-gutters class="pa-2">
           <v-col cols="6" lg="2" md="2" sm="3" class="pa-2 py-1">
             <v-card flat width="100%" style="overflow: hidden">
@@ -75,9 +72,6 @@
                 </v-col>
               </v-row>
             </v-card>
-          </v-col>
-          <v-col cols="2" class="ma-auto text-center">
-            <v-icon color="deep-orange">mdi-plus</v-icon>
           </v-col>
           <v-col
             cols="6"
@@ -154,37 +148,248 @@
           <!-- <v-spacer></v-spacer> -->
         </v-row>
       </v-sheet>
+      <v-sheet
+        :height="SeeMore ? `auto` : `199`"
+        class="overflow-y-hidden hidden-sm-and-up transparent"
+      >
+        <v-row no-gutters class="">
+          <v-col cols="6" lg="2" md="2" sm="3" class="pa-2">
+            <v-card flat width="100%" style="overflow: hidden">
+              <v-img
+                height="80"
+                src="https://picsum.photos/500/300?image"
+                lazy-src="https://picsum.photos/500/300?image"
+              >
+              </v-img>
+              <!-- Product Img and name  -->
+              <v-card-text
+                style="
+                  display: -webkit-box;
+                  -webkit-line-clamp: 1;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                "
+                class="card-text py-1 pb-0 pa-1"
+              >
+                من المهم أن يكون الموقع جاذبا من الناحية البصرية
+              </v-card-text>
+              <v-row no-gutters align="center">
+                <!-- Product price -->
+                <v-col cols="12">
+                  <small
+                    class="d-block grey--text text-decoration-line-through pt-1 text-left px-2"
+                  >
+                    551516
+                    <small class="text-truncate">ريال</small>
+                  </small>
+                  <strong
+                    style="color: #fc624d"
+                    class="px-2 text-center text-truncate"
+                  >
+                    235120
+                    <small class="text-truncate">ريال</small>
+                  </strong>
+                </v-col>
+                <v-col cols="12">
+                  <!-- select product -->
+                  <v-card-actions class="pt-0 align-center">
+                    <v-checkbox
+                      v-model="enabled"
+                      hide-details
+                      class="shrink mt-0"
+                      dense
+                    ></v-checkbox>
+                    <v-btn
+                      depressed
+                      text
+                      tile
+                      small
+                      class="text-for-all"
+                      color="grey darken-2"
+                    >
+                      تحديد الطلب
+                      <v-icon>mdi-menu-down</v-icon>
+                    </v-btn>
+                  </v-card-actions>
+                </v-col>
+              </v-row>
+            </v-card>
+          </v-col>
+          <v-col cols="6" lg="2" md="2" sm="3" class="pa-2">
+            <v-card flat width="100%" style="overflow: hidden">
+              <v-img
+                height="80"
+                src="https://picsum.photos/500/300?image"
+                lazy-src="https://picsum.photos/500/300?image"
+              >
+              </v-img>
+              <!-- Product Img and name  -->
+              <v-card-text
+                style="
+                  display: -webkit-box;
+                  -webkit-line-clamp: 1;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                "
+                class="card-text py-1 pb-0 pa-1"
+              >
+                من المهم أن يكون الموقع جاذبا من الناحية البصرية
+              </v-card-text>
+              <v-row no-gutters align="center">
+                <!-- Product price -->
+                <v-col cols="12">
+                  <small
+                    class="d-block grey--text text-decoration-line-through pt-1 text-left px-2"
+                  >
+                    551516
+                    <small class="text-truncate">ريال</small>
+                  </small>
+                  <strong
+                    style="color: #fc624d"
+                    class="px-2 text-center text-truncate"
+                  >
+                    235120
+                    <small class="text-truncate">ريال</small>
+                  </strong>
+                </v-col>
+                <v-col cols="12">
+                  <!-- select product -->
+                  <v-card-actions class="pt-0 align-center">
+                    <v-checkbox
+                      v-model="enabled"
+                      hide-details
+                      class="shrink mt-0"
+                      dense
+                    ></v-checkbox>
+                    <v-btn
+                      depressed
+                      text
+                      tile
+                      small
+                      class="text-for-all"
+                      color="grey darken-2"
+                    >
+                      تحديد الطلب
+                      <v-icon>mdi-menu-down</v-icon>
+                    </v-btn>
+                  </v-card-actions>
+                </v-col>
+              </v-row>
+            </v-card>
+          </v-col>
+          <v-col v-if="!SeeMore" cols="4" class="text-center my-auto">
+            <!-- <v-icon size="16" color="deep-orange">mdi-plus</v-icon> -->
+            <a
+              v-if="!SeeMore"
+              class="see-more grey--text text--darken-2"
+              @click="SeeMore = !SeeMore"
+            >
+              رؤية الصفقة <span>{{ VerifiedCar.length }}</span>
+            </a>
+          </v-col>
+          <v-col
+            cols="6"
+            lg="2"
+            md="2"
+            sm="3"
+            v-for="(Product, index) in getCarInfo"
+            :key="index"
+            class="pa-2"
+          >
+            <v-card flat width="100%" style="overflow: hidden">
+              <v-img
+                height="80"
+                :src="getimageUrl(Product.folder, Product.image)"
+                :lazy="getimageUrl(Product.folder, Product.image)"
+              >
+              </v-img>
+              <!-- Product Img and name  -->
+              <v-card-text
+                style="
+                  display: -webkit-box;
+                  -webkit-line-clamp: 1;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                "
+                class="card-text py-1 pb-0 pa-1"
+              >
+                من المهم أن يكون الموقع جاذبا من الناحية البصرية
+              </v-card-text>
+              <v-row no-gutters align="center">
+                <!-- Product price -->
+                <v-col cols="12">
+                  <small class="grey--text text-decoration-line-through pr-2">
+                    551516
+                    <small class="text-truncate">ريال</small>
+                  </small>
+                  <strong
+                    style="color: #fc624d"
+                    class="pl-2 text-center text-truncate"
+                  >
+                    235120
+                    <small class="text-truncate">ريال</small>
+                  </strong>
+                </v-col>
+                <v-col cols="12">
+                  <!-- select product -->
+                  <v-card-actions
+                    class="pt-0 align-center justify-space-between"
+                  >
+                    <v-checkbox
+                      v-model="enabled"
+                      hide-details
+                      class="shrink mt-0"
+                      dense
+                    ></v-checkbox>
+                    <v-btn
+                      depressed
+                      text
+                      tile
+                      small
+                      class="text-for-all"
+                      color="grey darken-2"
+                    >
+                      تحديد الطلب
+                      <v-icon>mdi-menu-down</v-icon>
+                    </v-btn>
+                  </v-card-actions>
+                </v-col>
+              </v-row>
+            </v-card>
+          </v-col>
+          <!-- <v-spacer></v-spacer> -->
+        </v-row>
+      </v-sheet>
 
       <!-- see more btn  -->
-      <v-col class="text-center pa-0">
+      <v-col class="text-center px-0">
         <a
-          v-if="!SeeMore"
-          class="see-more grey--text text--darken-2"
-          @click="SeeMore = !SeeMore"
-        >
-          رؤية المزيد (<span>{{ VerifiedCar.length }}</span
-          >)
-        </a>
-        <a
-          v-else
+          v-if="SeeMore"
           class="see-more grey--text text--darken-2"
           @click="SeeMore = !SeeMore"
         >
           رؤية أقل
         </a>
+        <a
+          v-if="!SeeMore"
+          class="see-more grey--text text--darken-2"
+          @click="SeeMore = !SeeMore"
+        >
+          رؤية المزيد <span>{{ VerifiedCar.length }}</span>
+        </a>
       </v-col>
       <!-- total price and how much u save  -->
       <v-col cols="12" class="pa-2 col-price">
-        <v-sheet color="amber lighten-5">
+        <v-sheet>
           <v-row no-gutters align="center">
-            <v-col cols="auto">
+            <v-col cols="auto" class="pa-2">
               <!-- price total and price befor  -->
-              <v-card-text class="pa-1 total-price">
+              <v-card-text class="pa-0 total-price">
                 المجموع :
-                <span class="pa-0 after-price">75 ريال</span>
+                <span class="after-price">75 ريال</span>
               </v-card-text>
               <!-- save price  -->
-              <v-card-text class="pa-1 total-price">
+              <v-card-text class="pa-0 total-price">
                 موفر :
                 <span class="pa-0 save-price">75 ريال</span>
               </v-card-text>
@@ -246,13 +451,13 @@ export default {
 .DailyOffer {
   width: 100%;
   min-height: 20vh;
-  background-color: #f5f5f5;
+  background-color: #fff;
   overflow: hidden;
 
   .tital {
     font-family: $fontfamliy3;
     font-size: 22px;
-    color: $color-2;
+    color: $fontcolor;
     pointer-events: none;
 
     @media (max-width: 470px) {
@@ -263,13 +468,18 @@ export default {
     }
   }
 }
+
 .see-more {
   font-family: $fontfamliy3;
   letter-spacing: 0;
-  font-size: 14px;
+  font-size: 15px;
   span {
     font-family: sans-serif;
     color: $color-2;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-right: 5px;
   }
 }
 .text-for-all {
@@ -313,7 +523,7 @@ export default {
 .after-price {
   font-family: sans-serif !important;
   font-size: 17px !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   margin: 0 2px;
   color: $fontcolor !important;
   @media (max-width: 600px) {
@@ -323,7 +533,7 @@ export default {
 .save-price {
   font-family: sans-serif !important;
   font-size: 17px !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   margin: 0 2px;
   color: $color-2 !important;
   @media (max-width: 600px) {
@@ -337,7 +547,7 @@ export default {
   pointer-events: none;
   display: block;
   @media (max-width: 600px) {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 

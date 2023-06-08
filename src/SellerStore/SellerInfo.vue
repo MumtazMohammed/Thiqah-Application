@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pa-2 px-0">
+  <v-container class="pt-0 px-0">
     <v-card tile flat color="" class="pa-2 overflow-hidden">
       <v-row no-gutters align="center">
         <v-col cols="auto">

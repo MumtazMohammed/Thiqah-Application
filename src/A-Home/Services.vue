@@ -64,7 +64,7 @@
           <v-card color="transparent" elevation="0">
             <v-row no-gutters justify="center" align="center">
               <v-badge overlap bottom color="white" content="قريباً">
-                <v-icon size="30" color="#eee" class="elevation-3 pa-1 TrEv">
+                <v-icon size="30" color="#fff" class="elevation-3 pa-1 TrEv">
                   mdi-image-filter-hdr
                 </v-icon>
               </v-badge>
@@ -90,7 +90,7 @@
           </v-card>
         </v-col>
       </v-row>
-      <v-row no-gutters class="mb-3">
+      <v-row no-gutters class="">
         <!-- Food  -->
         <v-col>
           <v-card color="transparent" elevation="0">
@@ -279,50 +279,83 @@ export default {
   font-size: 10px;
   color: #000;
   inset: calc(100% - 10px) calc(100% - 34.5px) auto auto !important;
+  @media (max-width: 700px) {
+    inset: calc(100% - 10px) calc(100% - 31.6px) auto auto !important;
+  }
 }
 // Icon color
 .TrEv {
-  border-radius: 10%;
+  border-radius: 20%;
   background: linear-gradient(
     140deg,
     rgba(230, 81, 0, 1) 15%,
     rgba(255, 183, 77, 1) 100%
   );
+  @media (max-width: 700px) {
+    font-size: 25px !important;
+  }
 }
 .RealSta {
   border-radius: 20%;
   background: linear-gradient(140deg, #2196f3 15%, #82b1ff 100%);
+  @media (max-width: 700px) {
+    font-size: 25px !important;
+  }
 }
 .Thiqah {
   border-radius: 20%;
   background: linear-gradient(140deg, #f44336 15%, #ff8a80 100%);
+  @media (max-width: 700px) {
+    font-size: 25px !important;
+  }
 }
 .grab {
   border-radius: 20%;
   background: linear-gradient(140deg, #00c853 15%, #b9f6ca 100%);
+  @media (max-width: 700px) {
+    font-size: 25px !important;
+  }
 }
 .service {
   border-radius: 20%;
   background: linear-gradient(140deg, #009688 15%, #a7ffeb 100%);
+  @media (max-width: 700px) {
+    font-size: 25px !important;
+  }
 }
 .Restaurant {
   border-radius: 20%;
   background: linear-gradient(140deg, #f57f17 15%, #fdd835 100%);
+  @media (max-width: 700px) {
+    font-size: 25px !important;
+  }
 }
 .SuperMar {
   border-radius: 20%;
   background: linear-gradient(140deg, #388e3c 15%, #00e676 100%);
+  @media (max-width: 700px) {
+    font-size: 25px !important;
+  }
 }
 .Car {
   border-radius: 20%;
   background: linear-gradient(140deg, #304ffe 15%, #42a5f5 100%);
+  @media (max-width: 700px) {
+    font-size: 25px !important;
+  }
 }
 .pay {
   border-radius: 20%;
   background: linear-gradient(140deg, #78909c 15%, #546e7a 100%);
+  @media (max-width: 700px) {
+    font-size: 25px !important;
+  }
 }
 .Help {
   border-radius: 20%;
   background: linear-gradient(140deg, #bdbdbd 15%, #757575 100%);
+  @media (max-width: 700px) {
+    font-size: 25px !important;
+  }
 }
 </style>

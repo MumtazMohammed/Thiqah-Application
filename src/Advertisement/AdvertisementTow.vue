@@ -5,7 +5,12 @@
       <!-- TheAdv -->
       <swiper class="swiper" :options="swiperOption">
         <swiper-slide v-for="(item, i) in items" :key="i">
-          <v-img contain max-height="360" :src="item.src">
+          <v-img
+            :style="`background-color:${item.color} ;`"
+            contain
+            max-height="360"
+            :src="item.src"
+          >
             <v-row
               class="fill-height"
               align="center"
@@ -39,20 +44,20 @@ export default {
       model: 0,
       items: [
         {
-          src: "https://cf.shopee.com.my/file/my-50009109-69f0041a5f226fe98cb3e5ac3eea4474_xxhdpi",
-          color: "#e3efff",
+          src: "https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_1280.png",
+          color: "#F5F5F5",
         },
         {
-          src: "https://cf.shopee.com.my/file/my-50009109-a14a7216a37a383d922cfd8251c8a69d_xxhdpi",
-          color: "#ad0401",
+          src: "https://cdn.pixabay.com/photo/2019/06/19/07/13/email-4284157_1280.png",
+          color: "#d0dce5",
         },
         {
-          src: "https://cf.shopee.com.my/file/my-50009109-eec5effd28eb8460e26587a0b3e10e74_xxhdpi",
-          color: "#fbdd63",
+          src: "https://cdn.pixabay.com/photo/2018/01/04/11/51/design-3060480_1280.jpg",
+          color: "#009688",
         },
         {
-          src: "https://cf.shopee.com.my/file/my-50009109-f04943177921139af489b66bcc4d34af_xxhdpi",
-          color: "#13bade",
+          src: "https://www.shutterstock.com/image-photo/contemporary-art-collage-stylish-man-600w-2159890271.jpg",
+          color: "#ffb702",
         },
       ],
       swiperOption: {
@@ -147,6 +152,19 @@ export default {
   height: 360px !important;
   @media (max-width: 600px) {
     height: 200px !important;
+  }
+}
+.adv-text {
+  font-family: $fontfamliy3;
+  font-size: 20px;
+  background-color: #fc624d;
+  padding: 42px 30px;
+  border-radius: 50%;
+  color: #f3f3f3;
+  text-align: center;
+  @media (max-width: 700px) {
+    font-size: 17px;
+    padding: 42px 30px;
   }
 }
 </style>
