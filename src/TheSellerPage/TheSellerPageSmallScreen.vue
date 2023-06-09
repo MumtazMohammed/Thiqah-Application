@@ -16,19 +16,19 @@
                 </v-list-item-title>
                 <v-list-item-subtitle>
                   <v-card
-                    class="overflow-hidden"
+                    class="overflow-hidden blue-grey lighten-5"
                     flat
-                    rounded="sm"
+                    rounded="0"
                     max-width="170"
                   >
                     <v-row align="center" class="fill-height" no-gutters>
                       <span class="store-with-thiah white--text red">
                         ثقة مول
                       </span>
-                      <v-icon size="18" color="red">
+                      <v-icon left size="18" color="red">
                         mdi-check-decagram
                       </v-icon>
-                      <span class="store-with-thiah black--text">
+                      <span class="store-with-thiah pr-1 black--text">
                         بائع مرخص
                       </span>
                     </v-row>
@@ -82,16 +82,16 @@
       </v-container>
     </v-card>
     <v-container class="pa-2">
-      <v-card tile flat class="mb-3 transparent">
-        <v-card-text class="pa-2 pt-0 card-titel">
+      <v-card class="pa-1 py-2 mb-3 card">
+        <v-card-text class="px-3 py-1 card-titel">
           الوظائف الأساسية
         </v-card-text>
         <v-row align="center" no-gutters class="fill-height">
-          <v-col class="px-1" v-for="item in MenuLinks" :key="item">
+          <v-col class="pa-1" v-for="item in MenuLinks" :key="item">
             <v-card
               flat
               rounded="lg"
-              class="my-1 menu-card"
+              class="menu-card grey lighten-5"
               link
               exact-path
               :to="item.RouterName"
@@ -103,19 +103,20 @@
                   v-text="item.icon"
                 ></v-icon>
               </v-row>
-              <span class="link mt-2" v-text="item.link"></span>
+              <span class="link pa-1 mt-1" v-text="item.link"></span>
             </v-card>
           </v-col>
         </v-row>
       </v-card>
       <!-- links   -->
-      <v-card rounded="lg" flat class="pa-1 py-2 grey lighten-3">
+      <v-card class="pa-1 py-2 mb-3 card">
+        <v-card-text class="px-3 py-1 card-titel"> عن متجرك </v-card-text>
         <v-row align="center" no-gutters class="fill-height">
-          <v-col class="pa-1" v-for="item in MyStore" :key="item">
+          <v-col class="pa-2 py-1" v-for="item in MyStore" :key="item">
             <v-card
               flat
               rounded="lg"
-              class="pa-1 menu-card"
+              class="pa-1 grey lighten-5"
               link
               exact-path
               :to="item.RouterName"
@@ -133,20 +134,20 @@
         </v-row>
       </v-card>
       <!-- Marketing Tools  -->
-      <v-card rounded="lg" flat class="pa-2 my-3 grey lighten-3">
-        <v-card-text class="pa-3 card-titel">أدوات التسويق </v-card-text>
+      <v-card class="pa-2 pb-2 my-3 card">
+        <v-card-text class="px-3 py-1 card-titel">أدوات التسويق </v-card-text>
         <v-row align="center" no-gutters class="fill-height">
           <v-col
-            cols="6"
+            cols="4"
             sm="4"
-            class="pa-2"
+            class="pa-1 py-1"
             v-for="item in MarketingTools"
             :key="item"
           >
             <v-card
               flat
               rounded="lg"
-              class="pa-1 menu-card"
+              class="pa-2 pt-1 deep-orange lighten-5"
               link
               height="100%"
               exact-path
@@ -155,29 +156,29 @@
               <v-row no-gutters class="pa-0 pt-1 justify-center">
                 <v-avatar
                   class="profile"
-                  color="deep-orange lighten-5"
-                  size="40"
+                  color="deep-orange lighten-4"
+                  size="50"
                 >
-                  <v-icon size="30" color="deep-orange">
+                  <v-icon size="37" color="deep-orange">
                     {{ item.icon }}
                   </v-icon>
                 </v-avatar>
               </v-row>
-              <span class="link mt-2" v-text="item.title"></span>
+              <span class="Marketing mt-1" v-text="item.title"></span>
             </v-card>
           </v-col>
         </v-row>
       </v-card>
       <!-- second row card  -->
-      <v-card tile flat class="transparent mt-3">
+      <v-card class="card pa-2 py-2 mt-3">
         <v-row align="center" no-gutters class="fill-height">
           <v-col
             cols="4"
-            class="pa-2"
+            class="pa-1 py-1"
             v-for="(Fift, i) in FifthhAccess"
             :key="i"
           >
-            <v-card flat class="pa-1">
+            <v-card flat class="pa-1 grey lighten-5">
               <v-row justify="center" no-gutters class="fill-height">
                 <v-icon
                   :style="Fift.flib"
@@ -329,13 +330,13 @@ export default {
         },
 
         {
+          title: "أنضم الى ثقة مول",
+          cunt: "mdi-set-all ",
+        },
+        {
           title: "خدمة العملاء",
           cunt: "mdi-face-agent ",
           flib: "  transform: scaleX(-1)",
-        },
-        {
-          title: "أنضم الى ثقة مول",
-          cunt: "mdi-set-all ",
         },
       ],
       MarketingTools: [
@@ -357,7 +358,7 @@ export default {
         },
         {
           icon: "mdi-handshake-outline",
-          title: "صفقة الحزمة",
+          title: "صفقة مع البيعة",
           describe:
             "زيادة متوسط الإنفاق لكل طلب من خلال تقديم خصومات على حزمة المنتج",
         },
@@ -388,7 +389,7 @@ export default {
 @import "@/scss/virables";
 @import "@/scss/mixin";
 .client-store {
-  background-color: #fafafa;
+  background-color: #fff;
   width: 100%;
   min-height: 100vh;
 }
@@ -451,6 +452,18 @@ export default {
   text-align: center;
   // height: 40px;
 }
+.Marketing {
+  font-size: 15px !important;
+  letter-spacing: 0;
+  color: $fontcolor !important;
+  font-family: $fontfamliy3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 40px;
+  // height: 40px;
+}
 .icon {
   font-size: 30px !important;
   // border-radius: 50%;
@@ -480,5 +493,8 @@ export default {
   @media (max-width: 600px) {
     // font-size: 11px !important;
   }
+}
+.card {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
 }
 </style>

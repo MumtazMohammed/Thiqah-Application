@@ -100,7 +100,6 @@ export default {
   @media (max-width: 600px) {
     bottom: 49px;
     right: 0px;
-
     transform: scale(0);
     z-index: 1;
   }
@@ -121,7 +120,7 @@ export default {
 .example::-webkit-scrollbar {
   display: none;
 }
-::v-deep .theme--light.v-btn:focus:before{
+::v-deep .theme--light.v-btn:focus:before {
   opacity: 0 !important;
 }
 </style>

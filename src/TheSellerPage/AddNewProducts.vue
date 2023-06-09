@@ -2,7 +2,7 @@
   <div class="ShowRoomAddNewCar grey lighten-4">
     <!-- small Screen Tabs  -->
     <div class="hidden-md-and-up">
-      <v-app-bar flat fixed>
+      <v-app-bar flat fixed color="white">
         <v-icon size="22" color="#0091EA"> mdi-plus </v-icon>
         <v-toolbar-title class="pr-1 titel">إضافة منتج</v-toolbar-title>
         <v-spacer></v-spacer>
@@ -12,7 +12,7 @@
       </v-app-bar>
       <v-sheet height="56"></v-sheet>
     </div>
-    <v-container class="pa-2">
+    <v-container class="pa-2 pb-0">
       <!-- Add the the images  -->
       <v-sheet rounded="" class="pa-1">
         <v-row no-gutters class="pa-0">
@@ -422,25 +422,27 @@
         </v-row>
       </v-sheet>
       <!-- Save Or cancel -->
-      <v-card-actions class="justify-center pa-4" v-if="step === 3">
-        <v-btn
-          width="200"
-          depressed
-          @click="step++"
-          elevation="0"
-          class="save-pu-btn"
-        >
-          احفظ وانشر
-        </v-btn>
-        <v-btn @click="step++" elevation="0" class="cancel-btn"> إلغاء </v-btn>
-      </v-card-actions>
+      <v-row justify="center" no-gutters class="py-3 p">
+        <v-col cols="4">
+          <v-btn block tile elevation="0" class="save-pu-btn">
+            احفظ وانشر
+          </v-btn>
+        </v-col>
+        <v-col cols="4">
+          <v-btn block tile elevation="0" class="cancel-btn"> إلغاء </v-btn>
+        </v-col>
+      </v-row>
     </v-container>
+    <div class="hidden-md-and-up">
+      <bottom-navigation />
+    </div>
   </div>
 </template>
 <script>
+import BottomNavigation from "./BottomNavigation.vue";
 export default {
   name: "ShowRoomAddNewCar",
-  components: {},
+  components: { BottomNavigation },
   data() {
     return {
       // checkbox
@@ -1326,13 +1328,14 @@ export default {
     font-family: $fontfamliy3 !important;
     background-color: $color-2 !important;
   }
-}
-.cancel-btn {
-  font-size: 16px !important;
-  color: $fontcolorlinks;
-  letter-spacing: 0;
-  font-weight: 500;
-  font-family: $fontfamliy3 !important;
+  .cancel-btn {
+    font-size: 16px !important;
+    color: $fontcolor;
+    letter-spacing: 0;
+    font-weight: 500;
+    font-family: $fontfamliy3 !important;
+    background-color: #eceff1 !important;
+  }
 }
 .cover-image-input {
   position: absolute;

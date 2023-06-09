@@ -191,7 +191,7 @@
         </v-row>
       </v-card>
       <!-- row for cart and other  -->
-      <v-card rounded="lg" flat class="pa-2 my-1">
+      <v-card tile flat class="pa-2 my-1">
         <v-row align="center" no-gutters class="fill-height">
           <!-- cart btn  -->
           <v-col cols="3" class="pa-1">
@@ -313,7 +313,7 @@
               >{{ Fift.title }}
             </v-card-text>
           </v-col>
-          <!-- Sell Your Car  -->
+          <!-- Sell Your Car and realstate  -->
           <v-col cols="" class="pa-1">
             <v-btn depressed block class="btn blue-grey lighten-5">
               <v-icon

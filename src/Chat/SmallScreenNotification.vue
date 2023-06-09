@@ -1,12 +1,12 @@
 <template>
   <div class="Notification grey">
     <v-card flat tile>
-      <v-app-bar app height="45" color="#fc624d" flat>
+      <v-app-bar app height="60" color="#fc624d" flat>
         <v-text-field
           placeholder="بحث عن مستخدم ..."
           dense
-          solo
           flat
+          solo
           prepend-inner-icon="mdi-magnify"
           class="rounded-pill"
           hide-details
@@ -17,7 +17,7 @@
           <v-icon color="white" size="30">mdi-arrow-left-thin</v-icon>
         </v-btn>
       </v-app-bar>
-      <v-sheet height="45"></v-sheet>
+      <v-sheet height="60"></v-sheet>
       <v-card
         flat
         tile
