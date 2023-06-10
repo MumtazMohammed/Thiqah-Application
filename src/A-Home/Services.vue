@@ -1,5 +1,5 @@
 <template>
-  <div class="Shape_box">
+  <div class="Srevice">
     <v-container class="py-2 pb-1 px-2 px-md-1 px-lg-1 px-sm-1">
       <!-- <v-card class="mx-auto" style="margin-top: -20px; z-index: 8" height="30" width="80%">
       </v-card> -->
@@ -258,7 +258,7 @@ export default {
 @import "@/scss/virables";
 @import "@/scss/mixin";
 
-.Shape_box {
+.Srevice {
   background-color: $color-background;
 }
 .text {
@@ -280,82 +280,82 @@ export default {
   color: #000;
   inset: calc(100% - 10px) calc(100% - 34.5px) auto auto !important;
   @media (max-width: 700px) {
-    inset: calc(100% - 10px) calc(100% - 31.6px) auto auto !important;
+    inset: calc(100% - 12px) calc(100% - 33.5px) auto auto !important;
   }
 }
 // Icon color
 .TrEv {
-  border-radius: 20%;
+  border-radius: 30%;
   background: linear-gradient(
     140deg,
     rgba(230, 81, 0, 1) 15%,
     rgba(255, 183, 77, 1) 100%
   );
   @media (max-width: 700px) {
-    font-size: 25px !important;
+    font-size: 28px !important;
   }
 }
 .RealSta {
-  border-radius: 20%;
+  border-radius: 30%;
   background: linear-gradient(140deg, #2196f3 15%, #82b1ff 100%);
   @media (max-width: 700px) {
-    font-size: 25px !important;
+    font-size: 28px !important;
   }
 }
 .Thiqah {
-  border-radius: 20%;
+  border-radius: 30%;
   background: linear-gradient(140deg, #f44336 15%, #ff8a80 100%);
   @media (max-width: 700px) {
-    font-size: 25px !important;
+    font-size: 28px !important;
   }
 }
 .grab {
-  border-radius: 20%;
+  border-radius: 30%;
   background: linear-gradient(140deg, #00c853 15%, #b9f6ca 100%);
   @media (max-width: 700px) {
-    font-size: 25px !important;
+    font-size: 28px !important;
   }
 }
 .service {
-  border-radius: 20%;
+  border-radius: 30%;
   background: linear-gradient(140deg, #009688 15%, #a7ffeb 100%);
   @media (max-width: 700px) {
-    font-size: 25px !important;
+    font-size: 28px !important;
   }
 }
 .Restaurant {
-  border-radius: 20%;
+  border-radius: 30%;
   background: linear-gradient(140deg, #f57f17 15%, #fdd835 100%);
   @media (max-width: 700px) {
-    font-size: 25px !important;
+    font-size: 28px !important;
   }
 }
 .SuperMar {
-  border-radius: 20%;
+  border-radius: 30%;
   background: linear-gradient(140deg, #388e3c 15%, #00e676 100%);
   @media (max-width: 700px) {
-    font-size: 25px !important;
+    font-size: 28px !important;
   }
 }
 .Car {
-  border-radius: 20%;
+  border-radius: 30%;
   background: linear-gradient(140deg, #304ffe 15%, #42a5f5 100%);
   @media (max-width: 700px) {
-    font-size: 25px !important;
+    font-size: 28px !important;
   }
 }
 .pay {
-  border-radius: 20%;
+  border-radius: 30%;
   background: linear-gradient(140deg, #78909c 15%, #546e7a 100%);
   @media (max-width: 700px) {
-    font-size: 25px !important;
+    font-size: 28px !important;
   }
 }
 .Help {
-  border-radius: 20%;
+  border-radius: 30%;
   background: linear-gradient(140deg, #bdbdbd 15%, #757575 100%);
   @media (max-width: 700px) {
-    font-size: 25px !important;
+    font-size: 28px !important;
   }
 }
 </style>

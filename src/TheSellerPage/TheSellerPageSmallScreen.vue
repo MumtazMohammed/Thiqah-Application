@@ -214,28 +214,6 @@ export default {
         { title: " الزائرين", cunt: "50" },
         { title: "المتابعين", cunt: "1" },
       ],
-      Order: [
-        {
-          title: "طلبات جديدة",
-          cunt: "mdi-basket",
-          // flib: "  transform: scaleX(-1)",
-        },
-        {
-          title: "بإنتظار شحن المنتج",
-          cunt: "mdi-truck-delivery ",
-          flib: "  transform: scaleX(-1)",
-        },
-        {
-          title: "طلبات ألغيت",
-          cunt: "mdi-basket-remove",
-          flib: "  transform: scaleX(-1)",
-        },
-        {
-          title: "تقييمات العملاء",
-          cunt: "mdi-comment-multiple",
-          flib: "  transform: scaleX(-1)",
-        },
-      ],
       MenuLinks: [
         {
           link: "إضافة  ",

@@ -1,5 +1,5 @@
 <template>
-  <div class="BestOffer pa-1 grey lighten-3">
+  <div class="BestOffer pa-1">
     <v-container class="container pa-0">
       <v-row class="pa-2" no-gutters justify="center" align="center">
         <div class="font-weight-bold tital">
@@ -24,7 +24,7 @@
               }"
               width="100%"
               height="220"
-              class=""
+              class="thiqah-card"
               rounded="lg"
               flat
             >
@@ -33,7 +33,7 @@
                 :src="getimageUrl(Product.folder, Product.image)"
               ></v-img>
               <v-row style="margin-top: -30px" justify="center" no-gutters>
-                <v-avatar class="" size="60" color="white">
+                <v-avatar class="elevation-3" size="60" color="white">
                   <v-img
                     height="45"
                     contain

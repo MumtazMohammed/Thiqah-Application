@@ -3,8 +3,8 @@
     class="wrap"
     :color="
       model == 0
-        ? '#F5F5F5'
-        : '#eee' && model == 1
+        ? '#f7f7f7'
+        : '#f7f7f7' && model == 1
         ? '#d0dce5'
         : '#eee' && model == 2
         ? '#009688'

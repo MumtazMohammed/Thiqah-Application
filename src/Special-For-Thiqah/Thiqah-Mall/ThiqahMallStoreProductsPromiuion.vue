@@ -35,7 +35,7 @@
         </v-card-title>
       </v-col>
       <v-col class="" cols="12" v-for="i in 5" :key="i">
-        <v-card flat tile class="my-1 overflow-hidden">
+        <v-card flat tile class="my-1 overflow-hidden blue-grey lighten-5">
           <v-row class="mb-2" align="center" no-gutters>
             <div class="pl-5 font-weight-bold tital">
               <v-avatar class="ml-1" tile size="50">
@@ -46,11 +46,7 @@
               عروضات عروضات
             </div>
             <v-spacer></v-spacer>
-            <v-chip
-              text-color="white"
-              color="red "
-              class="ml-2 text-all"
-            >
+            <v-chip text-color="white" color="red " class="ml-2 text-all">
               المتجر
             </v-chip>
           </v-row>
@@ -295,7 +291,7 @@ export default {
     transform: translateX(-50%);
     border-radius: 10px;
     overflow: hidden;
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
 
     span.swiper-pagination-progressbar-fill {
       background-color: #f44336;
@@ -333,7 +329,7 @@ export default {
   }
   .tital {
     clip-path: polygon(7% 0, 100% 0%, 100% 100%, 0 100%);
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
     width: fit-content;
     font-family: $fontfamliy3;
     font-size: 18px;

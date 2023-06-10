@@ -25,16 +25,52 @@
       right
       temporary
     >
-      <v-sheet height="100vh" style="overflow-y: scroll">
-        <v-list-item>
-          <v-list-item-avatar>
-            <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
-          </v-list-item-avatar>
-
-          <v-list-item-content>
-            <v-list-item-title>John Leider</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+      <v-sheet style="overflow-y: scroll">
+        <v-row align="center" no-gutters class="fill-height">
+          <v-col cols="2" class="">
+            <v-img
+              class="blue-grey lighten-5"
+              contain
+              height="67"
+              src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"
+            ></v-img>
+          </v-col>
+          <v-col cols="10" md="10" sm="9" lg="10">
+            <v-list-item class="px-2 pl-0" color="grey">
+              <v-list-item-content class="py-0">
+                <v-list-item-title class="store-name mb-0">
+                  <v-row align="center" no-gutters>
+                    محمد أمين
+                    <v-spacer></v-spacer>
+                    <v-btn icon>
+                      <v-icon size="22" color="grey lighten-1">mdi-cog</v-icon>
+                    </v-btn>
+                  </v-row>
+                </v-list-item-title>
+                <v-list-item-subtitle>
+                  <v-card
+                    class="overflow-hidden blue-grey lighten-5"
+                    flat
+                    tile
+                    max-width="170"
+                  >
+                    <v-row align="center" class="fill-height" no-gutters>
+                      <span class="store-with-thiah white--text red">
+                        ثقة مول
+                      </span>
+                      <v-icon left size="18" color="red">
+                        mdi-check-decagram
+                      </v-icon>
+                      <span class="store-with-thiah black--text">
+                        بائع مرخص
+                      </span>
+                    </v-row>
+                  </v-card>
+                </v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+          </v-col>
+        </v-row>
         <v-divider></v-divider>
         <v-list>
           <v-list-group
@@ -68,50 +104,33 @@
               </v-list-item-content>
             </v-list-item>
           </v-list-group>
+          <v-list-item-group v-model="selectedItem" color="primary">
+            <v-list-item dense v-for="(item, i) in Others" :key="i">
+
+              <v-list-item-content>
+                <v-list-item-title
+                  class="link"
+                  v-text="item.title"
+                ></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-item-group>
         </v-list>
       </v-sheet>
     </v-navigation-drawer>
   </div>
 </template>
 <script>
-import ShowRoomUserCars from "../data-json/All-Car.json";
 export default {
-  name: "StoreProducts",
+  name: "BottomNavigation",
   components: {},
   data() {
     return {
-      search: "",
-      tab: null,
       sheet: false,
       drawer: null,
       items: [
         {
           title: "الوظائف الأساسية",
-          items: [
-            {
-              title: "طلبات جديدة",
-              icon: "mdi-basket",
-              // flib: "  transform: scaleX(-1)",
-            },
-            {
-              title: "بإنتظار شحن المنتج",
-              icon: "mdi-truck-delivery ",
-              flib: "  transform: scaleX(-1)",
-            },
-            {
-              title: "طلبات ألغيت",
-              icon: "mdi-basket-remove",
-              flib: "  transform: scaleX(-1)",
-            },
-            {
-              title: "تقييمات العملاء",
-              icon: "mdi-comment-multiple",
-              flib: "  transform: scaleX(-1)",
-            },
-          ],
-        },
-        {
-          title: "  ",
           items: [
             {
               title: "إضافة  ",
@@ -146,83 +165,89 @@ export default {
           ],
         },
         {
-          action: "mdi-human-male-female-child",
-          items: [{ title: "List Item" }],
-          title: "Family",
-        },
-        {
-          action: "mdi-bottle-tonic-plus",
-          items: [{ title: "List Item" }],
-          title: "Health",
-        },
-        {
-          action: "mdi-briefcase",
-          items: [{ title: "List Item" }],
-          title: "Office",
-        },
-        {
-          action: "mdi-tag",
-          items: [{ title: "List Item" }],
-          title: "Promotions",
-        },
-      ],
-      MyStore: [
-        {
-          link: "إضافة  ",
-          icon: "mdi-basket-plus",
-          class: "indigo accent-3",
-          RouterName: "/AddNewProducts",
-        },
-        {
-          link: "المنتجات",
-          icon: "mdi-basket",
-          class: "yellow darken-4",
-          RouterName: "/StoreProducts",
-        },
-        {
-          link: "الطلبات",
-          icon: "mdi-clipboard-text",
-          class: "yellow darken-3",
-          RouterName: "/MyOrder",
-        },
-        {
-          link: "التقييمات",
-          icon: "mdi-comment-text",
-          class: "light-blue accent-4",
-          RouterName: "/MyOrder",
-        },
-        {
-          link: "رصيدي",
-          icon: "mdi-wallet",
-          class: "green accent-4",
-          RouterName: "/StoreIncome",
-        },
-      ],
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      ShowRoomUserCars,
-      carId: this.$route.params.carId,
-      selectedItem: 0,
-    };
-  },
-  computed: {
-    filteredStore: function () {
-      return this.ShowRoomUserCars.filter((ShowRoomUserCars) => {
-        return ShowRoomUserCars.name.match(this.search);
-      });
-    },
-  },
+          title: " عن متجرك ",
+          items: [
+            {
+              title: "رؤى الأعمال",
+              icon: "mdi-chart-line",
+              class: "indigo accent-2",
+              RouterName: "/BusinessInsights",
+            },
 
-  methods: {
-    getimageUrl(FolderName, ImageName) {
-      let image = require.context("@/assets/");
-      return image("./" + FolderName + "/" + ImageName);
-    },
-    reset() {
-      return (this.search = "");
-    },
-    goBack() {
-      return this.$router.go(-1);
-    },
+            {
+              title: "المتجر  ",
+              icon: "mdi-store-edit-outline",
+              class: "pink lighten-1",
+              RouterName: "/StoreProfile",
+            },
+            {
+              title: "إعدادات ",
+              icon: "mdi-cog",
+              class: "grey darken-2",
+              RouterName: "/StoreProfile",
+            },
+          ],
+        },
+        {
+          title: " أدوات التسويق  ",
+          items: [
+            {
+              icon: "mdi-star-circle-outline",
+              title: "متميز",
+            },
+            {
+              icon: "mdi-ticket-confirmation",
+              title: "القسائم",
+            },
+            {
+              icon: "mdi-label-percent",
+              title: "عروض الخصم",
+            },
+            {
+              icon: "mdi-handshake-outline",
+              title: "صفقة مع البيعة",
+            },
+            {
+              icon: "mdi-basket-plus",
+              title: "صفقة إضافية",
+            },
+            {
+              icon: "mdi-home-lightning-bolt",
+              title: "تخفيضات صادمة  لمتجرك ",
+            },
+            {
+              icon: "mdi-truck-delivery",
+              title: "تخفيض في رسوم الشحن",
+            },
+          ],
+        },
+      ],
+      Others: [
+        {
+          title: " عضوية للمتجر",
+          icon: "mdi-card-account-details-star-outline ",
+        },
+
+        {
+          title: " تعبئة رصيد",
+          icon: "mdi-cellphone-arrow-down mdi-rotate-180 ",
+        },
+        {
+          title: "إعلن  لدينا ",
+          icon: "mdi-flash",
+        },
+
+        {
+          title: "أنضم الى ثقة مول",
+          icon: "mdi-set-all ",
+        },
+        {
+          title: "خدمة العملاء",
+          icon: "mdi-face-agent ",
+          flib: "  transform: scaleX(-1)",
+        },
+      ],
+    };
   },
 };
 </script>
@@ -244,8 +269,13 @@ export default {
   letter-spacing: 0 !important;
   color: $fontcolor !important;
   font-family: $fontfamliy3;
-
+  line-height: 1.6;
   //   align-items: center;
   // height: 40px;
+}
+.store-with-thiah {
+  font-family: $fontfamliy3;
+  letter-spacing: 0 !important;
+  padding: 4px 3px;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <div class="TheShowRoomPage pa-2">
+  <div class="TheShowRoomPage">
     <!-- small Screen Tabs  -->
     <div class="hidden-md-and-up">
-      <v-app-bar height="66" flat fixed color="grey lighten-4">
+      <v-app-bar height="66" flat fixed color="white">
         <v-list-item two-line class="px-0">
           <v-list-item-content>
             <v-list-item-title class="text-to-all">
@@ -21,7 +21,7 @@
       </v-app-bar>
       <v-sheet height="56"></v-sheet>
     </div>
-    <v-sheet rounded class="pt-3 pt-md-0 pt-lg-0">
+    <v-sheet rounded class="pt-3">
       <!-- search  -->
       <v-col class="mx-auto" cols="12" md="7" lg="7">
         <v-card color="" outlined class="search overflow-hidden">
@@ -87,15 +87,19 @@
         </v-card-subtitle>
       </div>
       <!-- the products  -->
-      <v-card flat tile class="grey lighten-4 card-hight overflow-y-auto">
-        <v-tabs-items style="" class="transparent px-1" v-model="tab">
+      <v-card flat tile class=" blue-grey lighten-5  card-hight overflow-y-auto">
+        <v-tabs-items
+          style=""
+          class="transparent px-md-2 px-lg-2"
+          v-model="tab"
+        >
           <v-tab-item>
             <v-row no-gutters>
               <v-col
                 v-for="(Car, i) in ShowRoomUserCars"
                 :key="i"
                 cols="12"
-                class="pa-2"
+                class="pa-1 px-2"
               >
                 <v-card
                   :to="{
@@ -105,7 +109,7 @@
                     },
                   }"
                   height="100%"
-                  class="overflow-hidden py-2"
+                  class="overflow-hidden py-0"
                   flat
                   tile
                 >
@@ -154,13 +158,17 @@
       </v-card>
     </v-sheet>
     <!-- <v-row no-gutters> </v-row> -->
+    <div class="hidden-md-and-up">
+      <bottom-navigation />
+    </div>
   </div>
 </template>
 <script>
 import ShowRoomUserCars from "../data-json/All-Car.json";
+import BottomNavigation from "./BottomNavigation.vue";
 export default {
   name: "StoreProducts",
-  components: {},
+  components: { BottomNavigation },
   data() {
     return {
       search: "",
@@ -243,7 +251,7 @@ export default {
 .card-hight {
   height: calc(100vh - 202px);
   @media (max-width: 960px) {
-    height: calc(100vh - 180.5px) !important;
+    height: calc(100vh - 231.5px) !important;
   }
 }
 </style>
