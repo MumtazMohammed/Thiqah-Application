@@ -3,29 +3,30 @@
     <v-row no-gutters>
       <!-- Categories  -->
       <v-col cols="12" class="mt-2">
-        <v-card flat tile color="light-blue accent-1" class="pa-2">
+        <v-card flat tile class="pa-2">
           <swiper class="swiperCatgories px-2" :options="swiperCatgories">
-            <swiper-slide class="white" v-for="i in 22" :key="i">
-              <v-img
-                src="https://down-my.img.susercontent.com/file/3c8d9860094df6057d95bc545fe1d790_tn"
-                alt="https://down-my.img.susercontent.com/file/3c8d9860094df6057d95bc545fe1d790_tn"
-                height="100"
-                contain
-                class=""
-              >
-              </v-img>
+            <swiper-slide class="" v-for="i in 22" :key="i">
+              <v-avatar color="transparent">
+                <v-img
+                  src="https://down-my.img.susercontent.com/file/3c8d9860094df6057d95bc545fe1d790_tn"
+                  alt="https://down-my.img.susercontent.com/file/3c8d9860094df6057d95bc545fe1d790_tn"
+                  contain
+                >
+                </v-img>
+              </v-avatar>
+              <v-card-text class="pa-0 list pt-1"> الألبان </v-card-text>
             </swiper-slide>
             <!-- <div class="swiper-pagination" slot="pagination"></div> -->
           </swiper>
         </v-card>
       </v-col>
       <!-- crazy sale  -->
-      <v-col style="background-color: #80d8ff" class="pa-2 my-2" cols="12">
-        <v-card tile color="transparent" flat class="card-wrapping">
+      <v-col class="my-2" cols="12">
+        <v-card class="pa-2" tile flat color="#eeeee4">
           <v-row class="py-2 pb-3" no-gutters align="center">
             <strong class="tital ma-0">
               العروضات
-              <v-icon right color="#2673dd">mdi-flash</v-icon>
+              <v-icon right color="#fc624d">mdi-flash</v-icon>
             </strong>
             <!-- بأفضل
           <strong class="mx-1">الأسعار</strong> -->
@@ -108,10 +109,12 @@
                     </v-card-text>
                   </v-row>
                   <!-- Price  -->
-                  <v-card-actions class="py-1 justify-center">
+                  <v-card-actions class="py-0 justify-center">
                     <strong class="PriceAfter text-truncate">
                       {{ Product.payment }}
-                      <small class="text-truncate">ريال</small>
+                      <v-icon color="grey darken-3" size="20">
+                        mdi-currency-rial
+                      </v-icon>
                     </strong>
                   </v-card-actions>
                   <!-- Residual   -->
@@ -128,7 +131,7 @@
                       style="position: relative; overflow: hidden"
                       class="my-2 mx-auto text-center"
                       width="150px"
-                      color="#80D8FF"
+                      color="#FFCCBC"
                       rounded="lg"
                       height="10"
                     >
@@ -180,7 +183,7 @@
               },
             }"
             :elevation="hover ? 3 : 0"
-            min-height="315"
+            min-height="300"
             width="100%"
             style="overflow: hidden; background-color: #fff; position: relative"
             rounded="lg"
@@ -201,7 +204,9 @@
             </v-card-text>
             <strong class="PriceAfter py-1 pt-0 pa-2 text-truncate">
               {{ Product.payment }}
-              <small class="text-truncate">ريال</small>
+              <v-icon color="grey darken-3" size="20">
+                mdi-currency-rial
+              </v-icon>
             </strong>
             <!-- if the product contain any promotion -->
             <v-card-text class="py-1 pa-2 text-truncate">
@@ -308,6 +313,7 @@ export default {
         slidesPerView: 3,
         slidesPerColumn: 3,
         spaceBetween: 30,
+        freeMode: true,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
@@ -412,11 +418,11 @@ export default {
   min-height: 20vh;
   //   background-color: #eceff1;
   .swiperCatgories {
-    height: 312px;
+    height: 300px;
     .swiper-slide {
       height: 100px !important;
-      margin: 2px 0px !important;
-      // text-align: center !important;
+      margin: 0px !important;
+      text-align: center !important;
       // border: 1px solid grey;
     }
   }
@@ -438,7 +444,7 @@ export default {
     background-color: #fafafa;
 
     span.swiper-pagination-progressbar-fill {
-      background-color: #2673dd;
+      background-color: #fc624d;
     }
   }
   .v-sheet {
@@ -525,7 +531,7 @@ export default {
 }
 .PriceAfter {
   font-size: 17px !important;
-  color: $color-2;
+  color: $fontcolor;
   font-weight: 600 !important;
   font-family: sans-serif !important;
 }
@@ -578,7 +584,7 @@ export default {
   font-family: $fontfamliy3 !important;
   letter-spacing: 0 !important;
   border-radius: 5px 0px 0px 5px !important;
-  background: #2673dd;
+  background: linear-gradient(140deg, #388e3c 15%, #00e676 100%);
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
 .ribbon:before {
@@ -618,7 +624,7 @@ export default {
   font-family: $fontfamliy3 !important;
   letter-spacing: 0 !important;
   border-radius: 5px 0px 0px 5px !important;
-  background: #2673dd;
+  background: linear-gradient(140deg, #388e3c 15%, #00e676 100%);
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
 .ribbon-swiper:before {
@@ -660,7 +666,7 @@ export default {
   height: 27px !important;
   // height: 20px !important;
   // display: block !important;
-  background-color: #2673dd !important;
+  background-color: #fc624d !important;
   color: #eee !important;
   margin: 0 3px;
   display: flex;
@@ -680,7 +686,7 @@ export default {
   top: 0;
   width: 70%;
   height: 100%;
-  background-color: #2673dd;
+  background-color: #fc624d;
   // border-radius: 1000px !important;
 }
 .progress-info {
@@ -698,7 +704,34 @@ export default {
   top: -15px;
   right: -6px;
   font-size: 29px !important;
-  color: #00b0ff !important;
+  color: #ffc400 !important;
   z-index: 800;
+}
+.list {
+  font-family: $fontfamliy3 !important;
+  letter-spacing: 0 !important;
+  font-size: 14px !important;
+
+  // background: linear-gradient(140deg, #388e3c 15%, #00e676 100%);
+  // @media (max-width: 700px) {
+  //   font-size: 28px !important;
+  // }
+}
+.SuperMar {
+  border-radius: 30%;
+  background: linear-gradient(140deg, #388e3c 15%, #00e676 100%);
+  @media (max-width: 700px) {
+    font-size: 28px !important;
+  }
+}
+::v-deep .v-avatar.transparent {
+  height: 60px !important;
+  min-width: 60px !important;
+  width: 60px !important;
+  @media (max-width: 700px) {
+    height: 50px !important;
+    min-width: 50px !important;
+    width: 50px !important;
+  }
 }
 </style>
