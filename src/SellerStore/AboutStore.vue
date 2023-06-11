@@ -1,10 +1,10 @@
 <template>
-  <div class="AboutStore pa-2">
+  <div class="AboutStore py-2">
     <v-card tile flat>
       <v-card-title class="pa-2 titel pb-0"> عن المتجر :</v-card-title>
       <v-row no-gutters>
         <v-col cols="12">
-          <v-card-text class="text pa-2">
+          <v-card-text class="text pa-2 pt-1">
             حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم
             الموقع. ومن هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر
             للعميل الشكل كاملاً،دور مولد النص العربى أن يوفر على المصمم عناء

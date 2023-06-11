@@ -87,12 +87,8 @@
         </v-card-subtitle>
       </div>
       <!-- the products  -->
-      <v-card flat tile class=" blue-grey lighten-5  card-hight overflow-y-auto">
-        <v-tabs-items
-          style=""
-          class="transparent px-md-2 px-lg-2"
-          v-model="tab"
-        >
+      <v-card flat tile class="blue-grey lighten-5 card-hight overflow-y-auto">
+        <v-tabs-items class="transparent px-md-2 px-lg-2" v-model="tab">
           <v-tab-item>
             <v-row no-gutters>
               <v-col

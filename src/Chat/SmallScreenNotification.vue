@@ -1,7 +1,7 @@
 <template>
   <div class="Notification grey">
     <v-card flat tile>
-      <v-app-bar app height="60" color="#fc624d" flat>
+      <v-app-bar app height="55" color="#fc624d" flat>
         <v-text-field
           placeholder="بحث عن مستخدم ..."
           dense
@@ -17,11 +17,11 @@
           <v-icon color="white" size="30">mdi-arrow-left-thin</v-icon>
         </v-btn>
       </v-app-bar>
-      <v-sheet height="60"></v-sheet>
+      <v-sheet height="55"></v-sheet>
       <v-card
         flat
         tile
-        class="grey lighten-4 overflow-y-auto tile overflow-x-hidden"
+        class="grey lighten-4 overflow-y-auto py-1 tile overflow-x-hidden"
         v-scroll.self="onScroll"
       >
         <v-dialog v-model="dialog" persistent fullscreen>
@@ -43,19 +43,29 @@
                       src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
                     ></v-img>
                   </v-list-item-avatar>
-                  <v-list-item-content>
-                    <v-list-item-title class="users-Name">
-                      محمد أمين شمسان محمد أمين شمسان محمد أمين شمسان محمد أمين
-                      شمسان محمد أمين شمسان محمد أمين شمسان محمد أمين شمسان
+                  <v-list-item-content class="py-2">
+                    <v-list-item-title>
+                      <v-row no-gutters align="center">
+                        <v-col cols="10">
+                          <v-card-title class="users-Name text-truncate pa-0">
+                            محمد أمين شمسان محمد أمين شمسان محمد أمين شمسان محمد
+                            أمين شمسان محمد أمين شمسان محمد أمين شمسان محمد أمين
+                            شمسان
+                          </v-card-title>
+                        </v-col>
+                        <v-spacer></v-spacer>
+                        <v-col cols="auto">
+                          <v-avatar size="25" color="#fc624d">
+                            <span class="unred-message">5</span>
+                          </v-avatar>
+                        </v-col>
+                      </v-row>
                     </v-list-item-title>
                     <v-list-item-subtitle class="users-Message">
                       محمد أمين شمسان محمد أمين شمسان محمد أمين شمسان محمد أمين
                       شمسان محمد أمين شمسان محمد أمين شمسان محمد أمين شمسان
                     </v-list-item-subtitle>
                   </v-list-item-content>
-                  <v-list-item-avatar size="30" class="mr-2">
-                    <span class="unred-message">5</span>
-                  </v-list-item-avatar>
                 </v-list-item>
               </v-list>
             </v-card>
@@ -230,27 +240,23 @@ export default {
   .users-card:hover {
     background-color: #eee;
   }
-  .users-Name {
-    font-size: 15px !important;
-    font-family: $fontfamliy3;
-    // width: 100px;
-    display: block !important;
-  }
 
   .unred-message {
-    background-color: $color-2;
     color: $fontcolorsm;
-    font-size: 15px;
+    font-size: 16px;
     border-radius: 50%;
-    padding: 2px 7px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // padding: 2px 7px;
 
     // display: flex;
     // align-items: center;
     // justify-content: center;
   }
+}
+.users-Name {
+  font-size: 15px !important;
+  font-family: $fontfamliy3;
+  // width: 100px;
+  display: block !important;
 }
 .users-Message {
   font-size: 13px !important;
@@ -332,9 +338,22 @@ export default {
   overflow: hidden;
   transition: all 0.1s 0s ease-in;
 }
+::v-deep .v-input__control {
+  min-height: 36px !important;
+}
+::v-deep i.v-icon.notranslate.mdi.mdi-magnify.theme--light {
+  font-size: 22px !important;
+}
 ::v-deep .v-banner__wrapper {
   padding: 0px !important;
   border: 0 !important;
+}
+::v-deep input {
+  font-family: $fontfamliy3;
+  letter-spacing: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.6;
+  color: $fontcolor;
 }
 ::v-deep input::placeholder {
   font-family: $fontfamliy3;

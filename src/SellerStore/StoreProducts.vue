@@ -1,77 +1,74 @@
 <template>
-  <div class="SpicalShowRoom pa-2">
+  <div class="SpicalShowRoom py-2">
     <!-- <div class="ont-weight-bold pa-2 tital">
       قد تنال على
       <strong class="mx-1">إعجابك</strong>
     </div> -->
     <v-row no-gutters class="">
       <!-- here is the filtration -->
-      <v-col cols="12" class="pa-1">
-        <v-card flat tile>
-          <v-btn-toggle
-            class="transparent"
-            borderless
-            tile
-            v-model="toggle_filter"
-            dense
+      <v-col cols="12" class="pa-2">
+        <v-btn-toggle
+          class="transparent"
+          borderless
+          tile
+          v-model="toggle_filter"
+        >
+          <v-btn
+            active-class="deep-orange--text tex--darken-2"
+            class="text-all"
           >
-            <v-btn
-              active-class="deep-orange--text tex--darken-2"
-              class="text-all"
-            >
-              <span> فلتر </span>
-            </v-btn>
-            <v-btn
-              active-class="deep-orange--text tex--darken-2"
-              class="text-all"
-            >
-              <span> فلتر </span>
-            </v-btn>
-            <v-btn
-              active-class="deep-orange--text tex--darken-2"
-              class="text-all"
-            >
-              <span> فلتر </span>
-            </v-btn>
-            <v-menu v-model="menu" bottom offset-y>
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn class="text-all" v-bind="attrs" v-on="on">
-                  <span> {{ model }} </span>
-                  <v-icon v-if="menu" color=" deep-orange darken-1">
-                    mdi-menu-up
-                  </v-icon>
-                  <v-icon v-else color="grey darken-3"> mdi-menu-down </v-icon>
-                </v-btn>
-              </template>
-              <v-list dense>
-                <v-list-item-group v-model="model">
-                  <template v-for="(item, i) in items">
-                    <v-list-item
-                      :key="`item-${i}`"
-                      :value="item"
-                      active-class="light-blue--text text--darken-2"
-                    >
-                      <template>
-                        <v-list-item-content>
-                          <v-list-item-title class="text-all text-center">
-                            {{ item }}
-                          </v-list-item-title>
-                        </v-list-item-content>
-                      </template>
-                    </v-list-item>
-                  </template>
-                </v-list-item-group>
-              </v-list>
-            </v-menu>
-          </v-btn-toggle>
-        </v-card>
+            <span> فلتر </span>
+          </v-btn>
+          <v-btn
+            active-class="deep-orange--text tex--darken-2"
+            class="text-all"
+          >
+            <span> فلتر </span>
+          </v-btn>
+          <v-btn
+            active-class="deep-orange--text tex--darken-2"
+            class="text-all"
+          >
+            <span> فلتر </span>
+          </v-btn>
+          <v-menu v-model="menu" bottom offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn class="text-all" v-bind="attrs" v-on="on">
+                <span> {{ model }} </span>
+                <v-icon v-if="menu" color=" deep-orange darken-1">
+                  mdi-menu-up
+                </v-icon>
+                <v-icon v-else color="grey darken-3"> mdi-menu-down </v-icon>
+              </v-btn>
+            </template>
+            <v-list dense>
+              <v-list-item-group v-model="model">
+                <template v-for="(item, i) in items">
+                  <v-list-item
+                    :key="`item-${i}`"
+                    :value="item"
+                    active-class="light-blue--text text--darken-2"
+                  >
+                    <template>
+                      <v-list-item-content>
+                        <v-list-item-title class="text-all text-center">
+                          {{ item }}
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </template>
+                  </v-list-item>
+                </template>
+              </v-list-item-group>
+            </v-list>
+          </v-menu>
+        </v-btn-toggle>
       </v-col>
       <v-col
         cols="6"
         md="3"
         sm="4"
         lg="2"
-        class="pa-1"
+        class="pa-2"
         v-for="Product in Products"
         :key="Product.id"
       >
@@ -108,15 +105,24 @@
                 :src="getimageUrl(Product.folder, Product.image)"
               ></v-img>
               <!--  product name  -->
-              <v-card-text class="card-text py-1 pa-2">
+              <v-card-text
+                style="
+                  display: -webkit-box;
+                  -webkit-line-clamp: 2;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                "
+                class="card-text py-1 pa-2"
+              >
                 <!-- if this product at thiqah mall  -->
-                <span class="ribbon-2 pa-1 pl-2">ثـقـة مـول</span>
+                <span class="ribbon-2 pa-1 pl-2 ml-1"> ثـقـة مـول </span>
                 {{ Product.name }} {{ Product.company }} {{ Product.name }}
-                {{ Product.company }} {{ Product.name }}
+                {{ Product.company }}
+                {{ Product.name }}
               </v-card-text>
               <strong class="PriceAfter py-1 pt-0 pa-2 text-truncate">
                 {{ Product.payment }}
-                <v-icon color="grey darken-2" size="19">
+                <v-icon color="grey darken-3" size="19">
                   mdi-currency-rial
                 </v-icon>
               </strong>
@@ -369,8 +375,12 @@ export default {
 .ribbon-2 {
   font-size: 11px !important;
   clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
-  background: #e53935;
+  background: #ef5350;
   color: #fff;
   border-radius: 0px !important;
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+  margin-right: -8px !important;
+  // margin-left: 2px !important;
 }
 </style>

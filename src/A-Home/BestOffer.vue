@@ -71,14 +71,13 @@
                       -webkit-box-orient: vertical;
                       overflow: hidden;
                     "
-                    class="card-text py-1 pa-0"
+                    class="card-text py-1 pa-2"
                   >
                     <!-- if this product at thiqah mall  -->
-
-                    <span class="ribbon-2 pa-1 pl-2">ثـقـة مـول</span>
-
-                    {{ Product.name }} {{ Product.company }}
-                    {{ Product.company }} {{ Product.name }}
+                    <span class="ribbon-2 pa-1 pl-2 ml-1"> ثـقـة مـول </span>
+                    {{ Product.name }} {{ Product.company }} {{ Product.name }}
+                    {{ Product.company }}
+                    {{ Product.name }}
                   </v-card-text>
                 </v-row>
                 <!-- Price  -->
@@ -266,10 +265,21 @@ export default {
     }
   }
   .card-text {
-    font-family: $fontfamliy3;
-    letter-spacing: 0;
-    font-size: 15px !important;
-    color: $fontcolor;
+    font-family: $fontfamliy3 !important;
+    color: $fontcolor !important;
+    letter-spacing: 0 !important;
+    font-size: 13.5px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    span {
+      background-color: #ff3d00;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 12px;
+      padding: 1px;
+    }
   }
   .tital {
     font-family: $fontfamliy3;
@@ -453,7 +463,12 @@ export default {
 .ribbon-2 {
   font-size: 11px !important;
   clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
-  background: #e53935;
+  background: #ef5350;
   color: #fff;
+  border-radius: 0px !important;
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+  margin-right: -8px !important;
+  // margin-left: 2px !important;
 }
 </style>

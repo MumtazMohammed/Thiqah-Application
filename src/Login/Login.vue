@@ -1,25 +1,24 @@
 <template>
     <v-main tile flat class="form-box">
         <SystemBar />
-        <!-- Logo  -->
-        <v-card-actions class="justify-center py-4">
-            <h3 class="logo-text">ثــــقـــة لتجارة الأكترونية</h3>
-            <v-icon
-                style="
-                    background-color: #fc624d;
-                    padding: 3px;
-                    border-radius: 50%;
-                    color: white;
-                "
-                left
-                size="28"
-                >mdi-shopping</v-icon
-            >
-        </v-card-actions>
         <!-- Login , sgin up , sgin up as seller -->
         <v-form class="d-flex justify-center form">
-            <v-col cols="12" md="8" sm="12" class="px-xs-0">
-                <v-card flat color="transparent" class="pa-md-3 pa-lg-3">
+            <v-col cols="12" md="5" sm="12" class="px-xs-0 ma-auto pa-2">
+                <v-card flat class="pa-3">
+                    <v-card-actions class="justify-center py-4">
+                        <h3 class="logo-text">ثــــقـــة لتجارة الأكترونية</h3>
+                        <v-icon
+                            style="
+                                background-color: #fc624d;
+                                padding: 5px;
+                                border-radius: 50%;
+                                color: #fff;
+                            "
+                            left
+                            size="28"
+                            >mdi-shopping</v-icon
+                        >
+                    </v-card-actions>
                     <!-- Login component -->
                     <v-row
                         justify="center"
@@ -35,7 +34,7 @@
                                 required
                                 hide-details
                                 outlined
-                                class="red--text"
+                                flat
                                 append-icon="far fa-user"
                             ></v-text-field>
                         </v-col>
@@ -48,23 +47,18 @@
                                 :type="show2 ? 'text' : 'password'"
                                 name="input-10-2"
                                 label="كلمة المرور"
-                                class="input-group--focused font-weight-regular"
+                                class="input-group--focused mb-0 font-weight-regular"
                                 @click:append="show2 = !show2"
                                 outlined
+                                flat
                                 required
                             >
                             </v-text-field>
                         </v-col>
-                        <v-col cols="12" class="py-0">
-                            <v-card-actions class="justify-center">
-                                <v-btn
-                                    elevation="0"
-                                    min-width="60%"
-                                    class="submet"
-                                >
-                                    تـسجيل الدخول
-                                </v-btn>
-                            </v-card-actions>
+                        <v-col cols="12" class="py-0 text-center">
+                            <v-btn elevation="0" min-width="60%" class="submet">
+                                تـسجيل الدخول
+                            </v-btn>
                         </v-col>
                         <v-col cols="12" class="py-0">
                             <v-card-actions class="justify-space-between">
@@ -214,6 +208,7 @@ export default {
 .form-box {
     min-height: calc(100vh - 40px);
     z-index: 1;
+    background-color: #fff;
 }
 .logo-text {
     font-family: $fontfamliy3;
@@ -227,8 +222,8 @@ export default {
     font-size: 16px !important;
     font-weight: 500 !important;
     letter-spacing: 0;
-    background-color: $color-2 !important;
-    color: $fontcolorsm !important;
+    background-color: #fafafa !important;
+    color: $fontcolor !important;
     @media (max-width: 600px) {
         font-size: 14px !important;
     }
@@ -370,10 +365,14 @@ export default {
         max-width: 250px !important;
     }
 }
+::v-deep .v-input__slot {
+    margin-bottom: 0px !important;
+}
 .form {
-    @media (max-width: 600px) {
-    }
-    min-height: calc(100vh - 40px);
+    min-height: calc(100vh - 30px);
     // align-items: center;
+    @media (max-width: 960px) {
+        min-height: calc(100vh - 0px);
+    }
 }
 </style>

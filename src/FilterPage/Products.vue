@@ -80,6 +80,7 @@
               نتيجة البحث عن "<span class="red--text mx-1">سيارة</span>"
             </v-card-text>
           </v-col>
+          <!-- Search resulte  -->
           <v-col
             cols="6"
             md="3"
@@ -128,25 +129,14 @@
                     class="card-text py-1 pa-2"
                   >
                     <!-- if this product at thiqah mall  -->
-                    <span
-                      style="
-                        background-color: #ff3d00;
-                        border-radius: 3px;
-                        font-weight: 600;
-                        font-size: 12px;
-                        padding: 1px;
-                      "
-                      class="white--text ml-1"
-                    >
-                      ثـقـة مـول
-                    </span>
-
+                    <span class="ribbon-2 pa-1 pl-2 ml-1"> ثـقـة مـول </span>
                     {{ Product.name }} {{ Product.company }} {{ Product.name }}
-                    {{ Product.company }} {{ Product.name }}
+                    {{ Product.company }}
+                    {{ Product.name }}
                   </v-card-text>
                   <strong class="PriceAfter py-1 pt-0 pa-2 text-truncate">
                     {{ Product.payment }}
-                    <v-icon color="grey darken-2" size="19">
+                    <v-icon color="grey darken-3" size="19">
                       mdi-currency-rial
                     </v-icon>
                   </strong>
@@ -331,26 +321,16 @@
                         class="card-text py-1 pa-2"
                       >
                         <!-- if this product at thiqah mall  -->
-                        <span
-                          style="
-                            background-color: #ff3d00;
-                            border-radius: 3px;
-                            font-weight: 600;
-                            font-size: 12px;
-                            padding: 1px;
-                          "
-                          class="white--text ml-1"
-                        >
+                        <span class="ribbon-2 pa-1 pl-2 ml-1">
                           ثـقـة مـول
                         </span>
-
                         {{ Product.name }} {{ Product.company }}
                         {{ Product.name }} {{ Product.company }}
                         {{ Product.name }}
                       </v-card-text>
                       <strong class="PriceAfter py-1 pt-0 pa-2 text-truncate">
                         {{ Product.payment }}
-                        <v-icon color="grey darken-2" size="19">
+                        <v-icon color="grey darken-3" size="19">
                           mdi-currency-rial
                         </v-icon>
                       </strong>
@@ -616,5 +596,15 @@ export default {
   padding: 1px;
   background-color: #e0e0e0;
   border-radius: 2px;
+}
+.ribbon-2 {
+  font-size: 11px !important;
+  clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
+  background: #ef5350;
+  color: #fff;
+  border-radius: 0px !important;
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+  margin-right: -8px !important;
 }
 </style>

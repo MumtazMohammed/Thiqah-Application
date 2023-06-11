@@ -1,18 +1,8 @@
 <template>
-  <div class="UserAdd">
+  <div class="MyOrder">
     <!-- small Screen Tabs  -->
     <div class="hidden-md-and-up">
-      <v-app-bar flat fixed color="grey lighten-4">
-        <!-- <v-btn
-          :to="{
-            name: 'MainStorePage',
-            params: { MyCar: 'إعلاناتي' },
-          }"
-          icon
-        >
-          <v-icon> mdi-home </v-icon>
-        </v-btn>
-        <v-toolbar-title class="pr-1 titel">الرئيسية</v-toolbar-title> -->
+      <v-app-bar flat fixed color="white">
         <v-card-title v-if="tab === `tab-1`" class="text pa-2">
           <span class="ml-1">{{ ShowRoomUserCars.length }}</span>
           طلب جديد
@@ -22,24 +12,18 @@
           منتج في طريقها للعميل
         </v-card-title>
         <v-spacer></v-spacer>
-        <v-btn
-          :to="{
-            name: 'MainStorePage',
-            params: { MyCar: 'إعلاناتي' },
-          }"
-          icon
-        >
+        <v-btn color="#fc624d" @click="goBack" icon>
           <v-icon> mdi-arrow-left </v-icon>
         </v-btn>
       </v-app-bar>
       <v-sheet height="56"></v-sheet>
     </div>
     <v-tabs
-      slider-color="1"
-      color="grey darken-2"
-      v-model="tab"
-      grow
       :show-arrows="false"
+      background-color="white"
+      color="basil"
+      center-active
+      v-model="tab"
     >
       <v-tab href="#tab-1" class="links"> بإنتظار التجهيز </v-tab>
       <v-tab href="#tab-2" class="links"> بإنتظار الشحن </v-tab>
@@ -58,7 +42,7 @@
           منتج في طريقها للعميل
         </v-card-title>
       </div>
-      <v-tabs-items touchless v-model="tab" class="transparent">
+      <v-tabs-items v-model="tab" touchless class="transparent">
         <!-- prepare the order  -->
         <v-tab-item value="tab-1">
           <v-card flat tile class="mx-auto">
@@ -68,14 +52,9 @@
                 v-for="(Car, i) in ShowRoomUserCars"
                 :key="i"
                 cols="12"
-                class="pa-2"
+                class="pa-2 py-1"
               >
-                <v-card
-                  flat
-                  class="pa-2"
-                  color="blue-grey lighten-5
-"
-                >
+                <v-card flat class="pa-2" color="blue-grey lighten-5">
                   <v-row align="center" no-gutters justify="space-between">
                     <!-- buyer Info  -->
                     <v-col
@@ -577,105 +556,24 @@
         </v-tab-item>
       </v-tabs-items>
     </v-card>
+    <div class="hidden-md-and-up">
+      <bottom-navigation />
+    </div>
   </div>
 </template>
 <script>
 import ShowRoomUserCars from "../data-json/All-Car.json";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import BottomNavigation from "./BottomNavigation.vue";
 import "swiper/css/swiper.css";
 
 export default {
-  name: "UserAdd",
-  components: { Swiper, SwiperSlide },
+  name: "MyOrder",
+  components: { Swiper, SwiperSlide, BottomNavigation },
   data() {
     return {
       ShowRoomUserCars,
       tab: null,
-      CustomerInfo: [
-        {
-          name: " تاريخ الطلب ",
-          DateTime: ["21 / 1 / 2022", "10:55 am"],
-        },
-        {
-          name: "طلب رقم ",
-          calories: "0147",
-        },
-        {
-          name: "طلب رقم ",
-          calories: "0147",
-        },
-      ],
-      ProductInfo: [
-        {
-          name: "أسم المنتج",
-          calories: "مـازدا مازدا3 مـازدا مازدا3 مـازدا مازدا3",
-        },
-        {
-          name: "رقم المنتج ",
-          calories: 1654218459,
-        },
-        {
-          name: "الموديل",
-          calories: 262,
-        },
-        {
-          name: "المقاس",
-          calories: 262,
-        },
-        {
-          name: "اللون",
-          calories: 262,
-        },
-        {
-          name: "عدد",
-          calories: 2,
-        },
-        {
-          name: "إجمالي",
-          calories: "1521 ريال",
-        },
-      ],
-      ShipmentInfo: [
-        {
-          name: "أسم شركة التوصيل أو أسم موصل الطلب",
-          calories: 159,
-        },
-        {
-          name: "رقم هاتف التوصيل",
-          calories: 237,
-        },
-        {
-          name: "زمن توصيل المنتج",
-          calories: 262,
-        },
-        {
-          name: "رقم التوصيل ",
-          calories: 159,
-        },
-      ],
-      ShipmentArrived: [
-        {
-          calories: "النسر السريع",
-          name: "أسم شركة التوصيل أو أسم موصل الطلب",
-        },
-        {
-          calories: "0112151456",
-          name: "رقم هاتف التوصيل",
-        },
-        {
-          calories: 4,
-          name: "زمن توصيل المنتج",
-        },
-        {
-          name: "رقم التوصيل ",
-          calories: "DE2550551",
-        },
-        {
-          name: "عنوان التسليم",
-          calories:
-            "عنوانعنوانعنوانعنوانعنوانعنوانعنوانعنوان 1424 عنوانعنوانعنوانعنوانعنوان",
-        },
-      ],
       swiperOption: {
         slidesPerView: 1,
         slidesPerColumn: 5,
@@ -687,13 +585,6 @@ export default {
       },
     };
   },
-  computed: {
-    filteredStore: function () {
-      return this.ShowRoomUserCars.filter((ShowRoomUserCars) => {
-        return ShowRoomUserCars.name.match(this.search);
-      });
-    },
-  },
 
   methods: {
     getimageUrl(FolderName, ImageName) {
@@ -703,22 +594,19 @@ export default {
     reset() {
       return (this.search = "");
     },
+    goBack() {
+      return this.$router.go(-1);
+    },
   },
 };
 </script>
 <style lang="scss" scoped>
 @import "../scss/virables";
 @import "../scss/mixin";
-.UserAdd {
+.MyOrder {
   width: 100%;
 
   // height: calc(100vh - 100px);
-  .title {
-    font-family: $fontfamliy3 !important;
-    letter-spacing: 0;
-    color: #039be5 !important;
-    font-size: 16px !important;
-  }
   .btn {
     font-family: $fontfamliy3 !important;
     letter-spacing: 0px !important;
@@ -728,12 +616,6 @@ export default {
     letter-spacing: 0;
     font-weight: 500 !important;
     font-size: 18px !important;
-  }
-  .client-Info {
-    font-family: $fontfamliy3 !important;
-    letter-spacing: 0;
-    font-weight: 500 !important;
-    font-size: 16px !important;
   }
 }
 .swiper {
@@ -751,10 +633,6 @@ export default {
 ::v-deep .theme--light.v-tabs .v-tab:hover:before {
   opacity: 0 !important;
 }
-::v-deep span.v-stepper__step__step {
-  margin-left: 0;
-  margin-bottom: 10px;
-}
 ::v-deep input::placeholder {
   font-family: $fontfamliy3 !important;
   letter-spacing: 0;
@@ -768,8 +646,8 @@ export default {
   // font-weight: 600;
 
   @media (max-width: 600px) {
-    font-size: 14px !important;
-    font-weight: 600;
+    font-size: 15px !important;
+    // font-weight: 600;
   }
 }
 

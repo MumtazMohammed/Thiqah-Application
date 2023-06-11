@@ -1,32 +1,49 @@
 <template>
-    <v-system-bar height="30px" color="#fc624d">
-        <v-card tile flat color="transparent" to="/" class="btn1 mx-1">
-            <v-card-actions class="pa-0">
-                <v-icon dark class="icon" right>mdi-home</v-icon>
-                <v-card-text v-text="btnSignUp" class="sgin pa-0"></v-card-text>
-                <!-- <v-icon class="sign-in-icon" right>mdi-account</v-icon> -->
-            </v-card-actions>
-        </v-card>
-        <!-- Be a personal seller or company  -->
-        <v-card tile flat color="transparent" class="btn1 mx-1">
-            <v-card-actions class="pa-0">
-                <v-icon dark class="icon" right>mdi-help</v-icon>
-                <v-card-text v-text="Help" class="sgin pa-0"></v-card-text>
-                <!-- <v-icon class="sign-in-icon" right>mdi-account</v-icon> -->
-            </v-card-actions>
-        </v-card>
-        <!-- Be a personal seller or company  -->
-        <v-card tile flat color="transparent" class="btn1 mx-1">
-            <v-card-actions class="pa-0">
-                <v-icon dark right class="icon">mdi-text-box-outline</v-icon>
-                <v-card-text v-text="AboutWeb" class="sgin pa-0"></v-card-text>
-                <!-- <v-icon class="sign-in-icon" right>mdi-account</v-icon> -->
-            </v-card-actions>
-        </v-card>
-    </v-system-bar>
-    <!-- Be a personal seller or company  -->
-
-    <!-------------------------->
+    <div>
+        <v-system-bar class="hidden-sm-and-down" height="30px" color="#fc624d">
+            <v-card tile flat color="transparent" to="/" class="btn1 mx-1">
+                <v-card-actions class="pa-0">
+                    <v-icon dark class="icon" right>mdi-home</v-icon>
+                    <v-card-text
+                        v-text="btnSignUp"
+                        class="sgin pa-0"
+                    ></v-card-text>
+                    <!-- <v-icon class="sign-in-icon" right>mdi-account</v-icon> -->
+                </v-card-actions>
+            </v-card>
+            <!-- Be a personal seller or company  -->
+            <v-card tile flat color="transparent" class="btn1 mx-1">
+                <v-card-actions class="pa-0">
+                    <v-icon dark class="icon" right>mdi-help</v-icon>
+                    <v-card-text v-text="Help" class="sgin pa-0"></v-card-text>
+                    <!-- <v-icon class="sign-in-icon" right>mdi-account</v-icon> -->
+                </v-card-actions>
+            </v-card>
+            <!-- Be a personal seller or company  -->
+            <v-card tile flat color="transparent" class="btn1 mx-1">
+                <v-card-actions class="pa-0">
+                    <v-icon dark right class="icon"
+                        >mdi-text-box-outline</v-icon
+                    >
+                    <v-card-text
+                        v-text="AboutWeb"
+                        class="sgin pa-0"
+                    ></v-card-text>
+                    <!-- <v-icon class="sign-in-icon" right>mdi-account</v-icon> -->
+                </v-card-actions>
+            </v-card>
+        </v-system-bar>
+        <v-app-bar class="hidden-md-and-up" color="#fc624d" app flat>
+            <v-toolbar-title class="toolbar-title pr-0">
+                تسجيل الدخول
+            </v-toolbar-title>
+            <!-- <v-icon size="22">mdi-ticket-percent</v-icon> -->
+            <v-spacer></v-spacer>
+            <v-btn @click="goBack" color="white" icon>
+                <v-icon size="30"> mdi-arrow-left-thin </v-icon>
+            </v-btn>
+        </v-app-bar>
+    </div>
 </template>
 <script>
 export default {
@@ -41,6 +58,11 @@ export default {
                 { title: "تسجيل شركات ", path: "/LoginSeller" },
             ],
         };
+    },
+    methods: {
+        goBack() {
+            return this.$router.go(-1);
+        },
     },
 };
 </script>
@@ -89,7 +111,7 @@ export default {
     font-weight: 500 !important;
 }
 .title-link {
-    font-family: $fontfamliy2 !important;
+    font-family: $fontfamliy3 !important;
     font-size: 13px !important;
     font-weight: 400;
 }
@@ -108,10 +130,11 @@ export default {
 ::v-deep a#list-item-640 {
     min-height: 35px !important;
 }
-.show-menu-icon {
-    position: absolute !important;
-    right: 0;
-    bottom: 0px;
+.toolbar-title {
+    font-family: $fontfamliy3 !important;
+    font-size: 18px !important;
+    font-weight: 400;
+    color: $fontcolorsm !important;
 }
 ::v-deep hr.mx-2.white.v-divider.v-divider--vertical.theme--light {
     height: 27px !important;

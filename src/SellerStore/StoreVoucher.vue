@@ -3,21 +3,20 @@
     <v-card-title class="titel pa-2"> قسائم المتجر </v-card-title>
 
     <v-row no-gutters>
-      <v-col class="pa-1 px-1" cols="6" md="4" sm="4" lg="4">
+      <v-col class="pa-1 px-1" cols="6" md="3" sm="3" lg="3">
         <v-card
-          style="border: 1px dashed #ffab40"
-          color="#FFF3E0"
+          color="deep-orange lighten-2"
           flat
           rounded="lg"
-          class="pb-1 pl-5 px-3 StoreVoucher"
+          class="pb-1 px-3 overflow-hidden StoreVoucher"
         >
-          <v-row no-gutters justify="center" class="main">
-            <v-col class="pr-1" cols="12" sm="9" md="9" lg="9">
+          <v-row no-gutters justify="space-between" class="main">
+            <v-col class="pr-1" cols="12" md="auto" sm="auto" lg="auto">
               <v-card-text class="pa-0 text">
-                خصم
-                <span class="mx-1 amber--text text--accent-4">
-                  <span>20</span>%
+                <span class="mx-1 amount black--text text--accent-2">
+                  <span class="">20</span>%
                 </span>
+                خصم
               </v-card-text>
               <v-card-text class="pa-0 text">
                 أنفق
@@ -31,53 +30,7 @@
                 <span>10/2/2020</span>
               </v-card-text>
             </v-col>
-            <v-col cols="3">
-              <v-row
-                align="center"
-                style="height: 100%"
-                justify="center"
-                no-gutters
-              >
-                <v-btn tile text class="btn" small> أحصل عليها </v-btn>
-              </v-row>
-            </v-col>
-          </v-row>
-          <!-- <div class="copy-button">
-        <input id="copyvalue" type="text" readonly value="GOFREE" />
-        <button onclick="copyIt()" class="copybtn">COPY</button>
-      </div> -->
-        </v-card>
-      </v-col>
-      <v-col class="pa-1 px-1" cols="6" md="4" sm="4" lg="4">
-        <v-card
-          style="border: 1px dashed #ffab40"
-          color="#FFF3E0"
-          flat
-          disabled
-          rounded="lg"
-          class="pb-1 pl-5 px-3 StoreVoucher"
-        >
-          <v-row no-gutters justify="center" class="main">
-            <v-col class="pr-1" cols="12" sm="9" md="9" lg="9">
-              <v-card-text class="pa-0 text">
-                خصم
-                <span class="mx-1 amber--text text--accent-4">
-                  <span>20</span>%
-                </span>
-              </v-card-text>
-              <v-card-text class="pa-0 text">
-                أنفق
-                <span class="mx-1">
-                  52<v-icon left size="17">mdi-currency-rial</v-icon>
-                </span>
-                كحد أدنى
-              </v-card-text>
-              <v-card-text class="pa-0 text">
-                متاح حتى
-                <span>10/2/2020</span>
-              </v-card-text>
-            </v-col>
-            <v-col cols="3">
+            <v-col cols="12" md="auto" sm="auto" lg="auto">
               <v-row
                 align="center"
                 style="height: 100%"
@@ -168,6 +121,7 @@ export default {
 @import "@/scss/mixin";
 .Store-Voucher {
   // background-color: $color-background;
+  overflow: hidden;
   .titel {
     letter-spacing: 0 !important;
     font-size: 20px !important;
@@ -182,20 +136,28 @@ export default {
   .text {
     font-family: $fontfamliy3 !important;
     letter-spacing: 0 !important;
-    color: $fontcolor !important;
+    color: $fontcolorsm !important;
     font-weight: 600 !important;
     line-height: 1.4;
-    font-size: 13px !important;
-
+    font-size: 12px !important;
     @media (max-width: 750px) {
       font-size: 13px !important;
     }
     span {
       font-family: sans-serif !important;
       font-size: 15px;
-      font-weight: 600 !important;
+      font-weight: 600;
+      color: $fontcolorsm !important;
       @media (max-width: 600px) {
-        font-size: 14px !important;
+        font-size: 14px;
+      }
+    }
+    .amount {
+      font-family: sans-serif !important;
+      font-size: 20px;
+      font-weight: 700 !important;
+      @media (max-width: 600px) {
+        font-size: 18px !important;
       }
     }
   }
@@ -203,7 +165,7 @@ export default {
     font-family: $fontfamliy3 !important;
     letter-spacing: 0 !important;
     color: $fontcolor !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
     margin: 0 auto !important;
     font-weight: 600;
     // background-color: $color-2 !important;
@@ -239,25 +201,23 @@ export default {
 .StoreVoucher::after {
   content: "";
   position: absolute;
-  width: 27px;
-  height: 27px;
-  background-color: #fafafa;
-  left: -16px;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  left: -17px;
   top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;
-  border-right: 1.5px dashed #ff9800;
 }
 .StoreVoucher::before {
   content: "";
   position: absolute;
-  width: 27px;
-  height: 27px;
-  background-color: #fafafa;
-  right: -16px;
+  background-color: #fff;
+  right: -17px;
   top: 50%;
+  width: 25px;
+  height: 25px;
   transform: translateY(-50%);
   border-radius: 50%;
-  border-left: 1.5px dashed #ff9800;
 }
 </style>

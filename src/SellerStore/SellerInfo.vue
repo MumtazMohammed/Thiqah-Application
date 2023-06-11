@@ -1,6 +1,6 @@
 <template>
   <v-container class="pt-0 px-0">
-    <v-card tile flat color="" class="pa-2 overflow-hidden">
+    <v-card tile flat color="" class="pa-2 blue-grey lighten-5 overflow-hidden">
       <v-row no-gutters align="center">
         <v-col cols="auto">
           <v-img
@@ -11,7 +11,7 @@
             src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"
           ></v-img>
         </v-col>
-        <v-col cols="9" md="6" lg="6" sm="6" class="pr-1">
+        <v-col cols="9" md="6" lg="6" sm="6" class="pr-2">
           <v-list-item two-line class="pr-1 pa-0">
             <v-list-item-content class="pa-0">
               <v-list-item-title class="store-name mb-2">

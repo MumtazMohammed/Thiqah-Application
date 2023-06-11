@@ -764,7 +764,7 @@ export default {
   font-family: $fontfamliy3 !important;
   font-size: 18px;
 }
-::v-deep i.v-icon.notranslate.mdi.mdi-cart-plus.theme--dark{
+::v-deep i.v-icon.notranslate.mdi.mdi-cart-plus.theme--dark {
   color: #fff !important;
 }
 </style>

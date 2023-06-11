@@ -142,7 +142,15 @@
           color="grey lighten-5"
         >
           <v-row no-gutters>
-            <v-col class="pa-1 px-1" cols="6" md="4" sm="4" lg="4" v-for="n in 3" :key="n">
+            <v-col
+              class="pa-1 px-1"
+              cols="6"
+              md="4"
+              sm="4"
+              lg="4"
+              v-for="n in 3"
+              :key="n"
+            >
               <v-card
                 style="border: 1px dashed #ffab40"
                 color="#FFF3E0"

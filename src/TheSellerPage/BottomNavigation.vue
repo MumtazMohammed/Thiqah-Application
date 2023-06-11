@@ -106,7 +106,6 @@
           </v-list-group>
           <v-list-item-group v-model="selectedItem" color="primary">
             <v-list-item dense v-for="(item, i) in Others" :key="i">
-
               <v-list-item-content>
                 <v-list-item-title
                   class="link"

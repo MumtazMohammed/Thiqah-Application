@@ -12,25 +12,21 @@
           lg="2"
           cols="6"
           class="pa-1"
-          v-for="i in 6"
+          v-for="(Companie, i) in Companies"
           :key="i"
         >
-          <v-card flat to="/SellerStorePage" class="mx-auto">
-            <v-img height="150" contain src="../assets/outsrc/adidas-logo.png">
+          <v-card
+            rounded="lg"
+            outlined
+            to="/SellerStorePage"
+            class="mx-auto pa-2"
+          >
+            <v-img
+              height="120"
+              contain
+              :src="getimageUrl(Companie.folder, Companie.logo)"
+            >
             </v-img>
-            <!-- <v-card-text class="py-2" style="position: relative">
-              <v-card-actions class="justify-center pa-0">
-                <v-btn
-                  color="#fc624d"
-                  class="white--text brand elevation-0"
-                  small
-                  to="/SellerStorePage"
-                  block
-                >
-                  أديداس
-                </v-btn>
-              </v-card-actions>
-            </v-card-text> -->
           </v-card>
         </v-col>
       </v-row>
@@ -41,7 +37,6 @@
 
 <script>
 import featuredshowrooms from "../data-json/showroom.json";
-
 export default {
   name: "SpicalShowRoom",
   components: {},
@@ -50,6 +45,24 @@ export default {
     return {
       Tital: "المعارض المتميزة",
       featuredshowrooms,
+      Companies: [
+        {
+          logo: "adidas-logo.png",
+          folder: "CompaniesLogo",
+        },
+        {
+          logo: "nikePNG.png",
+          folder: "CompaniesLogo",
+        },
+        {
+          logo: "Nestle_logo_PNG2.png",
+          folder: "CompaniesLogo",
+        },
+        {
+          logo: "Sony_logo_PNG1.png",
+          folder: "CompaniesLogo",
+        },
+      ],
     };
   },
   methods: {
@@ -77,7 +90,7 @@ export default {
 @import "@/scss/mixin";
 .SpicalShowRoom {
   width: 100%;
-  background-color: $color-background;
+  background-color: #fff;
   .tital {
     position: relative;
     font-family: $fontfamliy3;
