@@ -46,9 +46,7 @@
               عروضات عروضات
             </div>
             <v-spacer></v-spacer>
-            <v-chip text-color="white" color="red " class="ml-2 text-all">
-              المتجر
-            </v-chip>
+            <a class="ml-2 light-blue--text card-text-seeMore"> رؤية المتجر </a>
           </v-row>
           <swiper class="swiper" :options="swiperOption">
             <swiper-slide v-for="(Product, index) in getCarInfo" :key="index">
@@ -140,10 +138,12 @@
           </swiper>
         </v-card>
       </v-col>
-      <v-col cols="12" class="text-center pa-2">
-        <v-btn class="grey lighten-5 see-more" min-width="200" depressed>
-          المزيد
-        </v-btn>
+      <v-col cols="12">
+        <v-card-actions class="justify-center">
+          <v-btn outlined color="#fc624d" width="300" class="seeMoreBtn">
+            تـحـمـيـل الـمـزيـد
+          </v-btn>
+        </v-card-actions>
       </v-col>
     </v-row>
   </div>
@@ -357,7 +357,7 @@ export default {
 .card-text-seeMore {
   font-family: $fontfamliy3;
   letter-spacing: 0;
-  font-size: 16px;
+  font-size: 16px !important;
   color: $fontcolorlinks !important;
 }
 .text-all {
@@ -368,12 +368,11 @@ export default {
     margin-left: 4px;
   }
 }
-.see-more {
+.seeMoreBtn {
   font-family: $fontfamliy3;
   letter-spacing: 0;
   font-size: 15px !important;
-  font-weight: 600 !important;
-  color: $fontcolor !important;
+  // font-weight: 600 !important;
 }
 // Products
 .sold-info {

@@ -1,6 +1,6 @@
 <template>
-  <div class="ThqahMall pt-1">
-    <v-sheet class="pa-1">
+  <div class="ThqahMall">
+    <v-sheet rounded="" class="pa-1 Car">
       <v-col cols="12" class="pa-0">
         <v-card-title class="justify-center title">
           ابحث عن سيارات للبيع أو للايجار
@@ -9,7 +9,7 @@
       <v-row no-gutters>
         <!-- search the manufactory -->
         <v-col cols="6" lg="4" sm="4" md="4" class="text-center pa-1">
-          <v-card flat height="100%" class="blue-grey lighten-5 pa-1">
+          <v-card flat class="">
             <v-select
               v-model="valueSaleOrRent"
               :items="SaleOrRent"
@@ -35,7 +35,7 @@
         </v-col>
         <!-- search car name  -->
         <v-col cols="6" lg="4" sm="4" md="4" class="text-center pa-1">
-          <v-card flat height="100%" class="blue-grey lighten-5 pa-1">
+          <v-card flat class="">
             <v-select
               v-model="Citiesvalue"
               :items="Cities"
@@ -61,7 +61,7 @@
         </v-col>
         <!-- car condition -->
         <v-col cols="6" lg="4" sm="4" md="4" class="text-center pa-1">
-          <v-card flat height="100%" class="blue-grey lighten-5 pa-1">
+          <v-card flat>
             <v-select
               v-model="valueSaleOrRent"
               :items="SaleOrRent"
@@ -87,7 +87,7 @@
         </v-col>
         <!-- spmanufacturing yearace -->
         <v-col cols="6" lg="3" sm="3" md="3" class="text-center pa-1">
-          <v-card flat height="100%" class="blue-grey lighten-5 pa-1">
+          <v-card flat>
             <v-menu
               :close-on-content-click="false"
               :nudge-width="200"
@@ -150,7 +150,7 @@
         </v-col>
         <!-- auto or normal -->
         <v-col cols="6" lg="3" sm="3" md="3" class="text-center pa-1">
-          <v-card flat height="100%" class="blue-grey lighten-5 pa-1">
+          <v-card flat>
             <v-select
               v-model="valueSaleOrRent"
               :items="SaleOrRent"
@@ -176,7 +176,7 @@
         </v-col>
         <!-- City -->
         <v-col cols="6" lg="3" sm="3" md="3" class="text-center pa-1">
-          <v-card flat height="100%" class="blue-grey lighten-5 pa-1">
+          <v-card flat>
             <v-select
               v-model="valueSaleOrRent"
               :items="SaleOrRent"
@@ -202,7 +202,7 @@
         </v-col>
         <!-- price -->
         <v-col cols="12" lg="3" sm="3" md="3" class="text-center pa-1">
-          <v-card flat height="100%" class="blue-grey lighten-5 pa-1">
+          <v-card flat>
             <v-menu
               :close-on-content-click="false"
               :nudge-width="200"
@@ -279,8 +279,9 @@
             }"
             class="text-all"
             text
-            >بحث</v-btn
           >
+            بحث
+          </v-btn>
           <v-btn class="text-all" text> إعادة الضبط </v-btn>
         </v-col>
       </v-row>
@@ -370,7 +371,7 @@ export default {
     letter-spacing: 0px !important;
     font-size: 23px !important;
     font-weight: 500;
-    color: $fontcolor;
+    color: $fontcolorsm;
     @media (max-width: 600px) {
       font-size: 18px !important;
     }
@@ -421,5 +422,8 @@ export default {
   font-family: $fontfamliy3;
   letter-spacing: 0px !important;
   font-size: 14px !important;
+}
+.Car {
+  background: linear-gradient(#fc624d 0%, #fbe9e7 100%);
 }
 </style>

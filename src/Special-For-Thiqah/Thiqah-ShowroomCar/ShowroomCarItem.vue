@@ -1,26 +1,17 @@
 <template>
   <div class="BestOffer">
-    <v-row no-gutters class="">
-      <v-col cols="2" md="1" lg="1" sm="1" class="ma-auto">
-        <v-btn
-          height="100"
-          class="text-all rounded-0 grey lighten-5"
-          block
-          text
-        >
-          أ كثـر
-        </v-btn>
-      </v-col>
-      <v-col cols="10" md="11" lg="11" sm="11">
+    <v-row no-gutters>
+      <v-col cols="12">
         <v-tabs
-          active-class="deep-orange lighten-5 text--deep-orange"
+          active-class="white text--deep-orange"
           center-active
-          class="overflow-hidden"
+          class="overflow-hidden rounded-b"
           :show-arrows="false"
+          
           grow
           height="100"
           icons-and-text
-          background-color="#FAFAFA"
+          background-color="deep-orange lighten-5"
           hide-slider
         >
           <v-tab class="text-all" v-for="(Type, i) in CarType" :key="i">
@@ -297,5 +288,11 @@ export default {
   color: $color-2;
   font-weight: 700 !important;
   font-family: sans-serif !important;
+}
+::v-deep .v-slide-group__prev.v-slide-group__prev--disabled {
+  display: none !important;
+}
+::v-deep .v-slide-group__next.v-slide-group__next--disabled {
+  display: none !important;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <div class="SpicalShowRoom grey lighten-5 pa-1">
+  <div class="SpicalShowRoom grey lighten-5">
     <v-container class="pa-0">
       <v-sheet color=" transparent" class="">
-        <div class="ont-weight-bold pa-2 tital">
+        <div class="ont-weight-bold pa-2 px-3 tital">
           قد تنال على
           <strong class="mx-1">إعجابك</strong>
         </div>
@@ -12,7 +12,7 @@
             md="3"
             sm="4"
             lg="2"
-            class="pa-1"
+            class="pa-2"
             v-for="Product in Products"
             :key="Product.id"
           >

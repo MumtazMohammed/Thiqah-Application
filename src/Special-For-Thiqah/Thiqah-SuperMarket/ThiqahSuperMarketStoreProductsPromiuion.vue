@@ -245,10 +245,12 @@
           </v-card>
         </div>
       </v-col>
-      <v-col cols="12" class="text-center pa-2">
-        <v-btn class="grey lighten-5 see-more" min-width="200" depressed>
-          المزيد
-        </v-btn>
+      <v-col cols="12">
+        <v-card-actions class="justify-center">
+          <v-btn outlined color="#fc624d" width="300" class="seeMoreBtn">
+            تـحـمـيـل الـمـزيـد
+          </v-btn>
+        </v-card-actions>
       </v-col>
     </v-row>
   </div>
@@ -506,12 +508,10 @@ export default {
   font-family: $fontfamliy3;
   letter-spacing: 0;
 }
-.see-more {
+.seeMoreBtn {
   font-family: $fontfamliy3;
   letter-spacing: 0;
   font-size: 15px !important;
-  font-weight: 600 !important;
-  color: $fontcolor !important;
 }
 // Products
 .sold-info {
@@ -596,7 +596,7 @@ export default {
   padding: 0 0 2.33em 0px !important;
   top: 0;
   right: -0.51em;
-  background: inherit;
+  background: #00e676;
   border-radius: 0px 5px 5px 0px !important;
 }
 .ribbon:after {
@@ -636,7 +636,7 @@ export default {
   padding: 0 0 0.52em 0px !important;
   top: 0;
   right: -0.51em;
-  background: inherit;
+  background: #00e676;
   border-radius: 0px 5px 5px 0px !important;
 }
 .ribbon-swiper:after {
@@ -717,13 +717,7 @@ export default {
   //   font-size: 28px !important;
   // }
 }
-.SuperMar {
-  border-radius: 30%;
-  background: linear-gradient(140deg, #388e3c 15%, #00e676 100%);
-  @media (max-width: 700px) {
-    font-size: 28px !important;
-  }
-}
+
 ::v-deep .v-avatar.transparent {
   height: 60px !important;
   min-width: 60px !important;
