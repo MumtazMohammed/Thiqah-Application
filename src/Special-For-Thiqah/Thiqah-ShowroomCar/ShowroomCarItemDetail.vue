@@ -1,7 +1,7 @@
 <template>
-  <div class="ContactSeller grey lighten-4">
+  <div class="ContactSeller grey lighten-5">
     <TheNavBar />
-    <v-container class="pa-1">
+    <v-container class="pa-1 py-0">
       <v-row no-gutters>
         <v-col class="pa-1 grey lighten-4" cols="12" md="8" lg="8">
           <!-- here the product img  -->

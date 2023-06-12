@@ -2,32 +2,27 @@
   <div class="ContactSeller grey lighten-5">
     <TheNavBar />
     <v-container class="py-1 px-2">
-      <p class="title pr-1 mb-1">عقارات للبيع في تعز</p>
+      <p class="title pa-3 mb-0">سيارة هواند أكسنت للبيع في آب</p>
       <v-row no-gutters class="">
         <!-- here is the filtration -->
-        <v-col cols="12" class="pa-1">
-          <v-btn-toggle borderless tile v-model="toggle_filter" dense>
-            <v-btn
-              active-class="deep-orange--text tex--darken-2"
-              class="toggle_filter"
-            >
+        <v-col cols="12" class="pa-2 text-xs-center">
+          <v-btn-toggle  background-color="transparent"  borderless>
+            <v-btn class="toggle_filter px-xs-2 blue-grey lighten-5">
               <span> جميع العقارات </span>
             </v-btn>
-            <v-btn
-              active-class="deep-orange--text tex--darken-2"
-              class="toggle_filter"
-            >
+            <v-btn class="toggle_filter px-xs-2 blue-grey lighten-5">
               <span> المفروشة </span>
             </v-btn>
-            <v-btn
-              active-class="deep-orange--text tex--darken-2"
-              class="toggle_filter"
-            >
+            <v-btn class="toggle_filter px-xs-2 blue-grey lighten-5">
               <span> غير المفروشة </span>
             </v-btn>
             <v-menu v-model="menu" bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
-                <v-btn class="toggle_filter" v-bind="attrs" v-on="on">
+                <v-btn
+                  class="toggle_filter px-xs-2 blue-grey lighten-5"
+                  v-bind="attrs"
+                  v-on="on"
+                >
                   <span> {{ model }} </span>
                   <v-icon v-if="menu" color=" deep-orange darken-1">
                     mdi-menu-up
@@ -59,10 +54,10 @@
         </v-col>
         <!-- here the search result -->
         <v-col
-          class="pa-1"
+          class="pa-2"
           cols="12"
           md="6"
-          lg="4"
+          lg="6"
           sm="4"
           v-for="(Product, index) in GetCarData"
           :key="index"
@@ -155,7 +150,7 @@
                               style="font-size: 14px"
                               small
                               class="text-all mr-0"
-                              color="white"
+                              color="blue-grey lighten-5"
                             >
                               عمارة
                             </v-chip>
@@ -163,7 +158,7 @@
                               style="font-size: 14px"
                               small
                               class="text-all"
-                              color="white"
+                              color="blue-grey lighten-5"
                             >
                               غير مفروشة
                             </v-chip>
@@ -270,15 +265,15 @@ a {
 .toggle_filter {
   font-family: $fontfamliy3;
   letter-spacing: 0 !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
   // font-weight: 600;
   @media (max-width: 450px) {
-    font-size: 12.5px !important;
+    font-size: 13px !important;
   }
 }
 p.title {
   font-family: $fontfamliy3 !important;
-  color: $fontcolor !important;
+  color: #1e88e5 !important;
   font-weight: 400;
   letter-spacing: 0 !important;
   font-size: 23px !important;

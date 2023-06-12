@@ -1,12 +1,12 @@
 <template>
   <div class="ThqahMall">
-    <v-sheet rounded="" class="pa-1 Car">
+    <v-sheet  class="pa-1 Car rounded-t">
       <v-col cols="12" class="pa-0">
         <v-card-title class="justify-center title">
           ابحث عن سيارات للبيع أو للايجار
         </v-card-title>
       </v-col>
-      <v-row no-gutters>
+      <v-row no-gutters justify="center">
         <!-- search the manufactory -->
         <v-col cols="6" lg="4" sm="4" md="4" class="text-center pa-1">
           <v-card flat class="">
@@ -269,8 +269,10 @@
             </v-menu>
           </v-card>
         </v-col>
-        <v-col cols="12" class="pa-1 text-center">
+        <v-col cols="auto" class="pa-2 text-center">
           <v-btn
+            min-width="170"
+            depressed
             :to="{
               name: 'ShowroomCarSearchResult',
               params: {
@@ -278,11 +280,14 @@
               },
             }"
             class="text-all"
-            text
           >
             بحث
           </v-btn>
-          <v-btn class="text-all" text> إعادة الضبط </v-btn>
+        </v-col>
+        <v-col cols="auto" class="pa-2 text-center">
+          <v-btn class="text-all" min-width="170" depressed>
+            إعادة الضبط
+          </v-btn>
         </v-col>
       </v-row>
     </v-sheet>
@@ -371,7 +376,7 @@ export default {
     letter-spacing: 0px !important;
     font-size: 23px !important;
     font-weight: 500;
-    color: $fontcolorsm;
+    color: $fontcolor;
     @media (max-width: 600px) {
       font-size: 18px !important;
     }
@@ -424,6 +429,6 @@ export default {
   font-size: 14px !important;
 }
 .Car {
-  background: linear-gradient(#fc624d 0%, #fbe9e7 100%);
+  background: linear-gradient(#FAFAFA 0%, #FBE9E7 100%);
 }
 </style>

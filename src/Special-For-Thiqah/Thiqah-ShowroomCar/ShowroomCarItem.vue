@@ -1,13 +1,11 @@
 <template>
   <div class="BestOffer">
     <v-row no-gutters>
-      <v-col cols="12">
+      <v-col cols="12" style="margin-top: -1px">
         <v-tabs
-          active-class="white text--deep-orange"
           center-active
           class="overflow-hidden rounded-b"
           :show-arrows="false"
-          
           grow
           height="100"
           icons-and-text
@@ -17,7 +15,7 @@
           <v-tab class="text-all" v-for="(Type, i) in CarType" :key="i">
             {{ Type.carName }}
             <!-- <v-icon> {{ Category.icon }} </v-icon> -->
-            <v-avatar tile size="50" color="transparent">
+            <v-avatar size="50" color="white">
               <v-img
                 contain
                 :src="getimageUrl(Type.folder, Type.carLogo)"
@@ -44,72 +42,83 @@
             md="2"
             sm="4"
             lg="2"
-            class="pa-1"
+            class="pa-2"
             v-for="Product in VerifiedCar"
             :key="Product.id"
           >
             <v-hover v-slot="{ hover }">
-              <div style="position: relative">
+              <v-card
+                :to="{
+                  name: 'ShowroomCarItemDetail',
+                  params: {
+                    carName: Product.name,
+                    carShape: Product.Shape,
+                    carId: Product.id,
+                    Company: Product.folder,
+                  },
+                }"
+                :elevation="hover ? 3 : 0"
+                min-height="290"
+                width="100%"
+                rounded="lg"
+                style="position: relative"
+              >
+                <h1 class="ribbon">
+                  {{ Product.payment }}
+                  <v-icon color="white" size="19"> mdi-currency-rial </v-icon>
+                </h1>
                 <v-card
-                  :to="{
-                    name: 'ShowroomCarItemDetail',
-                    params: {
-                      carName: Product.name,
-                      carShape: Product.Shape,
-                      carId: Product.id,
-                      Company: Product.folder,
-                    },
-                  }"
-                  :elevation="hover ? 3 : 0"
-                  min-height="290"
-                  width="100%"
-                  style="overflow: hidden; position: relative"
-                  rounded="lg"
+                  flat
+                  rounded="b-0 t-lg"
+                  style="overflow: hidden; height: 150px; width: 100%"
                 >
                   <v-img
                     height="150"
                     :src="getimageUrl(Product.folder, Product.image)"
                   ></v-img>
-                  <!--  product name  -->
-                  <v-card-text class="card-text py-1 pa-2">
-                    التيما 2020 استاندر للمستخدم الي يبي شي بدون اعطال واخو
-                    الجديد يخدمه
-                  </v-card-text>
-                  <!--  product name  -->
-                  <v-card-text class="text text-center text-truncate py-1 pa-2">
-                    {{ Product.company }} - {{ Product.name }} -
-                    {{ Product.modle }}
-                  </v-card-text>
-                  <p class="PriceAfter ma-0 text-center text-truncate">
-                    {{ Product.payment }}
-                    <small class="text-truncate">ريال</small>
-                  </p>
-                  <!-- location -->
-                  <v-row
-                    class="pa-2"
-                    no-gutters
-                    align="center"
-                    justify="space-between"
-                  >
-                    <div class="text d-flex align-center text-truncate">
-                      <v-icon size="20" color="deep-orange lighten-1" right>
-                        mdi-speedometer
-                      </v-icon>
-                      <span>
-                        {{ Product.kilometer }}
-                      </span>
-                    </div>
-                    <span class="text text-truncate">
-                      {{ Product.location }}
-                    </span>
-                  </v-row>
                 </v-card>
-              </div>
+
+                <!--  product name  -->
+                <v-card-text class="card-text pb-1 pa-2">
+                  التيما 2020 استاندر للمستخدم الي يبي شي بدون اعطال واخو الجديد
+                  يخدمه
+                </v-card-text>
+                <!--  product name  -->
+                <v-card-text class="text text-truncate pa-2">
+                  {{ Product.company }} - {{ Product.name }} -
+                  {{ Product.modle }}
+                </v-card-text>
+                <!-- <strong class="PriceAfter py-1 pa-2 text-truncate">
+                {{ Product.payment }}
+                <v-icon color="grey darken-3" size="19">
+                  mdi-currency-rial
+                </v-icon>
+              </strong> -->
+                <!-- location -->
+                <v-row
+                  class="pa-2"
+                  no-gutters
+                  align="center"
+                  justify="space-between"
+                >
+                  <div class="text d-flex align-center text-truncate">
+                    <v-icon size="18" color="grey darken-1" right>
+                      mdi-speedometer
+                    </v-icon>
+                    <span>
+                      {{ Product.kilometer }}
+                    </span>
+                  </div>
+                  <span class="text text-truncate">
+                    {{ Product.location }}
+                  </span>
+                </v-row>
+              </v-card>
             </v-hover>
           </v-col>
           <v-col cols="12" class="text-center pa-2">
-            <v-btn class="grey lighten-4 see-more" min-width="200" depressed>
-              المزيد
+            <v-btn outlined color="#fc624d" width="300" class="seeMoreBtn">
+              تـحـمـيـل الـمـزيـد
             </v-btn>
           </v-col>
         </v-row>
@@ -275,24 +284,64 @@ export default {
     margin-left: 4px;
   }
 }
-.see-more {
-  font-family: $fontfamliy3;
-  letter-spacing: 0;
-  font-size: 17px !important;
-  font-weight: 600 !important;
-  color: $fontcolor !important;
+::v-deep button.seeMoreBtn.v-btn.v-btn--outlined.theme--light.v-size--default {
+  letter-spacing: 0 !important;
+  font-size: 18px ;
+  font-family: $fontfamliy3 !important;
 }
-
 .PriceAfter {
   font-size: 17px !important;
-  color: $color-2;
-  font-weight: 700 !important;
+  color: $fontcolor;
+  font-weight: 600 !important;
   font-family: sans-serif !important;
+  display: block;
 }
 ::v-deep .v-slide-group__prev.v-slide-group__prev--disabled {
   display: none !important;
 }
 ::v-deep .v-slide-group__next.v-slide-group__next--disabled {
   display: none !important;
+}
+.ribbon {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  z-index: 1;
+  padding: 0 5px;
+  min-width: 60px;
+  text-align: center;
+  font-size: 17px !important;
+  color: $fontcolorsm;
+  font-weight: 600 !important;
+  font-family: sans-serif !important;
+  letter-spacing: 0 !important;
+  border-radius: 2px 0px 0px 2px !important;
+  background: linear-gradient(140deg, #fc624d 0%, #ff8a65 100%);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.ribbon:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0.5em;
+  height: 100%;
+  padding: 0 0 32px 0px !important;
+  top: 0;
+  right: -0.51em;
+  background: #ff8a65;
+  border-radius: 0px 5px 5px 0px !important;
+}
+
+.ribbon:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 0.313em;
+  height: 0.313em;
+  background: rgba(0, 0, 0, 0.35);
+  bottom: -0.313em;
+  right: -0.3em;
+  border-radius: 0px 5px 5px 0px !important;
+  box-shadow: inset -1px 2px 2px rgba(0, 0, 0, 0.3);
 }
 </style>

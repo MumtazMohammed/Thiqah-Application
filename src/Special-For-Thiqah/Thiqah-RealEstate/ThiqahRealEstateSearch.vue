@@ -1,15 +1,15 @@
 <template>
-  <div class="ThqahMall pt-1">
-    <v-sheet color="" class="pa-1">
+  <div class="ThqahMall">
+    <v-sheet rounded color="" class="pa-1 Car">
       <v-col cols="12" class="pa-0">
         <v-card-title class="justify-center title">
           ابحث عن عقارات للبيع أو للايجار
         </v-card-title>
       </v-col>
-      <v-row no-gutters>
+      <v-row no-gutters justify="center">
         <!-- search / sale or rent  -->
         <v-col cols="6" lg="4" sm="4" md="4" class="text-center pa-1">
-          <v-card flat height="100%" class="blue-grey lighten-5 pa-1">
+          <v-card flat>
             <v-select
               v-model="valueSaleOrRent"
               :items="SaleOrRent"
@@ -35,7 +35,7 @@
         </v-col>
         <!-- search / Cities  -->
         <v-col cols="6" lg="4" sm="4" md="4" class="text-center pa-1">
-          <v-card flat height="100%" class="blue-grey lighten-5 pa-1">
+          <v-card flat>
             <v-select
               v-model="Citiesvalue"
               :items="Cities"
@@ -61,7 +61,7 @@
         </v-col>
         <!-- real estate or residential -->
         <v-col cols="6" lg="4" sm="4" md="4" class="text-center pa-1">
-          <v-card flat height="100%" class="blue-grey lighten-5 pa-1">
+          <v-card flat>
             <v-menu
               :close-on-content-click="false"
               :nudge-width="200"
@@ -120,7 +120,7 @@
         </v-col>
         <!-- Room AND Bathroom count -->
         <v-col cols="6" lg="4" sm="4" md="4" class="text-center pa-1">
-          <v-card flat height="100%" class="blue-grey lighten-5 pa-1">
+          <v-card flat>
             <v-menu
               :close-on-content-click="false"
               :nudge-width="200"
@@ -173,7 +173,7 @@
         </v-col>
         <!-- space -->
         <v-col cols="6" lg="4" sm="4" md="4" class="text-center pa-1">
-          <v-card flat height="100%" class="blue-grey lighten-5 pa-1">
+          <v-card flat>
             <v-menu
               :close-on-content-click="false"
               :nudge-width="200"
@@ -242,7 +242,7 @@
         </v-col>
         <!-- price -->
         <v-col cols="6" lg="4" sm="4" md="4" class="text-center pa-1">
-          <v-card flat height="100%" class="blue-grey lighten-5 pa-1">
+          <v-card flat>
             <v-menu
               :close-on-content-click="false"
               :nudge-width="200"
@@ -309,8 +309,10 @@
             </v-menu>
           </v-card>
         </v-col>
-        <v-col cols="12" class="pa-1 text-center">
+        <v-col cols="auto" class="pa-2 text-center">
           <v-btn
+            min-width="170"
+            depressed
             :to="{
               name: 'RealEstateSearchResult',
               params: {
@@ -318,10 +320,14 @@
               },
             }"
             class="text-all"
-            text
-            >بحث</v-btn
           >
-          <v-btn class="text-all" text> إعادة الضبط </v-btn>
+            بحث
+          </v-btn>
+        </v-col>
+        <v-col cols="auto" class="pa-2 text-center">
+          <v-btn class="text-all" min-width="170" depressed>
+            إعادة الضبط
+          </v-btn>
         </v-col>
       </v-row>
     </v-sheet>
@@ -461,5 +467,8 @@ export default {
   font-family: $fontfamliy3;
   letter-spacing: 0px !important;
   font-size: 14px !important;
+}
+.Car {
+  background: linear-gradient(#fafafa 0%, #fbe9e7 100%);
 }
 </style>

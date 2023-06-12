@@ -10,10 +10,10 @@
         </v-card-title>
       </v-col>
       <v-col
-        class="pa-1"
+        class="pa-2"
         cols="12"
-        md="4"
-        lg="4"
+        md="6"
+        lg="6"
         sm="6"
         v-for="(Product, index) in getCarInfo"
         :key="index"
@@ -104,7 +104,7 @@
                             style="font-size: 14px"
                             small
                             class="text-all mr-0"
-                            color="white "
+                            color="blue-grey lighten-5"
                             text-color="grey darken-2"
                           >
                             عمارة
@@ -113,7 +113,7 @@
                             style="font-size: 14px"
                             small
                             class="text-all"
-                            color="white "
+                            color="blue-grey lighten-5"
                             text-color="grey darken-2"
                           >
                             غير مفروشة

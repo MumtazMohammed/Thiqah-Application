@@ -5,11 +5,22 @@
       <p class="title pa-3 mb-0">سيارة هواند أكسنت للبيع في آب</p>
       <v-row no-gutters class="">
         <!-- here is the filtration -->
-        <v-col cols="12" class="pa-1">
-          <v-btn-toggle borderless tile v-model="toggle_filter" dense>
+        <v-col cols="12" class="pa-2">
+          <v-btn-toggle
+            background-color="transparent"
+            borderless
+            tile
+            v-model="toggle_filter"
+            dense
+          >
             <v-menu v-model="menu" bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
-                <v-btn class="toggle_filter" v-bind="attrs" v-on="on">
+                <v-btn
+                  outlined
+                  class="toggle_filter grey lighten-2"
+                  v-bind="attrs"
+                  v-on="on"
+                >
                   <span> {{ model }} </span>
                   <v-icon v-if="menu" color=" deep-orange darken-1">
                     mdi-menu-up
@@ -39,7 +50,12 @@
             </v-menu>
             <v-menu v-model="menu" bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
-                <v-btn class="toggle_filter" v-bind="attrs" v-on="on">
+                <v-btn
+                  outlined
+                  class="toggle_filter mx-1 grey lighten-2"
+                  v-bind="attrs"
+                  v-on="on"
+                >
                   <span> {{ model }} </span>
                   <v-icon v-if="menu" color=" deep-orange darken-1">
                     mdi-menu-up
@@ -69,7 +85,11 @@
             </v-menu>
             <v-menu v-model="menu" bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
-                <v-btn class="toggle_filter" v-bind="attrs" v-on="on">
+                <v-btn
+                  class="toggle_filter grey lighten-2"
+                  v-bind="attrs"
+                  v-on="on"
+                >
                   <span> {{ model }} </span>
                   <v-icon v-if="menu" color=" deep-orange darken-1">
                     mdi-menu-up
@@ -105,67 +125,80 @@
           md="2"
           sm="4"
           lg="2"
-          class="pa-1"
+          class="pa-2"
           v-for="Product in GetCarData"
           :key="Product.id"
         >
           <v-hover v-slot="{ hover }">
-            <div style="position: relative">
+            <v-card
+              :to="{
+                name: 'ShowroomCarItemDetail',
+                params: {
+                  carName: Product.name,
+                  carShape: Product.Shape,
+                  carId: Product.id,
+                  Company: Product.folder,
+                },
+              }"
+              :elevation="hover ? 3 : 0"
+              min-height="290"
+              width="100%"
+              rounded="lg"
+              style="position: relative"
+            >
+              <h1 class="ribbon">
+                {{ Product.payment }}
+                <v-icon color="white" size="19">
+                  mdi-currency-rial
+                </v-icon>
+              </h1>
               <v-card
-                :to="{
-                  name: 'ShowroomCarItemDetail',
-                  params: {
-                    carName: Product.name,
-                    carShape: Product.Shape,
-                    carId: Product.id,
-                    Company: Product.folder,
-                  },
-                }"
-                :elevation="hover ? 3 : 0"
-                min-height="290"
-                width="100%"
-                rounded="lg"
-                style="overflow: hidden; position: relative"
+                flat
+                rounded="b-0 t-lg"
+                style="overflow: hidden; height: 150px; width: 100%"
               >
                 <v-img
                   height="150"
                   :src="getimageUrl(Product.folder, Product.image)"
                 ></v-img>
-                <!--  product name  -->
-                <v-card-text class="card-text py-1 pa-2">
-                  التيما 2020 استاندر للمستخدم الي يبي شي بدون اعطال واخو الجديد
-                  يخدمه
-                </v-card-text>
-                <!--  product name  -->
-                <v-card-text class="text text-center text-truncate py-1 pa-2">
-                  {{ Product.company }} - {{ Product.name }} -
-                  {{ Product.modle }}
-                </v-card-text>
-                <p class="PriceAfter ma-0 text-center text-truncate">
-                  {{ Product.payment }}
-                  <small class="text-truncate">ريال</small>
-                </p>
-                <!-- location -->
-                <v-row
-                  class="pa-2"
-                  no-gutters
-                  align="center"
-                  justify="space-between"
-                >
-                  <div class="text d-flex align-center text-truncate">
-                    <v-icon size="20" color="deep-orange lighten-1" right>
-                      mdi-speedometer
-                    </v-icon>
-                    <span>
-                      {{ Product.kilometer }}
-                    </span>
-                  </div>
-                  <span class="text text-truncate">
-                    {{ Product.location }}
-                  </span>
-                </v-row>
               </v-card>
-            </div>
+
+              <!--  product name  -->
+              <v-card-text class="card-text pb-1 pa-2">
+                التيما 2020 استاندر للمستخدم الي يبي شي بدون اعطال واخو الجديد
+                يخدمه
+              </v-card-text>
+              <!--  product name  -->
+              <v-card-text class="text text-truncate pa-2">
+                {{ Product.company }} - {{ Product.name }} -
+                {{ Product.modle }}
+              </v-card-text>
+              <!-- <strong class="PriceAfter py-1 pa-2 text-truncate">
+                {{ Product.payment }}
+                <v-icon color="grey darken-3" size="19">
+                  mdi-currency-rial
+                </v-icon>
+              </strong> -->
+              <!-- location -->
+              <v-row
+                class="pa-2"
+                no-gutters
+                align="center"
+                justify="space-between"
+              >
+                <div class="text d-flex align-center text-truncate">
+                  <v-icon size="18" color="grey darken-1" right>
+                    mdi-speedometer
+                  </v-icon>
+                  <span>
+                    {{ Product.kilometer }}
+                  </span>
+                </div>
+                <span class="text text-truncate">
+                  {{ Product.location }}
+                </span>
+              </v-row>
+            </v-card>
           </v-hover>
         </v-col>
       </v-row>
@@ -283,9 +316,49 @@ p.title {
 }
 
 .PriceAfter {
-  font-size: 17px !important;
-  color: $color-2;
-  font-weight: 700 !important;
   font-family: sans-serif !important;
+  display: block;
+}
+.ribbon {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  z-index: 1;
+  padding: 0 5px;
+  min-width: 60px;
+  text-align: center;
+  font-size: 17px !important;
+  color: $fontcolorsm;
+  font-weight: 600 !important;
+  font-family: sans-serif !important;
+  letter-spacing: 0 !important;
+  border-radius: 2px 0px 0px 2px !important;
+  background: linear-gradient(140deg, #fc624d 0%, #FF8A65 100%);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.ribbon:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0.5em;
+  height: 100%;
+  padding: 0 0 32px 0px !important;
+  top: 0;
+  right: -0.51em;
+  background: #FF8A65;
+  border-radius: 0px 5px 5px 0px !important;
+}
+
+.ribbon:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 0.313em;
+  height: 0.313em;
+  background: rgba(0, 0, 0, 0.35);
+  bottom: -0.313em;
+  right: -0.3em;
+  border-radius: 0px 5px 5px 0px !important;
+  box-shadow: inset -1px 2px 2px rgba(0, 0, 0, 0.3);
 }
 </style>

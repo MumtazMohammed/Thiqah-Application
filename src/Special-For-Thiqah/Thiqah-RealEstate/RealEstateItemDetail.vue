@@ -88,11 +88,13 @@
                     <span> ريال </span>
                   </p>
                   <v-card-actions class="pa-0">
-                    <v-btn icon class="grey lighten-3" color="grey darken-3">
-                      <v-icon>mdi-heart-outline</v-icon>
+                    <v-btn icon class="blue-grey lighten-5">
+                      <v-icon size="20" color="grey darken-3"
+                        >mdi-heart-outline</v-icon
+                      >
                     </v-btn>
-                    <v-btn icon class="grey lighten-3" color="grey darken-3">
-                      <v-icon>mdi-share</v-icon>
+                    <v-btn icon class="blue-grey lighten-5">
+                      <v-icon size="20" color="grey darken-3">mdi-share</v-icon>
                     </v-btn>
                   </v-card-actions>
                 </v-row>
@@ -258,10 +260,10 @@
           <p class="ma-0 ProductName">عقارات ذات صلة</p>
         </v-col>
         <v-col
-          class="pa-1"
+          class="pa-2"
           cols="12"
-          md="4"
-          lg="4"
+          md="6"
+          lg="6"
           sm="6"
           v-for="(Product, index) in GetCarData"
           :key="index"
