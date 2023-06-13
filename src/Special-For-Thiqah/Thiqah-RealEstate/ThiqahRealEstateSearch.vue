@@ -309,23 +309,24 @@
             </v-menu>
           </v-card>
         </v-col>
-        <v-col cols="auto" class="pa-2 text-center">
+        <v-col cols="auto" class="pa-2 px-1 text-center">
           <v-btn
-            min-width="170"
+            min-width="160"
             depressed
+            
             :to="{
               name: 'RealEstateSearchResult',
               params: {
                 Search: ' نتائج البحث ',
               },
             }"
-            class="text-all"
+            class="text-all white"
           >
             بحث
           </v-btn>
         </v-col>
-        <v-col cols="auto" class="pa-2 text-center">
-          <v-btn class="text-all" min-width="170" depressed>
+        <v-col cols="auto" class="pa-2 px-1 text-center">
+          <v-btn  class="text-all white" min-width="160" depressed>
             إعادة الضبط
           </v-btn>
         </v-col>

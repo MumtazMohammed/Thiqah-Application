@@ -4,7 +4,7 @@
     <v-container class="pa-1 px-2">
       <v-row no-gutters>
         <!-- image and info  -->
-        <v-col cols="12" md="8" lg="8" sm="8" class="pa-1">
+        <v-col cols="12" md="8" lg="8" sm="8" class="pa-">
           <v-row no-gutters>
             <v-col cols="12">
               <v-dialog
@@ -88,12 +88,12 @@
                     <span> ريال </span>
                   </p>
                   <v-card-actions class="pa-0">
-                    <v-btn icon class="blue-grey lighten-5">
-                      <v-icon size="20" color="grey darken-3"
-                        >mdi-heart-outline</v-icon
-                      >
+                    <v-btn icon>
+                      <v-icon size="20" color="grey darken-3">
+                        mdi-heart-outline
+                      </v-icon>
                     </v-btn>
-                    <v-btn icon class="blue-grey lighten-5">
+                    <v-btn icon>
                       <v-icon size="20" color="grey darken-3">mdi-share</v-icon>
                     </v-btn>
                   </v-card-actions>
@@ -188,7 +188,7 @@
           </v-row>
         </v-col>
         <!--  -->
-        <v-col cols="12" md="4" lg="4" sm="4" class="pa-1">
+        <v-col cols="12" md="4" lg="4" sm="4" class="pa-">
           <v-row no-gutters>
             <!-- Advertiser information -->
             <v-col cols="12">
@@ -227,9 +227,9 @@
               </v-card>
             </v-col>
             <!-- similarities search -->
-            <v-col cols="12" class="mt-2">
-              <p class="mb-0 px-2 py-1">عقارات مشابهة</p>
-              <ul class="px-2 text">
+            <v-col cols="12" class="pa-2">
+              <p class="mb-0">عقارات مشابهة</p>
+              <ul class="text">
                 <li class="my-3">
                   <a href="#"> عقارات للبيع في المنطقة الغربية </a>
                 </li>
@@ -245,8 +245,8 @@
               </ul>
             </v-col>
             <!-- report this add  -->
-            <v-col cols="12" class="mt-2">
-              <v-btn color="red accent-2" class="text" block outlined>
+            <v-col cols="12" class="pa-2 pt-0 text-center">
+              <v-btn color="red accent-2" class="text" outlined>
                 <v-icon left>mdi-flag</v-icon>
                 الإبلاغ عن هذا الإعلان
               </v-btn>
@@ -256,7 +256,7 @@
       </v-row>
       <v-row no-gutters class="">
         <!-- here the more item   -->
-        <v-col cols="12" class="pa-2">
+        <v-col cols="12" class="pa-0">
           <p class="ma-0 ProductName">عقارات ذات صلة</p>
         </v-col>
         <v-col

@@ -44,7 +44,7 @@
             <v-col cols="8">
               <v-row no-gutters>
                 <v-col cols="12">
-                  <v-list-item three-line>
+                  <v-list-item dense three-line class="pl-1">
                     <v-list-item-content class="pb-0">
                       <v-list-item-title class="card-text">
                         المنطقة الشرقية حي اليرموك، المنطقة الشرقية حي اليرموك،
@@ -60,7 +60,7 @@
                       </v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
-                  <v-list-item dense three-line>
+                  <v-list-item dense three-line class="pl-1">
                     <v-list-item-content
                       style="align-content: space-around"
                       class="py-0"
@@ -140,8 +140,8 @@
         </v-card>
       </v-col>
       <v-col cols="12" class="text-center pa-2">
-        <v-btn class="grey lighten-4 see-more" min-width="200" depressed>
-          المزيد
+        <v-btn outlined color="#fc624d" width="300" class="seeMoreBtn">
+          تـحـمـيـل الـمـزيـد
         </v-btn>
       </v-col>
     </v-row>
@@ -230,12 +230,10 @@ export default {
   font-family: $fontfamliy3;
   font-size: 15px;
 }
-.see-more {
-  font-family: $fontfamliy3;
-  letter-spacing: 0;
-  font-size: 17px !important;
-  font-weight: 600 !important;
-  color: $fontcolor !important;
+::v-deep button.seeMoreBtn.v-btn.v-btn--outlined.theme--light.v-size--default {
+  letter-spacing: 0 !important;
+  font-size: 18px;
+  font-family: $fontfamliy3 !important;
 }
 // Products
 .Price {

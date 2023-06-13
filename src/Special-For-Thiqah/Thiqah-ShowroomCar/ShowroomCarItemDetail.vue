@@ -3,7 +3,7 @@
     <TheNavBar />
     <v-container class="pa-1 py-0">
       <v-row no-gutters>
-        <v-col class="pa-1 grey lighten-4" cols="12" md="8" lg="8">
+        <v-col class="pa-1 transparent" cols="12" md="8" lg="8">
           <!-- here the product img  -->
           <v-dialog
             class="overflow--hidden"
@@ -73,12 +73,7 @@
             </v-card>
           </v-dialog>
           <!-- here the product seller info & price  -->
-          <v-col
-            class="pa-0 grey lighten-4 hidden-md-and-up"
-            cols="12"
-            md="4"
-            lg="4"
-          >
+          <v-col class="pa-0 hidden-md-and-up" cols="12" md="4" lg="4">
             <v-card tile flat width="100%">
               <v-row no-gutters>
                 <v-col cols="12" class="pa-2">
@@ -88,25 +83,22 @@
                       <span> ريال </span>
                     </p>
                     <v-card-actions class="pa-0">
-                      <v-btn icon class="grey lighten-3" color="grey darken-3">
-                        <v-icon>mdi-heart-outline</v-icon>
+                      <v-btn icon class="" color="grey darken-3">
+                        <v-icon size="20">mdi-heart-outline</v-icon>
                       </v-btn>
-                      <v-btn icon class="grey lighten-3" color="grey darken-3">
-                        <v-icon>mdi-share</v-icon>
+                      <v-btn icon class="mr-0" color="grey darken-3 ">
+                        <v-icon size="20">mdi-share</v-icon>
                       </v-btn>
                     </v-card-actions>
                   </v-row>
                 </v-col>
-                <!-- <v-col cols="6" class="pa-1">
-                  <v-btn class="text" depressed block> أتصال </v-btn>
-                  <v-btn class="text mt-1" depressed block> وتس آب </v-btn>
-                </v-col> -->
               </v-row>
             </v-card>
+            <!-- info  -->
             <v-card tile flat width="100%" class="">
               <v-row no-gutters align="center" class="pa-2">
                 <v-col cols="auto" class="text-center my-auto">
-                  <v-avatar size="40" color="grey">
+                  <v-avatar rounded="lg" size="40" color="grey">
                     <!-- <img src="src" alt="alt"> -->
                   </v-avatar>
                 </v-col>
@@ -116,89 +108,70 @@
                 </v-col>
                 <v-spacer></v-spacer>
                 <v-col cols="auto" class="text-center">
-                  <v-btn class="ml-1 grey lighten-3" color="grey darken-3" icon>
-                    <v-icon>mdi-phone</v-icon>
-                  </v-btn>
-                  <v-btn icon color="grey darken-3" class="mr-1 grey lighten-3">
-                    <v-icon>mdi-whatsapp</v-icon>
-                  </v-btn>
+                  <v-btn tile small class="text" depressed block> أتصال </v-btn>
+                  <v-btn tile small class="text mt-1" depressed block> وتس آب </v-btn>
                 </v-col>
               </v-row>
             </v-card>
             <v-row no-gutters>
               <v-col cols="12" md="4" lg="4" sm="4">
-                <v-card tile flat width="100%" class="">
-                  <v-list-item class="px-1 py-0">
-                    <v-icon color="green accent-4" size="22">
-                      mdi-shield-check
-                    </v-icon>
-                    <v-list-item-content class="pa-0 pr-2">
-                      <v-list-item-title class="Guarantee-text">
-                        مــوثق
-                      </v-list-item-title>
-                      <v-list-item-subtitle class="Guarantee-text-tow">
-                        تم تـوثيق السيارة .
-                      </v-list-item-subtitle>
-                    </v-list-item-content>
-                  </v-list-item>
-                </v-card>
-              </v-col>
-              <v-col cols="12" md="4" lg="4" sm="4">
                 <v-card flat width="100%" tile>
-                  <v-list-item class="px-1 py-0">
-                    <v-icon color="deep-orange darken-1" size="22">
-                      mdi-map-marker-radius
-                    </v-icon>
-                    <v-list-item-content class="pa-0 pr-2">
-                      <v-list-item-title class="Guarantee-text">
-                        الـمـوقع
-                      </v-list-item-title>
-                      <v-list-item-subtitle class="Guarantee-text-tow">
-                        اليمن - تعز
-                      </v-list-item-subtitle>
-                    </v-list-item-content>
-                  </v-list-item>
+                  <v-list dense class="py-1">
+                    <v-list-item class="px-1 py-0">
+                      <v-icon color="green accent-4" size="22">
+                        mdi-shield-check
+                      </v-icon>
+                      <v-list-item-content class="pa-0 pr-2">
+                        <v-list-item-title class="Guarantee-text">
+                          مــوثق
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item one-line class="px-1 py-0">
+                      <v-icon color="deep-orange darken-1" size="22">
+                        mdi-map-marker-radius
+                      </v-icon>
+                      <v-list-item-content class="pa-0 pr-2">
+                        <v-list-item-title class="Guarantee-text">
+                          اليمن - تعز
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item one-line class="px-1 py-0">
+                      <v-icon color="yellow darken-1" size="22">
+                        mdi-credit-card
+                      </v-icon>
+                      <v-list-item-content class="pa-0 pr-2">
+                        <v-list-item-title class="Guarantee-text">
+                          <v-row
+                            no-gutters
+                            align="center"
+                            justify="space-between"
+                          >
+                            1235454812
+                            <v-btn
+                              height="30"
+                              class="text"
+                              text
+                              color="red lighten-1"
+                              style="float: left"
+                            >
+                              إبـلاغ
+                            </v-btn>
+                          </v-row>
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list>
                 </v-card>
               </v-col>
-              <v-col cols="12" md="4" lg="4" sm="4">
-                <v-card flat width="100%" tile>
-                  <v-list-item class="px-1 py-0">
-                    <v-icon color="yellow darken-1" size="22">
-                      mdi-credit-card
-                    </v-icon>
-                    <v-list-item-content class="pa-0 pr-2">
-                      <v-list-item-title class="Guarantee-text">
-                        رقم الأعلان
-                      </v-list-item-title>
-                      <v-list-item-subtitle class="">
-                        <v-row
-                          no-gutters
-                          align="center"
-                          justify="space-between"
-                        >
-                          1235454812
-                        </v-row>
-                      </v-list-item-subtitle>
-                    </v-list-item-content>
-                  </v-list-item>
-                </v-card>
-              </v-col>
-              <v-col cols="12" class="pa-2">
-                <p class="mb-0">نصائح عامة</p>
+              <v-col cols="12" class="pa-2 amber lighten-5">
+                <p class="mb-1">نصائح عامة</p>
                 <ul class="px-6 text">
                   <li>اجتمع في الأماكن العامة فقط.</li>
                   <li>لا تقم بإرسال المال مسبقاً.</li>
                   <li>قم بتفقد المنتج جيداً قبل شرائه.</li>
                 </ul>
-                <v-btn
-                  color="amber accent-4"
-                  class="text font-weight-medium"
-                  text
-                  block
-                >
-                  إبـلاغ
-                  <v-icon right>mdi-flag</v-icon>
-                </v-btn>
               </v-col>
             </v-row>
           </v-col>
@@ -317,12 +290,7 @@
           </v-sheet>
         </v-col>
         <!-- here the product seller info & price  -->
-        <v-col
-          class="pa-1 grey lighten-4 hidden-sm-and-down"
-          cols="12"
-          md="4"
-          lg="4"
-        >
+        <v-col class="pa-1 hidden-sm-and-down" cols="12" md="4" lg="4">
           <v-card flat width="100%">
             <v-col cols="12" class="pa-2">
               <p class="ma-0 price text-center">
@@ -346,75 +314,65 @@
             </v-col>
           </v-card>
           <v-card flat width="100%" class="mt-2">
-            <v-row no-gutters class="pa-2">
+            <v-row no-gutters class="pa-1">
               <v-col cols="auto" class="text-center my-auto">
                 <v-avatar size="45" color="blue">
                   <!-- <img src="src" alt="alt"> -->
                 </v-avatar>
               </v-col>
-              <v-col cols="auto" class="pr-2">
+              <v-col cols="10" class="pr-1">
                 <p class="mb-1 text-for-all">محمد أمين شمسان</p>
-                <v-card-subtitle class="my-1 text-center pa-0 grey--text">
+                <v-card-subtitle class="my-1 text-end pa-0 grey--text">
                   20 / 10 / 2022
                 </v-card-subtitle>
               </v-col>
             </v-row>
           </v-card>
+          <!-- add number & trusred  -->
           <v-card flat width="100%" class="mt-2">
-            <v-list-item two-line class="px-1 py-0">
-              <v-icon color="green accent-4" size="22">
-                mdi-shield-check
-              </v-icon>
-              <v-list-item-content class="pa-0 pr-2">
-                <v-list-item-title class="Guarantee-text">
-                  مــوثق
-                </v-list-item-title>
-                <v-list-item-subtitle class="Guarantee-text-tow">
-                  تم تـوثيق السيارة .
-                </v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-          </v-card>
-          <v-card flat width="100%" class="mt-2">
-            <v-list-item two-line class="px-1 py-0">
-              <v-icon color="deep-orange darken-1" size="22">
-                mdi-map-marker-radius
-              </v-icon>
-              <v-list-item-content class="pa-0 pr-2">
-                <v-list-item-title class="Guarantee-text">
-                  الـمـوقع
-                </v-list-item-title>
-                <v-list-item-subtitle class="Guarantee-text-tow">
-                  اليمن - تعز
-                </v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-          </v-card>
-          <v-card flat width="100%" class="mt-2">
-            <v-list-item two-line class="px-1 py-0">
-              <v-icon color="yellow darken-1" size="22">
-                mdi-credit-card
-              </v-icon>
-              <v-list-item-content class="pa-0 pr-2">
-                <v-list-item-title class="Guarantee-text">
-                  رقم الأعلان
-                </v-list-item-title>
-                <v-list-item-subtitle class="">
-                  <v-row no-gutters align="center" justify="space-between">
-                    1235454812
-                    <v-btn
-                      height="30"
-                      class="text"
-                      text
-                      color="red lighten-1"
-                      style="float: left"
-                    >
-                      إبـلاغ
-                    </v-btn>
-                  </v-row>
-                </v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+            <v-list>
+              <v-list-item one-line class="px-1 py-0">
+                <v-icon color="green accent-4" size="22">
+                  mdi-shield-check
+                </v-icon>
+                <v-list-item-content class="pa-0 pr-2">
+                  <v-list-item-title class="Guarantee-text">
+                    مــوثق
+                  </v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item one-line class="px-1 py-0">
+                <v-icon color="deep-orange darken-1" size="22">
+                  mdi-map-marker-radius
+                </v-icon>
+                <v-list-item-content class="pa-0 pr-2">
+                  <v-list-item-title class="Guarantee-text">
+                    اليمن - تعز
+                  </v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item one-line class="px-1 py-0">
+                <v-icon color="yellow darken-1" size="22">
+                  mdi-credit-card
+                </v-icon>
+                <v-list-item-content class="pa-0 pr-2">
+                  <v-list-item-title class="Guarantee-text">
+                    <v-row no-gutters align="center" justify="space-between">
+                      1235454812
+                      <v-btn
+                        height="30"
+                        class="text"
+                        text
+                        color="red lighten-1"
+                        style="float: left"
+                      >
+                        إبـلاغ
+                      </v-btn>
+                    </v-row>
+                  </v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
           </v-card>
         </v-col>
         <!-- here the more product   -->
@@ -426,67 +384,71 @@
           md="3"
           sm="4"
           lg="2"
-          class="pa-1"
+          class="pa-2"
           v-for="Product in GetCarData"
           :key="Product.id"
         >
           <v-hover v-slot="{ hover }">
-            <div style="position: relative">
+            <v-card
+              :to="{
+                name: 'ShowroomCarItemDetail',
+                params: {
+                  carName: Product.name,
+                  carShape: Product.Shape,
+                  carId: Product.id,
+                  Company: Product.folder,
+                },
+              }"
+              :elevation="hover ? 3 : 0"
+              min-height="290"
+              width="100%"
+              rounded="lg"
+              style="position: relative"
+            >
+              <h1 class="ribbon">
+                {{ Product.payment }}
+                <v-icon color="white" size="19"> mdi-currency-rial </v-icon>
+              </h1>
               <v-card
-                :to="{
-                  name: 'ShowroomCarItemDetail',
-                  params: {
-                    carName: Product.name,
-                    carShape: Product.Shape,
-                    carId: Product.id,
-                    Company: Product.folder,
-                  },
-                }"
-                :elevation="hover ? 3 : 0"
-                min-height="290"
-                width="100%"
-                style="overflow: hidden; position: relative"
-                tile
+                flat
+                rounded="b-0 t-lg"
+                style="overflow: hidden; height: 150px; width: 100%"
               >
                 <v-img
                   height="150"
                   :src="getimageUrl(Product.folder, Product.image)"
                 ></v-img>
-                <!--  product name  -->
-                <v-card-text class="card-text py-1 pa-2">
-                  التيما 2020 استاندر للمستخدم الي يبي شي بدون اعطال واخو الجديد
-                  يخدمه
-                </v-card-text>
-                <!--  product name  -->
-                <v-card-text class="text text-center text-truncate py-1 pa-2">
-                  {{ Product.company }} - {{ Product.name }} -
-                  {{ Product.modle }}
-                </v-card-text>
-                <strong class="PriceAfter py-1 pt-0 pa-2 text-truncate">
-                  {{ Product.payment }}
-                  <small class="text-truncate">ريال</small>
-                </strong>
-                <!-- location -->
-                <v-row
-                  class="pa-2"
-                  no-gutters
-                  align="center"
-                  justify="space-between"
-                >
-                  <div class="text d-flex align-center text-truncate">
-                    <v-icon size="22" color="grey" right
-                      >mdi-speedometer</v-icon
-                    >
-                    <span>
-                      {{ Product.kilometer }}
-                    </span>
-                  </div>
-                  <span class="text text-truncate">
-                    {{ Product.location }}
-                  </span>
-                </v-row>
               </v-card>
-            </div>
+
+              <!--  product name  -->
+              <v-card-text class="card-text pb-1 pa-2">
+                التيما 2020 استاندر للمستخدم الي يبي شي بدون اعطال واخو الجديد
+                يخدمه
+              </v-card-text>
+              <!--  product name  -->
+              <v-card-text class="text text-truncate pa-2">
+                {{ Product.company }} - {{ Product.name }} -
+                {{ Product.modle }}
+              </v-card-text>
+              <v-row
+                class="pa-2"
+                no-gutters
+                align="center"
+                justify="space-between"
+              >
+                <div class="text d-flex align-center text-truncate">
+                  <v-icon size="18" color="grey darken-1" right>
+                    mdi-speedometer
+                  </v-icon>
+                  <span>
+                    {{ Product.kilometer }}
+                  </span>
+                </div>
+                <span class="text text-truncate">
+                  {{ Product.location }}
+                </span>
+              </v-row>
+            </v-card>
           </v-hover>
         </v-col>
       </v-row>
@@ -682,7 +644,7 @@ p {
   margin: 0 !important;
 }
 .table:nth-child(odd) {
-  background-color: #f5f5f5;
+  background-color: #fafafa;
 }
 .table-2:nth-child(even) {
   background-color: #f5f5f5;
@@ -692,7 +654,7 @@ p {
   color: $fontcolor !important;
   letter-spacing: 0 !important;
   font-weight: 700;
-  font-size: 14px !important;
+  font-size: 13px !important;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -701,10 +663,47 @@ p {
     font-size: 13px !important;
   }
 }
-.PriceAfter {
-  font-size: 18px !important;
-  color: $color-2;
-  font-weight: 700 !important;
+
+.ribbon {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  z-index: 1;
+  padding: 0 5px;
+  min-width: 60px;
+  text-align: center;
+  font-size: 17px !important;
+  color: $fontcolorsm;
+  font-weight: 600 !important;
   font-family: sans-serif !important;
+  letter-spacing: 0 !important;
+  border-radius: 2px 0px 0px 2px !important;
+  background: linear-gradient(140deg, #fc624d 0%, #ff8a65 100%);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.ribbon:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0.5em;
+  height: 100%;
+  padding: 0 0 32px 0px !important;
+  top: 0;
+  right: -0.51em;
+  background: #ff8a65;
+  border-radius: 0px 5px 5px 0px !important;
+}
+
+.ribbon:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 0.313em;
+  height: 0.313em;
+  background: rgba(0, 0, 0, 0.35);
+  bottom: -0.313em;
+  right: -0.3em;
+  border-radius: 0px 5px 5px 0px !important;
+  box-shadow: inset -1px 2px 2px rgba(0, 0, 0, 0.3);
 }
 </style>

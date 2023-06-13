@@ -1,6 +1,6 @@
 <template>
   <div class="ThqahMall">
-    <v-sheet  class="pa-1 Car rounded-t">
+    <v-sheet class="pa-1 Car rounded-t">
       <v-col cols="12" class="pa-0">
         <v-card-title class="justify-center title">
           ابحث عن سيارات للبيع أو للايجار
@@ -271,7 +271,7 @@
         </v-col>
         <v-col cols="auto" class="pa-2 text-center">
           <v-btn
-            min-width="170"
+            min-width="150"
             depressed
             :to="{
               name: 'ShowroomCarSearchResult',
@@ -279,13 +279,13 @@
                 Search: ' نتائج البحث ',
               },
             }"
-            class="text-all"
+            class="text-all white"
           >
             بحث
           </v-btn>
         </v-col>
         <v-col cols="auto" class="pa-2 text-center">
-          <v-btn class="text-all" min-width="170" depressed>
+          <v-btn class="text-all white" min-width="150" depressed>
             إعادة الضبط
           </v-btn>
         </v-col>
@@ -429,6 +429,6 @@ export default {
   font-size: 14px !important;
 }
 .Car {
-  background: linear-gradient(#FAFAFA 0%, #FBE9E7 100%);
+  background: linear-gradient(#fafafa 0%, #fbe9e7 100%);
 }
 </style>

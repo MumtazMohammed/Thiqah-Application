@@ -1,23 +1,17 @@
 <template>
-  <div class="ContactSeller grey lighten-4">
+  <div class="ContactSeller grey lighten-5">
     <TheNavBar />
     <v-container class="py-1 px-2">
-      <p class="title pa-3 mb-0">سيارة هواند أكسنت للبيع في آب</p>
+      <p class="title pa-4 py-2 my-0">سيارة هواند أكسنت للبيع في آب</p>
       <v-row no-gutters class="">
         <!-- here is the filtration -->
-        <v-col cols="12" class="pa-2">
-          <v-btn-toggle
-            background-color="transparent"
-            borderless
-            tile
-            v-model="toggle_filter"
-            dense
-          >
-            <v-menu v-model="menu" bottom offset-y>
+        <v-col cols="12" class="pa-2 py-0">
+          <v-chip-group class="">
+            <v-menu v-model="menuOne" bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                  outlined
-                  class="toggle_filter grey lighten-2"
+                <v-chip
+                  large
+                  class="toggle_filter blue-grey lighten-5"
                   v-bind="attrs"
                   v-on="on"
                 >
@@ -26,7 +20,7 @@
                     mdi-menu-up
                   </v-icon>
                   <v-icon v-else color="grey darken-3"> mdi-menu-down </v-icon>
-                </v-btn>
+                </v-chip>
               </template>
               <v-list dense>
                 <v-list-item-group v-model="model">
@@ -48,20 +42,20 @@
                 </v-list-item-group>
               </v-list>
             </v-menu>
-            <v-menu v-model="menu" bottom offset-y>
+            <v-menu v-model="menuTow" bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                  outlined
-                  class="toggle_filter mx-1 grey lighten-2"
+                <v-chip
+                  class="toggle_filter blue-grey lighten-5"
                   v-bind="attrs"
                   v-on="on"
+                  large
                 >
                   <span> {{ model }} </span>
                   <v-icon v-if="menu" color=" deep-orange darken-1">
                     mdi-menu-up
                   </v-icon>
                   <v-icon v-else color="grey darken-3"> mdi-menu-down </v-icon>
-                </v-btn>
+                </v-chip>
               </template>
               <v-list dense>
                 <v-list-item-group v-model="model">
@@ -83,19 +77,20 @@
                 </v-list-item-group>
               </v-list>
             </v-menu>
-            <v-menu v-model="menu" bottom offset-y>
+            <v-menu v-model="menuThree" bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                  class="toggle_filter grey lighten-2"
+                <v-chip
+                  class="toggle_filter blue-grey lighten-5"
                   v-bind="attrs"
                   v-on="on"
+                  large
                 >
                   <span> {{ model }} </span>
                   <v-icon v-if="menu" color=" deep-orange darken-1">
                     mdi-menu-up
                   </v-icon>
                   <v-icon v-else color="grey darken-3"> mdi-menu-down </v-icon>
-                </v-btn>
+                </v-chip>
               </template>
               <v-list dense>
                 <v-list-item-group v-model="model">
@@ -117,7 +112,7 @@
                 </v-list-item-group>
               </v-list>
             </v-menu>
-          </v-btn-toggle>
+          </v-chip-group>
         </v-col>
         <!-- here the search result -->
         <v-col
@@ -148,9 +143,7 @@
             >
               <h1 class="ribbon">
                 {{ Product.payment }}
-                <v-icon color="white" size="19">
-                  mdi-currency-rial
-                </v-icon>
+                <v-icon color="white" size="19"> mdi-currency-rial </v-icon>
               </h1>
               <v-card
                 flat
@@ -219,7 +212,9 @@ export default {
       GetCarData: CarData,
       carName: this.$route.params.carName,
       carId: this.$route.params.carId,
-      menu: false,
+      menuOne: false,
+      menuTow: false,
+      menuThree: false,
       model: "الأكثر مشاهدة",
       items: ["الأكثر مشاهدة", "الأحدث", "الأقل سعراً", " الأعلى سعراً"],
     };
@@ -253,7 +248,8 @@ export default {
 .toggle_filter {
   font-family: $fontfamliy3;
   letter-spacing: 0 !important;
-  font-size: 14px !important;
+  font-size: 15px !important;
+  height: 46px !important;
   // font-weight: 600;
   @media (max-width: 450px) {
     font-size: 12.5px !important;
@@ -274,7 +270,7 @@ p.title {
     font-size: 18px !important;
   }
   @media (max-width: 600px) {
-    font-size: 16px !important;
+    font-size: 15px !important;
   }
 }
 .text {
@@ -333,7 +329,7 @@ p.title {
   font-family: sans-serif !important;
   letter-spacing: 0 !important;
   border-radius: 2px 0px 0px 2px !important;
-  background: linear-gradient(140deg, #fc624d 0%, #FF8A65 100%);
+  background: linear-gradient(140deg, #fc624d 0%, #ff8a65 100%);
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
 .ribbon:before {
@@ -345,7 +341,7 @@ p.title {
   padding: 0 0 32px 0px !important;
   top: 0;
   right: -0.51em;
-  background: #FF8A65;
+  background: #ff8a65;
   border-radius: 0px 5px 5px 0px !important;
 }
 

@@ -1,34 +1,26 @@
 <template>
   <div class="ContactSeller grey lighten-5">
     <TheNavBar />
-    <v-container class="py-1 px-2">
-      <p class="title pa-3 mb-0">سيارة هواند أكسنت للبيع في آب</p>
+    <v-container class="py-1 px-1">
+      <p class="title pa-4 py-2 my-0">سيارة هواند أكسنت للبيع في آب</p>
       <v-row no-gutters class="">
         <!-- here is the filtration -->
         <v-col cols="12" class="pa-2 text-xs-center">
-          <v-btn-toggle  background-color="transparent"  borderless>
-            <v-btn class="toggle_filter px-xs-2 blue-grey lighten-5">
-              <span> جميع العقارات </span>
-            </v-btn>
-            <v-btn class="toggle_filter px-xs-2 blue-grey lighten-5">
-              <span> المفروشة </span>
-            </v-btn>
-            <v-btn class="toggle_filter px-xs-2 blue-grey lighten-5">
-              <span> غير المفروشة </span>
-            </v-btn>
-            <v-menu v-model="menu" bottom offset-y>
+          <v-chip-group class="">
+            <v-menu v-model="menuOne" bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                  class="toggle_filter px-xs-2 blue-grey lighten-5"
+                <v-chip
+                  class="toggle_filter blue-grey lighten-5"
                   v-bind="attrs"
                   v-on="on"
+                  large
                 >
                   <span> {{ model }} </span>
                   <v-icon v-if="menu" color=" deep-orange darken-1">
                     mdi-menu-up
                   </v-icon>
                   <v-icon v-else color="grey darken-3"> mdi-menu-down </v-icon>
-                </v-btn>
+                </v-chip>
               </template>
               <v-list dense>
                 <v-list-item-group v-model="model">
@@ -50,7 +42,77 @@
                 </v-list-item-group>
               </v-list>
             </v-menu>
-          </v-btn-toggle>
+            <v-menu v-model="menuTow" bottom offset-y>
+              <template v-slot:activator="{ on, attrs }">
+                <v-chip
+                  class="toggle_filter blue-grey lighten-5"
+                  v-bind="attrs"
+                  v-on="on"
+                  large
+                >
+                  <span> {{ model }} </span>
+                  <v-icon v-if="menu" color=" deep-orange darken-1">
+                    mdi-menu-up
+                  </v-icon>
+                  <v-icon v-else color="grey darken-3"> mdi-menu-down </v-icon>
+                </v-chip>
+              </template>
+              <v-list dense>
+                <v-list-item-group v-model="model">
+                  <template v-for="(item, i) in items">
+                    <v-list-item
+                      :key="`item-${i}`"
+                      :value="item"
+                      active-class="light-blue--text text--darken-2"
+                    >
+                      <template>
+                        <v-list-item-content>
+                          <v-list-item-title class="text-all text-center">
+                            {{ item }}
+                          </v-list-item-title>
+                        </v-list-item-content>
+                      </template>
+                    </v-list-item>
+                  </template>
+                </v-list-item-group>
+              </v-list>
+            </v-menu>
+            <v-menu v-model="menuThree" bottom offset-y>
+              <template v-slot:activator="{ on, attrs }">
+                <v-chip
+                  class="toggle_filter blue-grey lighten-5"
+                  v-bind="attrs"
+                  v-on="on"
+                  large
+                >
+                  <span> {{ model }} </span>
+                  <v-icon v-if="menu" color=" deep-orange darken-1">
+                    mdi-menu-up
+                  </v-icon>
+                  <v-icon v-else color="grey darken-3"> mdi-menu-down </v-icon>
+                </v-chip>
+              </template>
+              <v-list dense>
+                <v-list-item-group v-model="model">
+                  <template v-for="(item, i) in items">
+                    <v-list-item
+                      :key="`item-${i}`"
+                      :value="item"
+                      active-class="light-blue--text text--darken-2"
+                    >
+                      <template>
+                        <v-list-item-content>
+                          <v-list-item-title class="text-all text-center">
+                            {{ item }}
+                          </v-list-item-title>
+                        </v-list-item-content>
+                      </template>
+                    </v-list-item>
+                  </template>
+                </v-list-item-group>
+              </v-list>
+            </v-menu>
+          </v-chip-group>
         </v-col>
         <!-- here the search result -->
         <v-col
@@ -266,6 +328,7 @@ a {
   font-family: $fontfamliy3;
   letter-spacing: 0 !important;
   font-size: 16px !important;
+  height: 46px !important;
   // font-weight: 600;
   @media (max-width: 450px) {
     font-size: 13px !important;
