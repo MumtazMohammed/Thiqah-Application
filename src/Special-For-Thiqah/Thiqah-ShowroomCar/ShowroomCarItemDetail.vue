@@ -109,7 +109,9 @@
                 <v-spacer></v-spacer>
                 <v-col cols="auto" class="text-center">
                   <v-btn tile small class="text" depressed block> أتصال </v-btn>
-                  <v-btn tile small class="text mt-1" depressed block> وتس آب </v-btn>
+                  <v-btn tile small class="text mt-1" depressed block>
+                    وتس آب
+                  </v-btn>
                 </v-col>
               </v-row>
             </v-card>

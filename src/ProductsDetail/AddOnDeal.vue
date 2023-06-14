@@ -8,7 +8,7 @@
       <!-- big screen  -->
       <v-sheet class="overflow-y-hidden hidden-xs-only transparent">
         <v-row no-gutters class="pa-2">
-          <v-col cols="6" lg="2" md="2" sm="3" class="pa-2 py-1">
+          <v-col cols="6" lg="2" md="2" sm="3" class="pa-3">
             <v-card flat width="100%" style="overflow: hidden">
               <v-img
                 height="80"
@@ -80,7 +80,7 @@
             sm="3"
             v-for="(Product, index) in getCarInfo"
             :key="index"
-            class="pa-2 py-1"
+            class="pa-3"
           >
             <v-card flat width="100%" style="overflow: hidden">
               <v-img
@@ -153,7 +153,7 @@
         class="overflow-y-hidden hidden-sm-and-up transparent"
       >
         <v-row no-gutters class="">
-          <v-col cols="6" lg="2" md="2" sm="3" class="pa-2">
+          <v-col cols="6" lg="2" md="2" sm="3" class="pa-3">
             <v-card flat width="100%" style="overflow: hidden">
               <v-img
                 height="80"
@@ -192,12 +192,15 @@
                 </v-col>
                 <v-col cols="12">
                   <!-- select product -->
-                  <v-card-actions class="pt-0 align-center">
+                  <v-card-actions
+                    class="pt-0 justify-space-between align-center"
+                  >
                     <v-checkbox
-                      v-model="enabled"
+                      v-model="abled"
                       hide-details
                       class="shrink mt-0"
                       dense
+                      readonly
                     ></v-checkbox>
                     <v-btn
                       depressed
@@ -215,7 +218,7 @@
               </v-row>
             </v-card>
           </v-col>
-          <v-col cols="6" lg="2" md="2" sm="3" class="pa-2">
+          <v-col cols="6" lg="2" md="2" sm="3" class="pa-3">
             <v-card flat width="100%" style="overflow: hidden">
               <v-img
                 height="80"
@@ -254,7 +257,9 @@
                 </v-col>
                 <v-col cols="12">
                   <!-- select product -->
-                  <v-card-actions class="pt-0 align-center">
+                  <v-card-actions
+                    class="pt-0 justify-space-between align-center"
+                  >
                     <v-checkbox
                       v-model="enabled"
                       hide-details
@@ -276,16 +281,6 @@
                 </v-col>
               </v-row>
             </v-card>
-          </v-col>
-          <v-col v-if="!SeeMore" cols="4" class="text-center my-auto">
-            <!-- <v-icon size="16" color="deep-orange">mdi-plus</v-icon> -->
-            <a
-              v-if="!SeeMore"
-              class="see-more grey--text text--darken-2"
-              @click="SeeMore = !SeeMore"
-            >
-              رؤية الصفقة <span>{{ VerifiedCar.length }}</span>
-            </a>
           </v-col>
           <v-col
             cols="6"
@@ -294,7 +289,7 @@
             sm="3"
             v-for="(Product, index) in getCarInfo"
             :key="index"
-            class="pa-2"
+            class="pa-3"
           >
             <v-card flat width="100%" style="overflow: hidden">
               <v-img
@@ -362,7 +357,7 @@
       </v-sheet>
 
       <!-- see more btn  -->
-      <v-col class="text-center px-0">
+      <v-col class="text-center hidden-sm-and-up px-0">
         <a
           v-if="SeeMore"
           class="see-more grey--text text--darken-2"
@@ -480,6 +475,12 @@ export default {
     font-weight: 600;
     text-decoration: underline;
     margin-right: 5px;
+    @media (max-width: 700px) {
+      font-size: 15px;
+    }
+  }
+  @media (max-width: 700px) {
+    font-size: 14px;
   }
 }
 .text-for-all {

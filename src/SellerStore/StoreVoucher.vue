@@ -3,25 +3,36 @@
     <v-card-title class="titel pa-2"> قسائم المتجر </v-card-title>
 
     <v-row no-gutters>
-      <v-col class="pa-1 px-1" cols="6" md="3" sm="3" lg="3">
+      <v-col
+        v-for="i in 2"
+        :key="i"
+        class="pa-2 px-1"
+        cols="6"
+        md="3"
+        sm="3"
+        lg="3"
+      >
         <v-card
           color="deep-orange lighten-2"
           flat
           rounded="lg"
-          class="pb-1 px-3 overflow-hidden StoreVoucher"
+          class="py-1 px-3 overflow-hidden StoreVoucher"
         >
           <v-row no-gutters justify="space-between" class="main">
             <v-col class="pr-1" cols="12" md="auto" sm="auto" lg="auto">
               <v-card-text class="pa-0 text">
-                <span class="mx-1 amount black--text text--accent-2">
-                  <span class="">20</span>%
+                <span class="mx-1 black--text text--accent-2">
+                  <v-icon color="white" size="16">mdi-percent</v-icon>
+                  20
                 </span>
                 خصم
               </v-card-text>
               <v-card-text class="pa-0 text">
                 أنفق
                 <span class="mx-1">
-                  52<v-icon left size="17">mdi-currency-rial</v-icon>
+                  52<v-icon color="white" left size="20">
+                    mdi-currency-rial
+                  </v-icon>
                 </span>
                 كحد أدنى
               </v-card-text>
@@ -30,15 +41,16 @@
                 <span>10/2/2020</span>
               </v-card-text>
             </v-col>
-            <v-col cols="12" md="auto" sm="auto" lg="auto">
-              <v-row
-                align="center"
-                style="height: 100%"
-                justify="center"
-                no-gutters
-              >
-                <v-btn tile text class="btn" small> أحصل عليها </v-btn>
-              </v-row>
+            <v-col
+              class="pa-1 ma-auto text-center"
+              cols="12"
+              md="auto"
+              sm="auto"
+              lg="auto"
+            >
+              <v-btn depressed class="btn deep-orange lighten-4" small>
+                أحصل عليها
+              </v-btn>
             </v-col>
           </v-row>
           <!-- <div class="copy-button">
@@ -145,19 +157,11 @@ export default {
     }
     span {
       font-family: sans-serif !important;
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 600;
       color: $fontcolorsm !important;
       @media (max-width: 600px) {
-        font-size: 14px;
-      }
-    }
-    .amount {
-      font-family: sans-serif !important;
-      font-size: 20px;
-      font-weight: 700 !important;
-      @media (max-width: 600px) {
-        font-size: 18px !important;
+        font-size: 15px;
       }
     }
   }
@@ -168,8 +172,9 @@ export default {
     font-size: 12px !important;
     margin: 0 auto !important;
     font-weight: 600;
+    // background: linear-gradient(90deg, #FFAB91 20%, #fff 100%);
     // background-color: $color-2 !important;
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       font-size: 13px !important;
     }
   }

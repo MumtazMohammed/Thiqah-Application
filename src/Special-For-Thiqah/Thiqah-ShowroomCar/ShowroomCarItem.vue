@@ -286,7 +286,7 @@ export default {
 }
 ::v-deep button.seeMoreBtn.v-btn.v-btn--outlined.theme--light.v-size--default {
   letter-spacing: 0 !important;
-  font-size: 18px ;
+  font-size: 18px;
   font-family: $fontfamliy3 !important;
 }
 .PriceAfter {

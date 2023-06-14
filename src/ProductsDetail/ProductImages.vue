@@ -280,7 +280,7 @@
             dark
             class="white"
           >
-            <v-btn @click="sheet = !sheet" color="red">
+            <v-btn min-width="120" @click="sheet = !sheet" color="red">
               <span class="btn">شـراء الان</span>
             </v-btn>
             <v-btn

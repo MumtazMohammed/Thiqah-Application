@@ -29,12 +29,12 @@
     <v-row no-gutters align="center" class="pa-2">
       <p class="ma-0 price">
         {{ getCarInfo.payment }}
-        <v-icon color="grey " size="23">mdi-currency-rial</v-icon>
+        <v-icon color="grey darken-3" size="20">mdi-currency-rial</v-icon>
       </p>
       <span class="mx-2 grey--text">|</span>
       <p class="ma-0 price">
         {{ getCarInfo.payment }}
-        <v-icon color="grey " size="23">mdi-currency-rial</v-icon>
+        <v-icon color="grey darken-3" size="20">mdi-currency-rial</v-icon>
       </p>
       <v-spacer></v-spacer>
       <p class="ma-0 if-discount grey--text text--lighten-1">
@@ -114,7 +114,7 @@
     </v-row>
     <!-- here are the Promotions -->
     <v-sheet color="#fff" class="py-md-1 py-lg-1 pt-0">
-      <v-menu max-width="700" center left>
+      <v-menu min-width="700" center left>
         <template v-slot:activator="{ on, attrs }">
           <v-card style="width: fit-content" flat tile v-bind="attrs" v-on="on">
             <v-row no-gutters class="fill-height" align="center">
@@ -135,12 +135,7 @@
             </v-row>
           </v-card>
         </template>
-        <v-sheet
-          style="overflow-x: hidden"
-          height="300"
-          class="pa-2"
-          color="grey lighten-5"
-        >
+        <v-sheet style="overflow-x: hidden" height="300" class="pa-2">
           <v-row no-gutters>
             <v-col
               class="pa-1 px-1"
@@ -148,28 +143,30 @@
               md="4"
               sm="4"
               lg="4"
-              v-for="n in 3"
+              v-for="n in 2"
               :key="n"
             >
               <v-card
-                style="border: 1px dashed #ffab40"
-                color="#FFF3E0"
+                color="deep-orange lighten-2"
                 flat
                 rounded="lg"
-                class="pb-1 pl-5 px-3 StoreVoucher"
+                class="py-1 px-3 overflow-hidden StoreVoucher"
               >
                 <v-row no-gutters justify="center" class="main">
-                  <v-col class="pr-1" cols="12" sm="9" md="9" lg="9">
+                  <v-col class="pr-1" cols="12">
                     <v-card-text class="pa-0 text">
-                      خصم
-                      <span class="mx-1 amber--text text--accent-4">
-                        <span>20</span>%
+                      <span class="mx-1 black--text text--accent-2">
+                        <v-icon color="white" size="16">mdi-percent</v-icon>
+                        20
                       </span>
+                      خصم
                     </v-card-text>
                     <v-card-text class="pa-0 text">
                       أنفق
                       <span class="mx-1">
-                        52<v-icon left size="17">mdi-currency-rial</v-icon>
+                        52<v-icon color="white" left size="20">
+                          mdi-currency-rial
+                        </v-icon>
                       </span>
                       كحد أدنى
                     </v-card-text>
@@ -178,15 +175,16 @@
                       <span>10/2/2020</span>
                     </v-card-text>
                   </v-col>
-                  <v-col cols="3">
-                    <v-row
-                      align="center"
-                      style="height: 100%"
-                      justify="center"
-                      no-gutters
-                    >
-                      <v-btn tile text class="btn" small> أحصل عليها </v-btn>
-                    </v-row>
+                  <v-col
+                    class="pa-1 ma-auto text-center"
+                    cols="12"
+                    md="auto"
+                    sm="auto"
+                    lg="auto"
+                  >
+                    <v-btn depressed class="btn deep-orange lighten-4" small>
+                      أحصل عليها
+                    </v-btn>
                   </v-col>
                 </v-row>
                 <!-- <div class="copy-button">
@@ -359,20 +357,20 @@ p {
   .text {
     font-family: $fontfamliy3 !important;
     letter-spacing: 0 !important;
-    color: $fontcolor !important;
-    // font-weight: 600 !important;
+    color: $fontcolorsm !important;
+    font-weight: 600 !important;
     line-height: 1.4;
     font-size: 12px !important;
-
     @media (max-width: 750px) {
       font-size: 13px !important;
     }
     span {
       font-family: sans-serif !important;
-      font-size: 13px;
-      font-weight: 700 !important;
+      font-size: 17px;
+      font-weight: 600;
+      color: $fontcolorsm !important;
       @media (max-width: 600px) {
-        font-size: 13px !important;
+        font-size: 15px;
       }
     }
   }
@@ -380,9 +378,14 @@ p {
     font-family: $fontfamliy3 !important;
     letter-spacing: 0 !important;
     color: $fontcolor !important;
+    font-size: 12px !important;
     margin: 0 auto !important;
     font-weight: 600;
-    font-size: 10px;
+    // background: linear-gradient(90deg, #FFAB91 20%, #fff 100%);
+    // background-color: $color-2 !important;
+    @media (max-width: 700px) {
+      font-size: 13px !important;
+    }
   }
 }
 .StoreVoucher {
@@ -391,26 +394,24 @@ p {
 .StoreVoucher::after {
   content: "";
   position: absolute;
-  width: 27px;
-  height: 27px;
-  background-color: #fafafa;
-  left: -16px;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  left: -17px;
   top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;
-  border-right: 1.5px dashed #ff9800;
 }
 .StoreVoucher::before {
   content: "";
   position: absolute;
-  width: 27px;
-  height: 27px;
-  background-color: #fafafa;
-  right: -16px;
+  background-color: #fff;
+  right: -17px;
   top: 50%;
+  width: 25px;
+  height: 25px;
   transform: translateY(-50%);
   border-radius: 50%;
-  border-left: 1.5px dashed #ff9800;
 }
 ::v-deep.v-menu__content.theme--light.menuable__content__active {
   @media (max-width: 600px) {

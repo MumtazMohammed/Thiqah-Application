@@ -309,11 +309,10 @@
             </v-menu>
           </v-card>
         </v-col>
-        <v-col cols="auto" class="pa-2 px-1 text-center">
+        <v-col cols="auto" class="pa-2 text-center">
           <v-btn
-            min-width="160"
+            min-width="165"
             depressed
-            
             :to="{
               name: 'RealEstateSearchResult',
               params: {
@@ -325,8 +324,8 @@
             بحث
           </v-btn>
         </v-col>
-        <v-col cols="auto" class="pa-2 px-1 text-center">
-          <v-btn  class="text-all white" min-width="160" depressed>
+        <v-col cols="auto" class="pa-2 text-center">
+          <v-btn class="text-all white" min-width="165" depressed>
             إعادة الضبط
           </v-btn>
         </v-col>

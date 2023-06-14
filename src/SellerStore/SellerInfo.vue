@@ -6,12 +6,12 @@
           <v-img
             contain
             height="96"
-            class="white"
+            class="white imag"
             max-width="90"
             src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"
           ></v-img>
         </v-col>
-        <v-col cols="9" md="6" lg="6" sm="6" class="pr-2">
+        <v-col cols="9" md="auto" lg="6" sm="10" class="pr-2">
           <v-list-item two-line class="pr-1 pa-0">
             <v-list-item-content class="pa-0">
               <v-list-item-title class="store-name mb-2">
@@ -56,9 +56,30 @@
               منتج
             </div>
           </v-row>
+          <v-row
+            align="center"
+            justify="center"
+            no-gutters
+            class="fill-height pt-2 hidden-md-and-up"
+          >
+            <v-btn
+              min-width="100"
+              rounded
+              depressed
+              dark
+              class="light-blue accent-4 btn"
+            >
+              <v-icon left>mdi-account</v-icon>
+              متابعة
+            </v-btn>
+            <v-btn min-width="100" rounded depressed class="btn mr-2">
+              <v-icon color="green accent-4" left>mdi-chat-processing</v-icon>
+              مراسلة
+            </v-btn>
+          </v-row>
         </v-col>
-        <v-spacer></v-spacer>
-        <v-col cols="12" md="3" lg="3" sm="3">
+        <v-spacer class="hidden-sm-and-down"></v-spacer>
+        <v-col cols="12" md="4" lg="3" sm="4" class="hidden-sm-and-down">
           <v-row
             align="center"
             justify="center"
@@ -69,14 +90,13 @@
               min-width="100"
               rounded
               depressed
-              small
               dark
               class="light-blue accent-4 btn"
             >
               <v-icon left>mdi-account</v-icon>
               متابعة
             </v-btn>
-            <v-btn small min-width="100" rounded depressed class="btn mr-2">
+            <v-btn min-width="100" rounded depressed class="btn mr-2">
               <v-icon color="green accent-4" left>mdi-chat-processing</v-icon>
               مراسلة
             </v-btn>
@@ -150,11 +170,11 @@ export default {
   @media (max-width: 400px) {
   }
 }
-::v-deep .v-avatar {
+::v-deep .imag {
   @media (max-width: 600px) {
-    height: 80px !important;
-    min-width: 80px !important;
-    width: 80px !important;
+    height: 131.6px !important;
+    min-width: 90px !important;
+    width: 90px !important;
   }
 }
 ::v-deep .v-list-item.v-list-item--two-line {
@@ -176,6 +196,12 @@ export default {
     letter-spacing: 0.5px !important;
     color: #f4511e;
     font-weight: 500;
+    @media (max-width: 700px) {
+      font-size: 15px;
+    }
+  }
+  @media (max-width: 700px) {
+    font-size: 14px;
   }
 }
 </style>
