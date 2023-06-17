@@ -114,7 +114,7 @@
     </v-row>
     <!-- here are the Promotions -->
     <v-sheet color="#fff" class="py-md-1 py-lg-1 pt-0">
-      <v-menu min-width="700" center left>
+      <v-menu min-width="380" width="700">
         <template v-slot:activator="{ on, attrs }">
           <v-card style="width: fit-content" flat tile v-bind="attrs" v-on="on">
             <v-row no-gutters class="fill-height" align="center">
@@ -139,10 +139,10 @@
           <v-row no-gutters>
             <v-col
               class="pa-1 px-1"
-              cols="6"
-              md="4"
-              sm="4"
-              lg="4"
+              cols="12"
+              md="6"
+              sm="6"
+              lg="6"
               v-for="n in 2"
               :key="n"
             >
@@ -153,7 +153,7 @@
                 class="py-1 px-3 overflow-hidden StoreVoucher"
               >
                 <v-row no-gutters justify="center" class="main">
-                  <v-col class="pr-1" cols="12">
+                  <v-col class="pr-1" cols="8">
                     <v-card-text class="pa-0 text">
                       <span class="mx-1 black--text text--accent-2">
                         <v-icon color="white" size="16">mdi-percent</v-icon>
@@ -177,7 +177,7 @@
                   </v-col>
                   <v-col
                     class="pa-1 ma-auto text-center"
-                    cols="12"
+                    cols="auto"
                     md="auto"
                     sm="auto"
                     lg="auto"
