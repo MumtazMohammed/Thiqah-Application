@@ -12,7 +12,7 @@
     "
   >
     <!-- advertisement  -->
-    <v-container class="pa-2 pt-0 pa-md-0 pa-lg-0 pa-sm-1">
+    <v-container class="pa-0">
       <v-row no-gutters>
         <!-- TheCategories -->
         <v-col cols="2" class="hidden-sm-and-down">

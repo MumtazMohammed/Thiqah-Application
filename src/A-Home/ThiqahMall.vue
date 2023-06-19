@@ -23,9 +23,8 @@
                 },
               }"
               width="100%"
-              height="220"
-              class="thiqah-card"
-              rounded="lg"
+              height="230"
+              rounded=""
               flat
             >
               <v-img
@@ -33,7 +32,7 @@
                 :src="getimageUrl(Product.folder, Product.image)"
               ></v-img>
               <v-row style="margin-top: -30px" justify="center" no-gutters>
-                <v-avatar class="elevation-3" size="60" color="white">
+                <v-avatar rounded="" class="elevation-6" size="80" color="white">
                   <v-img
                     height="45"
                     contain
@@ -150,7 +149,7 @@ export default {
   min-height: 20vh;
   background-color: #fafafa;
   .swiper {
-    height: 245px;
+    height: 255px;
     // padding-bottom: 45px;
     padding-right: 5px !important;
     padding-left: 3px;
@@ -168,7 +167,7 @@ export default {
     overflow: hidden;
     background-color: #fff;
     span.swiper-pagination-progressbar-fill {
-      background-color: #f44336;
+      background-color: #fc624d;
     }
   }
   .container {

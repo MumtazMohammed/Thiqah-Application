@@ -85,7 +85,7 @@ export default {
 @import "@/scss/mixin";
 .SpicalShowRoom {
   width: 100%;
-  background-color: #fff;
+  background-color: #fafafa;
   .tital {
     position: relative;
     font-family: $fontfamliy3;

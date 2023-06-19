@@ -7,7 +7,7 @@
       </v-row>
       <swiper class="swiper" :options="swiperOption">
         <swiper-slide v-for="(Product, index) in VerifiedCar" :key="index">
-          <v-card flat class="overflow-hidden">
+          <v-card rounded="lg" flat class="overflow-hidden">
             <v-row no-gutters>
               <v-card
                 :to="{
@@ -30,16 +30,16 @@
                   style="overflow: hidden"
                   :src="getimageUrl(Product.folder, Product.image)"
                 >
-                  <span v-if="index == 0" class="top">
-                    <v-icon size="25" color="#ffd700">mdi-seal</v-icon>
+                  <span v-if="index == 0" class="top white elevation-10">
+                    <v-icon size="27" color="#ffd700">mdi-seal</v-icon>
                   </span>
-                  <span v-if="index == 1" class="top">
-                    <v-icon size="25" color="#c0c0c0">mdi-seal</v-icon>
+                  <span v-if="index == 1" class="top white elevation-10">
+                    <v-icon size="27" color="#c0c0c0">mdi-seal</v-icon>
                   </span>
-                  <span v-if="index == 2" class="top">
-                    <v-icon size="25" color="#cd7f32">mdi-seal</v-icon>
+                  <span v-if="index == 2" class="top white elevation-10">
+                    <v-icon size="27" color="#cd7f32">mdi-seal</v-icon>
                   </span>
-                  <span v-else-if="index >= 3" class="top white">
+                  <span v-else-if="index >= 3" class="top white elevation-10">
                     {{ index + 1 }}
                   </span>
                   <v-row
@@ -287,17 +287,17 @@ export default {
 .top {
   // clip-path: polygon(0 0, 100% 0%, 100% 70%, 50% 100%, 0 70%);
   // background-color: aqua;
-  width: 27px;
-  height: 27px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  font-size: 15px;
-  margin-right: 2px;
-  margin-top: 2px;
-  font-weight: 700;
+  font-size: 17px;
+  margin-right: 7px;
+  margin-top: 5px;
+  font-weight: 600;
   color: #424242 !important;
   font-family: sans-serif !important;
 }
