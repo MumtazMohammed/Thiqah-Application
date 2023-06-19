@@ -15,12 +15,7 @@
           v-for="(Companie, i) in Companies"
           :key="i"
         >
-          <v-card
-            rounded="lg"
-            outlined
-            to="/SellerStorePage"
-            class="mx-auto pa-2"
-          >
+          <v-card flat to="/SellerStorePage" class="mx-auto pa-2">
             <v-img
               height="120"
               contain

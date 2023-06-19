@@ -3,8 +3,8 @@
     <TheNavBar />
     <!-- <v-sheet height="100"></v-sheet> -->
     <v-sheet class="grey lighten-5" style="min-height: 100vh">
+      <ThiqahRealEstateSearch />
       <v-container class="pa-0 px-2">
-        <ThiqahRealEstateSearch />
         <ThiqahRealEstateItem />
       </v-container>
     </v-sheet>

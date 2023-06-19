@@ -1,6 +1,6 @@
 <template>
   <div class="ThqahMall">
-    <v-sheet rounded color="" class="pa-1 Car">
+    <v-container>
       <v-col cols="12" class="pa-0">
         <v-card-title class="justify-center title">
           ابحث عن عقارات للبيع أو للايجار
@@ -330,7 +330,7 @@
           </v-btn>
         </v-col>
       </v-row>
-    </v-sheet>
+    </v-container>
   </div>
 </template>
 
@@ -411,6 +411,8 @@ export default {
 @import "@/scss/virables";
 @import "@/scss/mixin";
 .ThqahMall {
+  background: linear-gradient(#fafafa 0%, #eceff1 100%);
+
   .title {
     font-family: $fontfamliy3 !important;
     letter-spacing: 0px !important;
@@ -467,8 +469,5 @@ export default {
   font-family: $fontfamliy3;
   letter-spacing: 0px !important;
   font-size: 14px !important;
-}
-.Car {
-  background: linear-gradient(#fafafa 0%, #fbe9e7 100%);
 }
 </style>

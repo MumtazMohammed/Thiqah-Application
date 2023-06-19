@@ -2,15 +2,16 @@
   <div class="ContactSeller grey lighten-5">
     <TheNavBar />
     <v-container class="py-1 px-1">
-      <p class="title pa-4 py-2 my-0">سيارة هواند أكسنت للبيع في آب</p>
+      <p class="title pa-4 py-2 my-0">شقة _ للبيع _ المهرة</p>
       <v-row no-gutters class="">
         <!-- here is the filtration -->
-        <v-col cols="12" class="pa-2 text-xs-center">
+        <v-col cols="12" class="text-xs-center">
           <v-chip-group class="">
             <v-menu v-model="menuOne" bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
                 <v-chip
-                  class="toggle_filter blue-grey lighten-5"
+                  label
+                  class="toggle_filter px-2 blue-grey lighten-5"
                   v-bind="attrs"
                   v-on="on"
                   large
@@ -45,7 +46,8 @@
             <v-menu v-model="menuTow" bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
                 <v-chip
-                  class="toggle_filter blue-grey lighten-5"
+                  label
+                  class="toggle_filter px-2 blue-grey lighten-5"
                   v-bind="attrs"
                   v-on="on"
                   large
@@ -80,7 +82,8 @@
             <v-menu v-model="menuThree" bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
                 <v-chip
-                  class="toggle_filter blue-grey lighten-5"
+                  label
+                  class="toggle_filter px-2 blue-grey lighten-5"
                   v-bind="attrs"
                   v-on="on"
                   large

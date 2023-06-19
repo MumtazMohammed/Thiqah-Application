@@ -1,31 +1,5 @@
 <template>
   <div class="BestOffer">
-    <v-row no-gutters>
-      <v-col cols="12" style="margin-top: -1px">
-        <v-tabs
-          center-active
-          class="overflow-hidden rounded-b"
-          :show-arrows="false"
-          grow
-          height="100"
-          icons-and-text
-          background-color="deep-orange lighten-5"
-          hide-slider
-        >
-          <v-tab class="text-all" v-for="(Type, i) in CarType" :key="i">
-            {{ Type.carName }}
-            <!-- <v-icon> {{ Category.icon }} </v-icon> -->
-            <v-avatar size="50" color="white">
-              <v-img
-                contain
-                :src="getimageUrl(Type.folder, Type.carLogo)"
-                :alt="getimageUrl(Type.folder, Type.carLogo)"
-              />
-            </v-avatar>
-          </v-tab>
-        </v-tabs>
-      </v-col>
-    </v-row>
     <div class="">
       <v-sheet class="" color="transparent">
         <v-row no-gutters>
@@ -296,12 +270,7 @@ export default {
   font-family: sans-serif !important;
   display: block;
 }
-::v-deep .v-slide-group__prev.v-slide-group__prev--disabled {
-  display: none !important;
-}
-::v-deep .v-slide-group__next.v-slide-group__next--disabled {
-  display: none !important;
-}
+
 .ribbon {
   position: absolute;
   top: 10px;

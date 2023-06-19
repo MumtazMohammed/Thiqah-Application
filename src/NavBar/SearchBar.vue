@@ -132,7 +132,7 @@
     </v-container>
     <!-- small screen nave  -->
     <v-card class="hidden-md-and-up supporter" flat></v-card>
-    <v-app-bar class="hidden-md-and-up" app color="#F5F5F5" fixed flat>
+    <v-app-bar class="hidden-md-and-up" app color="#FAFAFA" fixed flat>
       <v-row no-gutters align="center">
         <v-col cols="8">
           <v-dialog
@@ -148,9 +148,9 @@
                 flat
                 width="100%"
                 height="40px"
-                color="#fff"
-                rounded="sm"
-                class="search-small-screen mr-1 ml-3"
+                rounded="lg"
+                outlined
+                class="search-small-screen pr-3 mr-1 ml-3"
               >
                 <v-row
                   align="center"
@@ -162,15 +162,21 @@
                   <span class="pa-1 icon-small-screen-text">
                     على ماذا تبحث...
                   </span>
-                  <v-icon color="grey darken-1" size="24" class="ml-1">
+                  <v-icon color="grey " size="22" class="ml-1">
                     mdi-magnify mdi-rotate-90
                   </v-icon>
                 </v-row>
               </v-card>
             </template>
             <v-card>
-              <v-toolbar flat tile color="grey lighten-2">
-                <v-card width="100%" flat color="#fff" class="px-2 py-1">
+              <v-toolbar flat tile color="blue-grey lighten-5">
+                <v-card
+                  rounded="lg"
+                  width="90%"
+                  flat
+                  color="#fff"
+                  class="px-2 py-0"
+                >
                   <v-card-actions class="pa-0">
                     <v-text-field
                       placeholder="على ماذا تبحث..."
@@ -187,14 +193,11 @@
                     <v-btn v-if="search.length > 0" small icon @click="reset()">
                       <v-icon size="20" class="red--text">mdi-close</v-icon>
                     </v-btn>
-                    <v-btn icon dark @click="dialog = false">
-                      <v-icon color="primary" class="close-search-dig"
-                        >mdi-arrow-left</v-icon
-                      >
-                    </v-btn>
                   </v-card-actions>
                 </v-card>
-                <v-divider></v-divider>
+                <v-btn icon dark @click="dialog = false">
+                  <v-icon color="#fc624d" size="23"> mdi-arrow-left </v-icon>
+                </v-btn>
               </v-toolbar>
               <v-expand-transition>
                 <div v-if="search.length > 0">
@@ -204,7 +207,7 @@
                     router
                     @click="dialog = false"
                     :to="{
-                      name: 'ViewCar',
+                      name: 'ShowTheProduct',
                       params: {
                         carName: CarData.name,
                         carShape: CarData.Shape,
@@ -488,17 +491,14 @@ a {
 }
 ::v-deep .v-list-item .v-list-item__title {
   line-height: 1.6;
-  font-size: 14px !important;
+  font-size: 15px !important;
   color: $fontcolor !important;
   letter-spacing: 0px !important;
   font-family: $fontfamliy3;
-  font-weight: 600;
+  font-weight: 400;
 }
 ::v-deep .v-toolbar__content {
   padding: 4px !important;
-}
-.close-search-dig {
-  color: $color-2 !important;
 }
 .search-list-dig {
   color: #fff !important;

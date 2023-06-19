@@ -1,6 +1,6 @@
 <template>
   <div class="ThqahMall">
-    <v-sheet class="pa-1 Car rounded-t">
+    <v-container class="Car rounded-t">
       <v-col cols="12" class="pa-0">
         <v-card-title class="justify-center title">
           ابحث عن سيارات للبيع أو للايجار
@@ -290,7 +290,31 @@
           </v-btn>
         </v-col>
       </v-row>
-    </v-sheet>
+    </v-container>
+    <v-container fluid>
+      <v-tabs
+        center-active
+        class="overflow-hidden transparent rounded-b"
+        :show-arrows="false"
+        grow
+        height="100"
+        icons-and-text
+        background-color="transparent"
+        hide-slider
+      >
+        <v-tab class="text-all" v-for="(Type, i) in CarType" :key="i">
+          {{ Type.carName }}
+          <!-- <v-icon> {{ Category.icon }} </v-icon> -->
+          <v-avatar tile size="45" color="transparent">
+            <v-img
+              contain
+              :src="getimageUrl(Type.folder, Type.carLogo)"
+              :alt="getimageUrl(Type.folder, Type.carLogo)"
+            />
+          </v-avatar>
+        </v-tab>
+      </v-tabs>
+    </v-container>
   </div>
 </template>
 
@@ -371,6 +395,8 @@ export default {
 @import "@/scss/virables";
 @import "@/scss/mixin";
 .ThqahMall {
+  background: linear-gradient(#fafafa 0%, #eceff1 100%);
+
   .title {
     font-family: $fontfamliy3 !important;
     letter-spacing: 0px !important;
@@ -428,7 +454,10 @@ export default {
   letter-spacing: 0px !important;
   font-size: 14px !important;
 }
-.Car {
-  background: linear-gradient(#fafafa 0%, #fbe9e7 100%);
+::v-deep .v-slide-group__prev.v-slide-group__prev--disabled {
+  display: none !important;
+}
+::v-deep .v-slide-group__next.v-slide-group__next--disabled {
+  display: none !important;
 }
 </style>
