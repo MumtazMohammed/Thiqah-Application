@@ -10,7 +10,7 @@
         <swiper-slide v-for="(item, i) in items" :key="i">
           <v-img
             :style="item.color"
-            aspect-ratio="2.2"
+            aspect-ratio="1.9"
             contain
             :src="item.src"
             :lazy-src="item.src"

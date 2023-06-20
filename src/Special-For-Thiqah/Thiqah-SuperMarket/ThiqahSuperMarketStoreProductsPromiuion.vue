@@ -3,27 +3,25 @@
     <v-row no-gutters>
       <!-- Categories  -->
       <v-col cols="12" class="mt-2">
-        <v-card flat tile class="pa-2">
-          <swiper class="swiperCatgories px-2" :options="swiperCatgories">
-            <swiper-slide class="" v-for="i in 22" :key="i">
-              <v-avatar color="transparent">
-                <v-img
-                  src="https://down-my.img.susercontent.com/file/3c8d9860094df6057d95bc545fe1d790_tn"
-                  alt="https://down-my.img.susercontent.com/file/3c8d9860094df6057d95bc545fe1d790_tn"
-                  contain
-                >
-                </v-img>
-              </v-avatar>
-              <v-card-text class="pa-0 list pt-1"> الألبان </v-card-text>
-            </swiper-slide>
-            <!-- <div class="swiper-pagination" slot="pagination"></div> -->
-          </swiper>
-        </v-card>
+        <swiper class="swiperCatgories px-2" :options="swiperCatgories">
+          <swiper-slide class="" v-for="i in 22" :key="i">
+            <v-avatar color="transparent">
+              <v-img
+                src="https://down-my.img.susercontent.com/file/3c8d9860094df6057d95bc545fe1d790_tn"
+                alt="https://down-my.img.susercontent.com/file/3c8d9860094df6057d95bc545fe1d790_tn"
+                contain
+              >
+              </v-img>
+            </v-avatar>
+            <v-card-text class="pa-0 list pt-1"> الألبان </v-card-text>
+          </swiper-slide>
+          <!-- <div class="swiper-pagination" slot="pagination"></div> -->
+        </swiper>
       </v-col>
       <!-- crazy sale  -->
       <v-col class="my-2" cols="12">
         <v-card class="pa-2" tile flat color="#eeeee4">
-          <v-row class="py-2 pb-3" no-gutters align="center">
+          <v-row class="pa-3" no-gutters align="center">
             <strong class="tital ma-0">
               العروضات
               <v-icon right color="#fc624d">mdi-flash</v-icon>
@@ -56,7 +54,7 @@
           </v-row>
           <swiper class="swiper" :options="swiperOption">
             <swiper-slide v-for="(Product, index) in getCarInfo" :key="index">
-              <div style="position: relative">
+              <div class="pa-2" style="position: relative">
                 <h1 class="ribbon-swiper">سـوبـرمـاركـت</h1>
                 <v-card
                   :to="{
@@ -166,7 +164,7 @@
         md="3"
         sm="4"
         lg="2"
-        class="pa-1"
+        class="pa-2"
         v-for="Product in VerifiedCar"
         :key="Product.id"
       >
@@ -351,7 +349,7 @@ export default {
         initialSlide: 0,
         freeMode: false,
         effect: "cards",
-        spaceBetween: 10,
+        spaceBetween: 5,
         autoplay: false,
         loop: false,
         loopFillGroupWithBlank: false,
@@ -429,14 +427,14 @@ export default {
     }
   }
   .swiper {
-    height: 290px;
+    height: 300px;
     // padding-bottom: 45px;
     padding-right: 5px !important;
     padding-left: 3px;
   }
 
   ::v-deep .swiper-container-horizontal > .swiper-pagination-progressbar {
-    top: 95% !important;
+    top: 97% !important;
     width: 50px;
     height: 5px;
     left: 50%;
@@ -573,7 +571,7 @@ export default {
 //
 .ribbon {
   position: absolute;
-  top: 3px;
+  top: 7px;
   right: 0px;
   z-index: 1;
   padding: 2px 5px;
@@ -596,7 +594,7 @@ export default {
   padding: 0 0 2.33em 0px !important;
   top: 0;
   right: -0.51em;
-  background: #00e676;
+  background: linear-gradient(90deg, #13c863 15%, #00e676 100%);
   border-radius: 0px 5px 5px 0px !important;
 }
 .ribbon:after {
@@ -613,8 +611,8 @@ export default {
 }
 .ribbon-swiper {
   position: absolute;
-  top: 3px;
-  right: 0px;
+  top: 15px;
+  right: 9px;
   z-index: 1;
   padding: 2px 5px;
   width: fit-content;
@@ -636,7 +634,7 @@ export default {
   padding: 0 0 0.52em 0px !important;
   top: 0;
   right: -0.51em;
-  background: #00e676;
+  background: linear-gradient(90deg, #13c863 15%, #00e676 100%);
   border-radius: 0px 5px 5px 0px !important;
 }
 .ribbon-swiper:after {

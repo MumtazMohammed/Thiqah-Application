@@ -1,8 +1,8 @@
 <template>
   <v-main class="">
     <TheNavBar />
-    <v-sheet class="grey lighten-4" style="min-height: 100vh">
-      <v-container class="py-0">
+    <v-sheet class="grey lighten-5" style="min-height: 100vh">
+      <v-container class="pa-0">
         <ThiqahSuperMarketAdd />
         <ThiqahSuperMarketStoreProductsPromiuion />
       </v-container>

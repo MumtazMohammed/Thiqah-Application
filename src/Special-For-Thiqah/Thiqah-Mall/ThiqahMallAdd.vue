@@ -5,7 +5,7 @@
         <swiper-slide v-for="(item, i) in items" :key="i">
           <v-img
             :style="item.color"
-            aspect-ratio="2.2"
+            aspect-ratio="1.9"
             contain
             :src="item.src"
             :lazy-src="item.src"
@@ -14,27 +14,7 @@
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
-      <!-- <v-sheet width="100%" color="">
-        <v-row no-gutters align="center" justify="center">
-          <v-col  v-for="(guarantee, i) in guarantees" :key="i">
-            <v-list-item one-line class="">
-              <v-icon
-                color="white"
-                class="red lighten-1"
-                style="border-radius: 50%; padding: 4px"
-              >
-                {{ guarantee.icon }}
-              </v-icon>
-              <v-list-item-content class="py-0 px-2">
-                <v-list-item-title class="text-all">
-                  {{ guarantee.title }}
-                </v-list-item-title>
-
-              </v-list-item-content>
-            </v-list-item>
-          </v-col>
-        </v-row>
-      </v-sheet> -->
+      
     </v-sheet>
   </div>
 </template>

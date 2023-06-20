@@ -1,30 +1,22 @@
 <template>
-  <div class="BestOffer mt-2">
-    <v-row no-gutters class="">
-      <v-col cols="2" md="1" lg="1" sm="1" class="ma-auto">
-        <v-btn height="80" class="rounded-0 text-all" block text>
-          أ كثـر
-        </v-btn>
-      </v-col>
-      <v-col cols="10" md="11" lg="11" sm="11">
-        <v-tabs
-          active-class="white red--text lighten-5 "
-          center-active
-          class="overflow-hidden"
-          :show-arrows="false"
-          grow
-          height="80"
-          icons-and-text
-          background-color=""
-          hide-slider
-        >
-          <v-tab class="text-all" v-for="(Category, i) in Categories" :key="i">
-            {{ Category.tital }}
-            <v-icon> {{ Category.icon }} </v-icon>
-          </v-tab>
-        </v-tabs>
-      </v-col>
-    </v-row>
+  <div class="BestOffer">
+    <v-tabs
+      active-class=" red--text lighten-5 "
+      center-active
+      class="overflow-hidden"
+      :show-arrows="false"
+      grow
+      height=""
+      icons-and-text
+      background-color="blue-grey lighten-5"
+      hide-slider
+    >
+      <v-tab class="text-all" v-for="(Category, i) in Categories" :key="i">
+        {{ Category.tital }}
+        <v-icon> {{ Category.icon }} </v-icon>
+      </v-tab>
+    </v-tabs>
+
     <v-row no-gutters>
       <v-col class="" cols="12">
         <v-card-title class="text-all">
@@ -35,22 +27,18 @@
         </v-card-title>
       </v-col>
       <v-col class="" cols="12" v-for="i in 5" :key="i">
-        <v-card flat tile class="my-1 overflow-hidden blue-grey lighten-5">
-          <v-row class="mb-2" align="center" no-gutters>
-            <div class="pl-5 font-weight-bold tital">
-              <v-avatar class="ml-1" tile size="50">
-                <v-img
-                  src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"
-                ></v-img>
-              </v-avatar>
-              عروضات عروضات
-            </div>
-            <v-spacer></v-spacer>
-            <a class="ml-2 light-blue--text card-text-seeMore"> رؤية المتجر </a>
-          </v-row>
+        <v-card flat tile class="my-1 overflow-hidden">
+          <div class="pt-2 pr-3 font-weight-bold tital">
+            <v-avatar class="ml-1" size="45">
+              <v-img
+                src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"
+              ></v-img>
+            </v-avatar>
+            متجر الذهبي
+          </div>
           <swiper class="swiper" :options="swiperOption">
             <swiper-slide v-for="(Product, index) in getCarInfo" :key="index">
-              <div style="position: relative">
+              <div class="pa-2" style="position: relative">
                 <h1 class="ribbon">متميز</h1>
                 <v-card
                   :to="{
@@ -62,10 +50,10 @@
                       Company: Product.folder,
                     },
                   }"
-                  :elevation="hover ? 3 : 0"
                   height="285"
                   width="100%"
-                  style="overflow: hidden; position: relative"
+                  outlined
+                  style="position: relative; overflow: hidden"
                   rounded="lg"
                 >
                   <v-row no-gutters style="height: 100%">
@@ -78,6 +66,7 @@
                           {{ Product.discountPercent }}-
                         </small>
                       </div>
+
                       <v-img
                         height="160"
                         :src="getimageUrl(Product.folder, Product.image)"
@@ -208,7 +197,7 @@ export default {
         initialSlide: 0,
         freeMode: false,
         effect: "cards",
-        spaceBetween: 10,
+        spaceBetween: 5,
         autoplay: false,
         loop: false,
         loopFillGroupWithBlank: false,
@@ -277,7 +266,7 @@ export default {
   min-height: 20vh;
   //   background-color: #eceff1;
   .swiper {
-    height: 320px;
+    height: 325px;
     // padding-bottom: 45px;
     padding-right: 5px !important;
     padding-left: 3px;
@@ -328,9 +317,6 @@ export default {
     }
   }
   .tital {
-    clip-path: polygon(7% 0, 100% 0%, 100% 100%, 0 100%);
-    background-color: #f5f5f5;
-    width: fit-content;
     font-family: $fontfamliy3;
     font-size: 18px;
     color: $fontcolor !important;
@@ -354,12 +340,6 @@ export default {
   font-weight: 600;
 }
 
-.card-text-seeMore {
-  font-family: $fontfamliy3;
-  letter-spacing: 0;
-  font-size: 16px !important;
-  color: $fontcolorlinks !important;
-}
 .text-all {
   font-family: $fontfamliy3;
   letter-spacing: 0;
@@ -434,8 +414,8 @@ export default {
 //
 .ribbon {
   position: absolute;
-  top: 3px;
-  right: 0;
+  top: 15px;
+  right: 9px;
   z-index: 1;
   width: 50px;
   padding: 3px;

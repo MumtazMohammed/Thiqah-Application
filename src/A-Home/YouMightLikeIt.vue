@@ -224,23 +224,24 @@ export default {
       0% 35%,
       0 0
     );
-    background-color: $color-2;
-    width: 35px;
+    background: linear-gradient(140deg, #fc624d 30%, #ffc0ac94 100%);
+    width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
     // transform: rotate(360deg);
     z-index: 1;
-    border-radius: 0 !important;
-  }
-  .discountPercent {
-    color: white !important;
-    font-weight: 500;
-    font-size: 13px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+    border-radius: 0 0 4px 4px !important;
+    .discountPercent {
+      color: white !important;
+      font-weight: 600;
+      font-size: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      font-family: sans-serif;
+    }
   }
   .seeMoreBtn {
     letter-spacing: 0 !important;
@@ -251,17 +252,17 @@ export default {
 //
 .ribbon {
   position: absolute;
-  top: 3px;
+  top: 7px;
   right: 0px;
   z-index: 1;
   padding: 0 5px;
   width: 50px;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   color: #ffffff;
   font-family: $fontfamliy3 !important;
   letter-spacing: 0 !important;
-  border-radius: 5px 0px 0px 5px !important;
+  border-radius: 3px 0px 0px 3px !important;
   background: $color-2;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
@@ -271,7 +272,7 @@ export default {
   display: block;
   width: 0.5em;
   height: 100%;
-  padding: 0 0 20px 0px !important;
+  padding: 0 0 23px 0px !important;
   top: 0;
   right: -0.51em;
   background: inherit;
