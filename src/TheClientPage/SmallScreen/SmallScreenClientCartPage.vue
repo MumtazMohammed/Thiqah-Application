@@ -10,21 +10,23 @@
         <v-icon color="#fc624d" size="30">mdi-arrow-left-thin</v-icon>
       </v-btn>
     </v-app-bar>
+    <v-sheet color="grey lighten-4" height="60"> </v-sheet>
     <v-sheet
       color="grey lighten-4"
-      style="height: calc(100vh - 80px); overflow-y: scroll"
+      style="height: calc(100vh - 140px); overflow-y: scroll"
     >
-      <v-container class="mt-14 py-1 px-1">
-        <v-col v-for="i in 2" :key="i" cols="12" class="pa-2">
-          <v-sheet rounded class="pa-2">
-            <v-card-actions class="pa-0 align-center">
+      <v-container class="pa-0">
+        <v-col v-for="i in 2" :key="i" cols="12" class="py-1 px-0">
+          <v-sheet class="py-1">
+            <v-card-actions class="ma-0  px-4  align-center">
               <v-checkbox
                 hide-details
                 value="1"
-                class="ma-0 pa-0"
+                dense
+                class="ma-0"
                 v-model="checkbox"
               ></v-checkbox>
-              <v-card-text class="pa-1 store-name">
+              <v-card-text class="pa-1 pr-0 store-name">
                 <v-icon right>mdi-store-outline </v-icon>
                 وقت العطور
               </v-card-text>
@@ -39,14 +41,7 @@
                 </v-icon>
               </v-btn>
             </v-card-actions>
-            <v-card
-              v-for="i in 3"
-              :key="i"
-              tile
-              color="white"
-              flat
-              class="pa-1 overflow-hidden grey lighten-4"
-            >
+            <v-card v-for="i in 3" :key="i" class="ma-2" outlined>
               <v-list-item three-line class="px-0">
                 <v-card-actions class="ma-0 pl-0 pa-2">
                   <v-checkbox
@@ -58,34 +53,30 @@
                   >
                   </v-checkbox>
                 </v-card-actions>
-                <v-img
-                  height="94"
-                  contain
-                  max-width="80"
-                  class="white"
-                  src="@/assets/Mazda/mazda1.jpg"
-                  alt="@/assets/Hyundai/image2.jpg"
-                ></v-img>
-                <v-list-item-content class="py-0 px-2">
-                  <v-list-item-title class="title pr-2">
+                <v-avatar rounded="" size="85" color="blue-grey lighten-5">
+                  <v-img
+                    contain
+                    src="@/assets/Mazda/mazda1.jpg"
+                    alt="@/assets/Hyundai/image2.jpg"
+                  ></v-img>
+                </v-avatar>
+
+                <v-list-item-content class="py-0 px-2 pl-0">
+                  <v-list-item-title class="title pa-2 ma-0">
                     مـازدا مازدا3
                   </v-list-item-title>
-                  <v-list-item-subtitle class="text-all">
-                    <v-row no-gutters>
-                      <v-col cols="10">
-                        <v-chip-group>
-                          <v-chip v-for="i in 5" :key="i" small class="">
-                            (15 - 18)
-                          </v-chip>
-                        </v-chip-group>
-                      </v-col>
-                      <v-spacer></v-spacer>
-                      <v-col cols="auto">
-                        <v-btn small icon @click="sheet = !sheet">
-                          <v-icon size="22">mdi-chevron-down</v-icon>
-                        </v-btn>
-                      </v-col>
-                    </v-row>
+                  <v-list-item-subtitle>
+                    <v-chip-group>
+                      <v-chip
+                        @click="sheet = !sheet"
+                        v-for="i in 3"
+                        :key="i"
+                        small
+                        class="mr-1 blue-grey lighten-5"
+                      >
+                        (15 - 18)
+                      </v-chip>
+                    </v-chip-group>
                   </v-list-item-subtitle>
                   <v-list-item-title class="price pt-0 pa-2 red--text">
                     10254<span class="mr-1">ريال</span>
@@ -300,7 +291,7 @@ export default {
   .title {
     font-family: $fontfamliy3 !important;
     letter-spacing: 0;
-    font-weight: 600;
+    // font-weight: 600;
     color: $fontcolor;
     font-size: 15px !important;
     // pointer-events: none;
@@ -370,7 +361,6 @@ export default {
 }
 ::v-deep .v-chip-group .v-slide-group__content {
   padding: 0 !important;
-  justify-content: center;
 }
 // edit order
 .select-img {
