@@ -8,9 +8,9 @@
         :key="i"
         class="pa-2 px-1"
         cols="6"
-        md="3"
+        md="2"
         sm="3"
-        lg="3"
+        lg="2"
       >
         <v-card
           color="deep-orange lighten-2"

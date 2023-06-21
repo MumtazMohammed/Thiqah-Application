@@ -9,31 +9,32 @@
       <v-col cols="12" class="pa-2">
         <v-btn-toggle
           class="transparent"
+          background-color="transparent"
           borderless
           tile
           v-model="toggle_filter"
         >
           <v-btn
             active-class="deep-orange--text tex--darken-2"
-            class="text-all"
+            class="text-all transparent"
           >
             <span> فلتر </span>
           </v-btn>
           <v-btn
             active-class="deep-orange--text tex--darken-2"
-            class="text-all"
+            class="text-all transparent"
           >
             <span> فلتر </span>
           </v-btn>
           <v-btn
             active-class="deep-orange--text tex--darken-2"
-            class="text-all"
+            class="text-all transparent"
           >
             <span> فلتر </span>
           </v-btn>
           <v-menu v-model="menu" bottom offset-y>
             <template v-slot:activator="{ on, attrs }">
-              <v-btn class="text-all" v-bind="attrs" v-on="on">
+              <v-btn class="text-all transparent" v-bind="attrs" v-on="on">
                 <span> {{ model }} </span>
                 <v-icon v-if="menu" color=" deep-orange darken-1">
                   mdi-menu-up
@@ -86,7 +87,7 @@
                 },
               }"
               :elevation="hover ? 3 : 0"
-              min-height="315"
+              min-height="285"
               width="100%"
               style="
                 overflow: hidden;
@@ -101,7 +102,7 @@
                 </small>
               </div>
               <v-img
-                height="150"
+                height="130"
                 :src="getimageUrl(Product.folder, Product.image)"
               ></v-img>
               <!--  product name  -->
@@ -112,10 +113,13 @@
                   -webkit-box-orient: vertical;
                   overflow: hidden;
                 "
-                class="card-text py-1 pa-2"
+                class="card-text pa-1"
               >
                 <!-- if this product at thiqah mall  -->
-                <span class="ribbon-2 pa-1 pl-2 ml-1"> ثـقـة مـول </span>
+                <!-- <span class="ribbon-2 pa-1 pl-2 ml-1"> ثـقـة مـول </span> -->
+                {{ Product.name }} {{ Product.company }} {{ Product.name }}
+                {{ Product.company }}
+                {{ Product.name }}
                 {{ Product.name }} {{ Product.company }} {{ Product.name }}
                 {{ Product.company }}
                 {{ Product.name }}
@@ -269,8 +273,8 @@ export default {
   }
   .best-price-tag {
     position: absolute;
-    left: 4px;
-    top: 0px;
+    left: 10px;
+    top: -1px;
     clip-path: polygon(
       50% 0%,
       100% 0,
@@ -283,14 +287,13 @@ export default {
       0% 35%,
       0 0
     );
-    background-color: $color-2;
-    width: 35px;
+    background: linear-gradient(140deg, #fc624d 30%, #ffc0ac94 100%);    width: 35px;
     height: 40px;
     display: flex;
     justify-content: center;
     // transform: rotate(360deg);
     z-index: 1;
-    border-radius: 0 !important;
+    border-radius: 0 0 3px 3px !important;
   }
   .discountPercent {
     color: white !important;
@@ -310,17 +313,17 @@ export default {
 //
 .ribbon {
   position: absolute;
-  top: 3px;
+  top: 8px;
   right: 0px;
   z-index: 1;
   padding: 0 5px;
   width: 50px;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   color: #ffffff;
   font-family: $fontfamliy3 !important;
   letter-spacing: 0 !important;
-  border-radius: 5px 0px 0px 5px !important;
+  border-radius: 3px 0px 0px 3px !important;
   background: $color-2;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
@@ -330,7 +333,7 @@ export default {
   display: block;
   width: 0.5em;
   height: 100%;
-  padding: 0 0 20px 0px !important;
+  padding: 0 0 22.5px 0px !important;
   top: 0;
   right: -0.51em;
   background: inherit;

@@ -30,7 +30,7 @@
                     },
                   }"
                   :elevation="hover ? 3 : 0"
-                  min-height="315"
+                  min-height="326.7"
                   width="100%"
                   style="
                     overflow: hidden;
@@ -56,11 +56,13 @@
                       -webkit-box-orient: vertical;
                       overflow: hidden;
                     "
-                    class="card-text py-1 pa-2"
+                    class="card-text py-1 pa-1"
                   >
                     <!-- if this product at thiqah mall  -->
-                    <span class="ribbon-2 pa-1 pl-2 ml-1">ثـقـة مـول</span>
+
                     {{ Product.name }} {{ Product.company }}
+                    {{ Product.company }} {{ Product.name }}
+                    {{ Product.company }} {{ Product.name }}
                     {{ Product.company }} {{ Product.name }}
                   </v-card-text>
                   <strong class="PriceAfter py-1 pt-0 pa-2 text-truncate">
@@ -86,7 +88,7 @@
                     <span class="span-text"> <span>20</span> نقطه </span>
                   </v-card-text>
                   <!-- how many sold and rating  -->
-                  <v-card-actions class="py-0 pa-2">
+                  <v-card-actions class="py-1 pa-2">
                     <!-- rating  -->
                     <v-icon size="17" color="amber">mdi-star</v-icon>
                     <span class="span">3.5</span>
@@ -98,11 +100,31 @@
                     </p>
                   </v-card-actions>
                   <!-- location -->
-                  <v-row no-gutters class="px-2 justify-end">
-                    <span class="sold-info">
-                      {{ Product.location }}
-                    </span>
-                  </v-row>
+                  <v-col class="pa-2">
+                    <v-row
+                      align="center"
+                      no-gutters
+                      fill-height
+                      class="fill-height"
+                    >
+                      <!-- if this item belong to the store registered with thiqah mall  -->
+                      <v-chip
+                        style="height: 22px"
+                        text-color="white"
+                        color="red lighten-1"
+                        small
+                        class="ribbon-2 px-1"
+                      >
+                        <v-icon  size="18">mdi-shopping</v-icon>
+                        ثقة مول
+                      </v-chip>
+                      <v-spacer></v-spacer>
+                      <!-- here the store location  -->
+                      <span class="sold-info">
+                        {{ Product.location }}
+                      </span>
+                    </v-row>
+                  </v-col>
                 </v-card>
               </div>
             </v-hover>
@@ -210,8 +232,8 @@ export default {
   }
   .best-price-tag {
     position: absolute;
-    left: 4px;
-    top: 0px;
+    left: 10px;
+    top: -1px;
     clip-path: polygon(
       50% 0%,
       100% 0,
@@ -311,14 +333,9 @@ export default {
   border-radius: 2px;
 }
 .ribbon-2 {
-  font-size: 11px !important;
-  clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
-  background: #ef5350;
-  color: #fff;
-  border-radius: 0px !important;
-  border-top-left-radius: 4px !important;
-  border-bottom-left-radius: 4px !important;
-  margin-right: -8px !important;
+  font-size: 12px !important;
+  font-family: $fontfamliy3 !important;
+
   // margin-left: 2px !important;
 }
 </style>

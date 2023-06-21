@@ -27,53 +27,53 @@
         </v-card-title>
       </v-col>
       <v-col class="" cols="12" v-for="i in 5" :key="i">
-        <v-card flat tile class="my-1 overflow-hidden">
-          <div class="pt-2 pr-3 font-weight-bold tital">
-            <v-avatar class="ml-1" size="45">
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"
-              ></v-img>
-            </v-avatar>
-            متجر الذهبي
-          </div>
-          <swiper class="swiper" :options="swiperOption">
-            <swiper-slide v-for="(Product, index) in getCarInfo" :key="index">
-              <div class="pa-2" style="position: relative">
-                <h1 class="ribbon">متميز</h1>
-                <v-card
-                  :to="{
-                    name: 'ShowTheProduct',
-                    params: {
-                      carName: Product.name,
-                      carShape: Product.Shape,
-                      carId: Product.id,
-                      Company: Product.folder,
-                    },
-                  }"
-                  height="285"
-                  width="100%"
-                  outlined
-                  style="position: relative; overflow: hidden"
-                  rounded="lg"
-                >
-                  <v-row no-gutters style="height: 100%">
-                    <v-col cols="12">
-                      <div
-                        v-if="Product.discountPercent"
-                        class="best-price-tag"
-                      >
-                        <small class="discountPercent">
-                          {{ Product.discountPercent }}-
-                        </small>
-                      </div>
+        <v-card flat tile class="my-1 blue-grey lighten-5 overflow-hidden">
+          <v-container>
+            <div class="pt-2 pr-3 font-weight-bold tital">
+              <v-avatar class="ml-1" size="45">
+                <v-img
+                  src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"
+                ></v-img>
+              </v-avatar>
+              متجر الذهبي
+            </div>
+            <swiper class="swiper" :options="swiperOption">
+              <swiper-slide v-for="(Product, index) in getCarInfo" :key="index">
+                <div class="pa-2" style="position: relative">
+                  <h1 class="ribbon">متميز</h1>
+                  <v-card
+                    :to="{
+                      name: 'ShowTheProduct',
+                      params: {
+                        carName: Product.name,
+                        carShape: Product.Shape,
+                        carId: Product.id,
+                        Company: Product.folder,
+                      },
+                    }"
+                    height="285"
+                    width="100%"
+                    flat
+                    style="position: relative; overflow: hidden"
+                    rounded="lg"
+                  >
+                    <v-row no-gutters>
+                      <v-col cols="12">
+                        <div
+                          v-if="Product.discountPercent"
+                          class="best-price-tag"
+                        >
+                          <small class="discountPercent">
+                            {{ Product.discountPercent }}-
+                          </small>
+                        </div>
 
-                      <v-img
-                        height="160"
-                        :src="getimageUrl(Product.folder, Product.image)"
-                      ></v-img>
-                    </v-col>
-                    <!--  product name  -->
-                    <v-col cols="12" class="ma-auto">
+                        <v-img
+                          height="130"
+                          :src="getimageUrl(Product.folder, Product.image)"
+                        ></v-img>
+                      </v-col>
+                      <!--  product name  -->
                       <v-card-text
                         style="
                           display: -webkit-box;
@@ -81,50 +81,52 @@
                           -webkit-box-orient: vertical;
                           overflow: hidden;
                         "
-                        class="card-text py-0 pa-0"
+                        class="card-text pa-1"
                       >
                         <!-- if this product at thiqah mall  -->
-                        <span class="ribbon-2 pa-1 pl-2">ثـقـة مـول</span>
                         {{ Product.name }} {{ Product.company }}
                         {{ Product.company }} {{ Product.name }}
+                        {{ Product.company }} {{ Product.name }}
+                        {{ Product.company }} {{ Product.name }}
                       </v-card-text>
-                    </v-col>
-                    <v-col cols="12" class="ma-auto">
-                      <strong class="PriceAfter py-0 pa-2 text-truncate">
-                        {{ Product.payment }}
-                        <v-icon color="grey darken-2" size="19">
-                          mdi-currency-rial
-                        </v-icon>
-                      </strong>
-                    </v-col>
-                    <!-- how many sold and rating  -->
-                    <v-col cols="12" class="ma-auto">
-                      <v-card-actions class="py-0 pa-2">
-                        <!-- rating  -->
-                        <v-icon size="17" color="amber">mdi-star</v-icon>
-                        <span class="span">3.5</span>
-                        <!-- divider -->
-                        <span class="divider mx-1"></span>
-                        <!-- sold Info  -->
-                        <p class="ma-0 sold-info text-truncate">
-                          <span class="span ml-1">({{ Product.id }})</span>بيعت
-                        </p>
-                      </v-card-actions>
-                    </v-col>
-                    <!-- location -->
-                    <v-col cols="12" class="ma-auto">
-                      <v-row no-gutters class="px-2 justify-end">
-                        <span class="sold-info">
-                          {{ Product.location }}
-                        </span>
-                      </v-row>
-                    </v-col>
-                  </v-row>
-                </v-card>
-              </div>
-            </swiper-slide>
-            <div class="swiper-pagination" slot="pagination"></div>
-          </swiper>
+                      <v-col cols="12" class="ma-auto">
+                        <strong class="PriceAfter py-0 pa-2 text-truncate">
+                          {{ Product.payment }}
+                          <v-icon color="grey darken-2" size="19">
+                            mdi-currency-rial
+                          </v-icon>
+                        </strong>
+                      </v-col>
+                      <!-- how many sold and rating  -->
+                      <v-col cols="12" class="ma-auto">
+                        <v-card-actions class="py-0 pa-2">
+                          <!-- rating  -->
+                          <v-icon size="17" color="amber">mdi-star</v-icon>
+                          <span class="span">3.5</span>
+                          <!-- divider -->
+                          <span class="divider mx-1"></span>
+                          <!-- sold Info  -->
+                          <p class="ma-0 sold-info text-truncate">
+                            <span class="span ml-1">({{ Product.id }})</span
+                            >بيعت
+                          </p>
+                        </v-card-actions>
+                      </v-col>
+                      <!-- location -->
+                      <v-col cols="12" class="ma-auto">
+                        <v-row no-gutters class="px-2 justify-end">
+                          <span class="sold-info">
+                            {{ Product.location }}
+                          </span>
+                        </v-row>
+                      </v-col>
+                    </v-row>
+                  </v-card>
+                </div>
+              </swiper-slide>
+              <div class="swiper-pagination" slot="pagination"></div>
+            </swiper>
+          </v-container>
         </v-card>
       </v-col>
       <v-col cols="12">

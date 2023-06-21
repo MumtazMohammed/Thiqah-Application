@@ -34,7 +34,7 @@
         </div>
         <swiper class="swiper" :options="swiperOption">
           <swiper-slide v-for="(Product, index) in getCarInfo" :key="index">
-            <div style="position: relative">
+            <div class="pa-2" style="position: relative">
               <h1 class="ribbon">متميز</h1>
               <v-card
                 :to="{
@@ -47,7 +47,7 @@
                   },
                 }"
                 width="100%"
-                height="265"
+                height="240"
                 class=""
                 rounded="lg"
                 flat
@@ -74,42 +74,51 @@
                     class="card-text py-1 pa-2"
                   >
                     <!-- if this product at thiqah mall  -->
-                    <span class="ribbon-2 pa-1 pl-2 ml-1"> ثـقـة مـول </span>
                     {{ Product.name }} {{ Product.company }} {{ Product.name }}
                     {{ Product.company }}
                     {{ Product.name }}
+                    {{ Product.name }}
                   </v-card-text>
                 </v-row>
-                <!-- Price  -->
-                <v-card-actions class="py-0 justify-center">
-                  <strong class="PriceAfter text-truncate">
+                <v-row class="px-2" justify="center" align="center" no-gutters>
+                  <!-- if this item belong to the store registered with thiqah mall  -->
+                  <v-avatar size="22" color="red lighten-1">
+                    <v-icon color="white" size="16">mdi-shopping</v-icon>
+                  </v-avatar>
+                  <!-- Price  -->
+                  <strong class="PriceAfter py-1 pt-0 pa-2 text-truncate">
                     {{ Product.payment }}
-                    <v-icon color="grey darken-3" size="20">
+                    <v-icon color="grey darken-3" size="19">
                       mdi-currency-rial
                     </v-icon>
                   </strong>
-                </v-card-actions>
+                </v-row>
                 <!-- Residual   -->
-                <v-card-text class="progress-info pa-0">
-                  المتبقي
-                  <span class="mr-1 deep-orange--text">14</span>
-                </v-card-text>
-                <v-card
-                  class="mx-auto"
-                  style="position: relative; width: fit-content"
-                >
-                  <v-icon class="v-icon-most-sel">mdi-fire</v-icon>
-                  <v-sheet
-                    style="position: relative; overflow: hidden"
-                    class="my-2 mx-auto text-center"
-                    width="150px"
-                    color="#FFCCBC"
-                    rounded="lg"
-                    height="10"
+                <v-row class="px-2" no-gutters align="center">
+                  <v-card flat style="position: relative; width: fit-content">
+                    <v-icon class="v-icon-most-sel">mdi-fire</v-icon>
+                    <v-sheet
+                      style="position: relative; overflow: hidden"
+                      class="my-2 mx-auto text-center"
+                      width="130px"
+                      color="#FFCCBC"
+                      rounded="lg"
+                      height="8"
+                    >
+                      <span class="progress"></span>
+                    </v-sheet>
+                  </v-card>
+                  <v-spacer></v-spacer>
+                  <span
+                    style="
+                      font-family: sans-serif;
+                      font-size: 14px;
+                      font-weight: 600;
+                    "
+                    class="deep-orange--text"
+                    >150</span
                   >
-                    <span class="progress"></span>
-                  </v-sheet>
-                </v-card>
+                </v-row>
               </v-card>
             </div>
           </swiper-slide>
@@ -158,7 +167,7 @@ export default {
         initialSlide: 0,
         freeMode: false,
         effect: "cards",
-        spaceBetween: 10,
+        spaceBetween: 5,
         autoplay: false,
         loop: false,
         loopFillGroupWithBlank: false,
@@ -170,9 +179,13 @@ export default {
         },
 
         breakpoints: {
-          1024: {
+          1261: {
             slidesPerView: 6,
             slidesPerGroup: 6,
+          },
+          1260: {
+            slidesPerView: 5,
+            slidesPerGroup: 5,
           },
           768: {
             slidesPerView: 5,
@@ -333,8 +346,8 @@ export default {
 }
 .best-price-tag {
   position: absolute;
-  left: 4px;
-  top: 0px;
+  left: 10px;
+  top: -1px;
   clip-path: polygon(
     50% 0%,
     100% 0,
@@ -347,38 +360,38 @@ export default {
     0% 35%,
     0 0
   );
-
-  background-color: $color-2;
-  width: 35px;
+  background: linear-gradient(140deg, #fc624d 30%, #ffc0ac94 100%);
+  width: 40px;
   height: 40px;
   display: flex;
   justify-content: center;
   // transform: rotate(360deg);
   z-index: 1;
-  border-radius: 0 !important;
-}
-.discountPercent {
-  color: white !important;
-  font-weight: 500;
-  font-size: 13px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
+  border-radius: 0 0 4px 4px !important;
+  .discountPercent {
+    color: white !important;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+  }
 }
 //
 .ribbon {
   position: absolute;
-  top: 3px;
-  right: 0;
+  top: 14px;
+  right: 8px;
   z-index: 1;
   width: 50px;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   color: #ffffff;
   font-family: $fontfamliy3 !important;
   letter-spacing: 0 !important;
-  border-radius: 5px 0px 0px 5px !important;
+  border-radius: 3px 0px 0px 3px !important;
   background: $color-2;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
@@ -435,9 +448,9 @@ export default {
 }
 .v-icon-most-sel {
   position: absolute !important;
-  top: -15px;
+  top: -4px;
   right: -5px;
-  font-size: 29px !important;
+  font-size: 23px !important;
   color: #ffc400 !important;
   z-index: 800;
 }
@@ -461,14 +474,7 @@ export default {
   }
 }
 .ribbon-2 {
-  font-size: 11px !important;
-  clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
-  background: #ef5350;
-  color: #fff;
-  border-radius: 0px !important;
-  border-top-left-radius: 4px !important;
-  border-bottom-left-radius: 4px !important;
-  margin-right: -8px !important;
-  // margin-left: 2px !important;
+  font-size: 13px !important;
+  font-family: $fontfamliy3 !important;
 }
 </style>

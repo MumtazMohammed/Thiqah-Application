@@ -1,25 +1,26 @@
 <template>
   <div class="ThqahMall">
-    <v-sheet class="overflow-hidden">
-      <!-- <v-col cols="12" class="py-1">
+    <v-container  class="pa-0">
+      <v-sheet class="overflow-hidden">
+        <!-- <v-col cols="12" class="py-1">
         <a href="" class="white--text text-all pl-3">
           أفتح متجرك في أكبر سوبر ماركت إلكتروني
         </a>
       </v-col> -->
-      <swiper class="swiper" :options="swiperOption">
-        <swiper-slide v-for="(item, i) in items" :key="i">
-          <v-img
-            :style="item.color"
-            aspect-ratio="1.9"
-            contain
-            :src="item.src"
-            :lazy-src="item.src"
-          >
-          </v-img>
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </swiper>
-      <!-- <v-sheet width="100%">
+        <swiper class="swiper" :options="swiperOption">
+          <swiper-slide v-for="(item, i) in items" :key="i">
+            <v-img
+              :style="item.color"
+              aspect-ratio="1.9"
+              contain
+              :src="item.src"
+              :lazy-src="item.src"
+            >
+            </v-img>
+          </swiper-slide>
+          <div class="swiper-pagination" slot="pagination"></div>
+        </swiper>
+        <!-- <v-sheet width="100%">
         <v-row no-gutters align="center" justify="center">
           <v-col v-for="(guarantee, i) in guarantees" :key="i">
             <v-list-item>
@@ -39,7 +40,8 @@
           </v-col>
         </v-row>
       </v-sheet> -->
-    </v-sheet>
+      </v-sheet>
+    </v-container>
   </div>
 </template>
 

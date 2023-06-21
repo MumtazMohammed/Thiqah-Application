@@ -3,254 +3,272 @@
     <v-row no-gutters>
       <!-- Categories  -->
       <v-col cols="12" class="mt-2">
-        <swiper class="swiperCatgories px-2" :options="swiperCatgories">
-          <swiper-slide class="" v-for="i in 22" :key="i">
-            <v-avatar color="transparent">
-              <v-img
-                src="https://down-my.img.susercontent.com/file/3c8d9860094df6057d95bc545fe1d790_tn"
-                alt="https://down-my.img.susercontent.com/file/3c8d9860094df6057d95bc545fe1d790_tn"
-                contain
-              >
-              </v-img>
-            </v-avatar>
-            <v-card-text class="pa-0 list pt-1"> الألبان </v-card-text>
-          </swiper-slide>
-          <!-- <div class="swiper-pagination" slot="pagination"></div> -->
-        </swiper>
+        <v-container class="pa-0">
+          <swiper class="swiperCatgories px-2" :options="swiperCatgories">
+            <swiper-slide class="" v-for="i in 22" :key="i">
+              <v-avatar color="transparent">
+                <v-img
+                  src="https://down-my.img.susercontent.com/file/3c8d9860094df6057d95bc545fe1d790_tn"
+                  alt="https://down-my.img.susercontent.com/file/3c8d9860094df6057d95bc545fe1d790_tn"
+                  contain
+                >
+                </v-img>
+              </v-avatar>
+              <v-card-text class="pa-0 list pt-1"> الألبان </v-card-text>
+            </swiper-slide>
+            <!-- <div class="swiper-pagination" slot="pagination"></div> -->
+          </swiper>
+        </v-container>
       </v-col>
       <!-- crazy sale  -->
-      <v-col class="my-2" cols="12">
-        <v-card class="pa-2" tile flat color="#eeeee4">
-          <v-row class="pa-3" no-gutters align="center">
-            <strong class="tital ma-0">
-              العروضات
-              <v-icon right color="#fc624d">mdi-flash</v-icon>
-            </strong>
-            <!-- بأفضل
-          <strong class="mx-1">الأسعار</strong> -->
-            <v-spacer></v-spacer>
-            <countdown :time="2 * 24 * 60 * 60 * 1000">
-              <template slot-scope="props">
-                <v-row
-                  align="center"
-                  no-gutters
-                  style="flex-direction: row-reverse"
-                >
-                  <span class="Countdown">
-                    {{ props.days }}
-                  </span>
-                  <span class="Countdown">
-                    {{ props.hours }}
-                  </span>
-                  <span class="Countdown">
-                    {{ props.minutes }}
-                  </span>
-                  <span class="Countdown">
-                    {{ props.seconds }}
-                  </span>
-                </v-row>
-              </template>
-            </countdown>
-          </v-row>
-          <swiper class="swiper" :options="swiperOption">
-            <swiper-slide v-for="(Product, index) in getCarInfo" :key="index">
-              <div class="pa-2" style="position: relative">
-                <h1 class="ribbon-swiper">سـوبـرمـاركـت</h1>
-                <v-card
-                  :to="{
-                    name: 'ShowTheProduct',
-                    params: {
-                      carName: Product.name,
-                      carShape: Product.Shape,
-                      carId: Product.id,
-                      Company: Product.folder,
-                    },
-                  }"
-                  width="100%"
-                  height="265"
-                  class=""
-                  rounded="lg"
-                  flat
-                  style="overflow: hidden"
-                >
-                  <div v-if="Product.discountPercent" class="best-price-tag">
-                    <small class="discountPercent">
-                      {{ Product.discountPercent }}-
-                    </small>
-                  </div>
-                  <v-img
-                    height="130"
-                    :src="getimageUrl(Product.folder, Product.image)"
-                  ></v-img>
-                  <!-- Product Name -->
-                  <v-row no-gutters>
-                    <v-card-text
-                      style="
-                        display: -webkit-box;
-                        -webkit-line-clamp: 2;
-                        -webkit-box-orient: vertical;
-                        overflow: hidden;
-                      "
-                      class="card-text py-1 pa-2"
-                    >
-                      {{ Product.name }} {{ Product.company }}
-                      {{ Product.name }} {{ Product.company }}
-                      {{ Product.name }} {{ Product.company }}
-                      {{ Product.name }} {{ Product.company }}
-                      {{ Product.name }} {{ Product.company }}
-                      {{ Product.name }} {{ Product.company }}
-                      {{ Product.name }} {{ Product.company }}
-                      {{ Product.name }} {{ Product.company }}
-                      {{ Product.name }} {{ Product.company }}
-                      {{ Product.name }}
-                      {{ Product.company }}
-                    </v-card-text>
-                  </v-row>
-                  <!-- Price  -->
-                  <v-card-actions class="py-0 justify-center">
-                    <strong class="PriceAfter text-truncate">
-                      {{ Product.payment }}
-                      <v-icon color="grey darken-3" size="20">
-                        mdi-currency-rial
-                      </v-icon>
-                    </strong>
-                  </v-card-actions>
-                  <!-- Residual   -->
-                  <v-card-text class="progress-info pa-0">
-                    المتبقي
-                    <span class="mr-1">14</span>
-                  </v-card-text>
-                  <v-card
-                    class="mx-auto"
-                    style="position: relative; width: fit-content"
+      <v-col class="my-3 mb-5" cols="12">
+        <v-sheet class="swiper_card">
+          <v-container class="pa-0">
+            <v-row class="pa-3" no-gutters align="center">
+              <strong class="tital ma-0">
+                العروضات
+                <v-icon right color="#fc624d">mdi-flash</v-icon>
+              </strong>
+              <!-- بأفضل
+            <strong class="mx-1">الأسعار</strong> -->
+              <v-spacer></v-spacer>
+              <countdown :time="2 * 24 * 60 * 60 * 1000">
+                <template slot-scope="props">
+                  <v-row
+                    align="center"
+                    no-gutters
+                    style="flex-direction: row-reverse"
                   >
-                    <v-icon class="v-icon-most-sel">mdi-fire</v-icon>
-                    <v-sheet
-                      style="position: relative; overflow: hidden"
-                      class="my-2 mx-auto text-center"
-                      width="150px"
-                      color="#FFCCBC"
-                      rounded="lg"
-                      height="10"
-                    >
-                      <span class="progress"></span>
-                    </v-sheet>
+                    <span class="Countdown">
+                      {{ props.days }}
+                    </span>
+                    <span class="Countdown">
+                      {{ props.hours }}
+                    </span>
+                    <span class="Countdown">
+                      {{ props.minutes }}
+                    </span>
+                    <span class="Countdown">
+                      {{ props.seconds }}
+                    </span>
+                  </v-row>
+                </template>
+              </countdown>
+            </v-row>
+            <swiper class="swiper" :options="swiperOption">
+              <swiper-slide v-for="(Product, index) in getCarInfo" :key="index">
+                <div class="pa-2" style="position: relative">
+                  <h1 class="ribbon-swiper">سـوبـرمـاركـت</h1>
+                  <v-card
+                    :to="{
+                      name: 'ShowTheProduct',
+                      params: {
+                        carName: Product.name,
+                        carShape: Product.Shape,
+                        carId: Product.id,
+                        Company: Product.folder,
+                      },
+                    }"
+                    width="100%"
+                    height="235"
+                    class=""
+                    rounded="lg"
+                    flat
+                    style="overflow: hidden"
+                  >
+                    <div v-if="Product.discountPercent" class="best-price-tag">
+                      <small class="discountPercent">
+                        {{ Product.discountPercent }}-
+                      </small>
+                    </div>
+                    <v-img
+                      height="130"
+                      :src="getimageUrl(Product.folder, Product.image)"
+                    ></v-img>
+                    <!-- Product Name -->
+                    <v-row no-gutters>
+                      <v-card-text
+                        style="
+                          display: -webkit-box;
+                          -webkit-line-clamp: 2;
+                          -webkit-box-orient: vertical;
+                          overflow: hidden;
+                        "
+                        class="card-text py-1 pa-2"
+                      >
+                        {{ Product.name }} {{ Product.company }}
+                        {{ Product.name }} {{ Product.company }}
+                        {{ Product.name }} {{ Product.company }}
+                        {{ Product.name }} {{ Product.company }}
+                        {{ Product.name }} {{ Product.company }}
+                        {{ Product.name }} {{ Product.company }}
+                        {{ Product.name }} {{ Product.company }}
+                        {{ Product.name }} {{ Product.company }}
+                        {{ Product.name }}
+                        {{ Product.company }}
+                        {{ Product.name }}
+                        {{ Product.company }}
+                      </v-card-text>
+                    </v-row>
+                    <!-- Price  -->
+                    <v-card-actions class="py-0 justify-center">
+                      <strong class="PriceAfter text-truncate">
+                        {{ Product.payment }}
+                        <v-icon color="grey darken-3" size="20">
+                          mdi-currency-rial
+                        </v-icon>
+                      </strong>
+                    </v-card-actions>
+                    <!-- Residual   -->
+                    <v-row class="px-2" no-gutters align="center">
+                      <v-card
+                        flat
+                        style="position: relative; width: fit-content"
+                      >
+                        <v-icon class="v-icon-most-sel">mdi-fire</v-icon>
+                        <v-sheet
+                          style="position: relative; overflow: hidden"
+                          class="my-2 mx-auto text-center"
+                          width="130px"
+                          color="#FFCCBC"
+                          rounded="lg"
+                          height="8"
+                        >
+                          <span class="progress"></span>
+                        </v-sheet>
+                      </v-card>
+                      <v-spacer></v-spacer>
+                      <span
+                        style="
+                          font-family: sans-serif;
+                          font-size: 14px;
+                          font-weight: 600;
+                        "
+                        class="deep-orange--text"
+                      >
+                        150
+                      </span>
+                    </v-row>
                   </v-card>
+                </div>
+              </swiper-slide>
+              <swiper-slide>
+                <v-card
+                  flat
+                  max-width="190px"
+                  height="240px"
+                  router
+                  color="transparent"
+                  class="overflow-hidden d-flex flex-column justify-center align-center"
+                >
+                  <v-card-text class="text-center py-1 card-text-seeMore">
+                    الكل
+                  </v-card-text>
+                  <v-icon size="27" color="#2673dd"> mdi-plus</v-icon>
                 </v-card>
-              </div>
-            </swiper-slide>
-            <swiper-slide>
-              <v-card
-                flat
-                max-width="190px"
-                height="240px"
-                router
-                color="transparent"
-                class="overflow-hidden d-flex flex-column justify-center align-center"
-              >
-                <v-card-text class="text-center py-1 card-text-seeMore">
-                  الكل
-                </v-card-text>
-                <v-icon size="27" color="#2673dd"> mdi-plus</v-icon>
-              </v-card>
-            </swiper-slide>
-            <div class="swiper-pagination" slot="pagination"></div>
-          </swiper>
-        </v-card>
+              </swiper-slide>
+              <div class="swiper-pagination" slot="pagination"></div>
+            </swiper>
+          </v-container>
+        </v-sheet>
       </v-col>
       <!-- Products most sales sale and on  -->
-      <v-col
-        cols="6"
-        md="3"
-        sm="4"
-        lg="2"
-        class="pa-2"
-        v-for="Product in VerifiedCar"
-        :key="Product.id"
-      >
-        <div style="position: relative">
-          <h1 class="ribbon">سـوبـرمـاركـت</h1>
-          <v-card
-            :to="{
-              name: 'ShowTheProduct',
-              params: {
-                carName: Product.name,
-                carShape: Product.Shape,
-                carId: Product.id,
-                Company: Product.folder,
-              },
-            }"
-            :elevation="hover ? 3 : 0"
-            min-height="300"
-            width="100%"
-            style="overflow: hidden; background-color: #fff; position: relative"
-            rounded="lg"
-          >
-            <div v-if="Product.discountPercent" class="best-price-tag">
-              <small class="discountPercent">
-                {{ Product.discountPercent }}-
-              </small>
-            </div>
-            <v-img
-              height="150"
-              :src="getimageUrl(Product.folder, Product.image)"
-            ></v-img>
-            <!--  product name  -->
-            <v-card-text class="card-text py-1 pa-2">
-              {{ Product.name }} {{ Product.company }} {{ Product.name }}
-              {{ Product.company }} {{ Product.name }}
-            </v-card-text>
-            <strong class="PriceAfter py-1 pt-0 pa-2 text-truncate">
-              {{ Product.payment }}
-              <v-icon color="grey darken-3" size="20">
-                mdi-currency-rial
-              </v-icon>
-            </strong>
-            <!-- if the product contain any promotion -->
-            <v-card-text class="py-1 pa-2 text-truncate">
-              <!-- free delivery  -->
-              <span class="span-text">
-                <!-- <v-icon>mdi-moped</v-icon> -->
-                توصيل مجاناً
-              </span>
-              <!-- divider -->
-              <span class="divider mx-1"></span>
-              <!-- Discount coupon  -->
-              <span class="span-text"> قسيمة <span>50%</span> </span>
-              <!-- divider -->
-              <span class="divider mx-1"></span>
-              <!-- free coins  -->
-              <span class="span-text"> <span>20</span> نقطه </span>
-            </v-card-text>
-            <!-- how many sold and rating  -->
-            <v-card-actions class="py-0 pa-2">
-              <!-- rating  -->
-              <v-icon size="17" color="amber">mdi-star</v-icon>
-              <span class="span">3.5</span>
-              <!-- divider -->
-              <span class="divider mx-1"></span>
-              <!-- sold Info  -->
-              <p class="ma-0 sold-info text-truncate">
-                <span class="span ml-1">({{ Product.id }})</span>بيعت
-              </p>
-            </v-card-actions>
-            <!-- location -->
-            <v-row no-gutters class="px-2 justify-end">
-              <span class="sold-info">
-                {{ Product.location }}
-              </span>
-            </v-row>
-          </v-card>
-        </div>
-      </v-col>
-      <v-col cols="12">
-        <v-card-actions class="justify-center">
-          <v-btn outlined color="#fc624d" width="300" class="seeMoreBtn">
-            تـحـمـيـل الـمـزيـد
-          </v-btn>
-        </v-card-actions>
-      </v-col>
     </v-row>
+    <v-container class="pa-0">
+      <v-row>
+        <v-col
+          cols="6"
+          md="3"
+          sm="4"
+          lg="2"
+          class="pa-2"
+          v-for="Product in VerifiedCar"
+          :key="Product.id"
+        >
+          <div style="position: relative">
+            <h1 class="ribbon">سـوبـرمـاركـت</h1>
+            <v-card
+              :to="{
+                name: 'ShowTheProduct',
+                params: {
+                  carName: Product.name,
+                  carShape: Product.Shape,
+                  carId: Product.id,
+                  Company: Product.folder,
+                },
+              }"
+              :elevation="hover ? 3 : 0"
+              min-height="280"
+              width="100%"
+              style="
+                overflow: hidden;
+                background-color: #fff;
+                position: relative;
+              "
+              rounded="lg"
+            >
+              <div v-if="Product.discountPercent" class="best-price-tag">
+                <small class="discountPercent">
+                  {{ Product.discountPercent }}-
+                </small>
+              </div>
+              <v-img
+                height="150"
+                :src="getimageUrl(Product.folder, Product.image)"
+              ></v-img>
+              <!--  product name  -->
+              <v-card-text class="card-text py-1 pa-2">
+                {{ Product.name }} {{ Product.company }} {{ Product.name }}
+                {{ Product.company }} {{ Product.name }} {{ Product.company }}
+                {{ Product.name }}
+                {{ Product.name }} {{ Product.company }} {{ Product.name }}
+                {{ Product.company }} {{ Product.name }} {{ Product.company }}
+                {{ Product.name }}
+              </v-card-text>
+              <strong class="PriceAfter py-1 pt-0 pa-2 text-truncate">
+                {{ Product.payment }}
+                <v-icon color="grey darken-3" size="20">
+                  mdi-currency-rial
+                </v-icon>
+              </strong>
+              <!-- how many sold and rating  -->
+              <v-card-actions class="py-0 pa-2">
+                <!-- rating  -->
+                <v-icon size="17" color="amber">mdi-star</v-icon>
+                <span class="span">3.5</span>
+                <!-- divider -->
+                <span class="divider mx-1"></span>
+                <!-- sold Info  -->
+                <p class="ma-0 sold-info text-truncate">
+                  <span class="span ml-1">({{ Product.id }})</span>بيعت
+                </p>
+              </v-card-actions>
+              <!-- location -->
+              <v-row
+                justify="space-between"
+                align="center"
+                no-gutters
+                class="px-2 justify-end"
+              >
+                <span class="sold-info">
+                  {{ Product.location }}
+                </span>
+                <v-btn depressed style="background-color: #00e676" fab x-small>
+                  <v-icon color="white"> mdi-cart-plus </v-icon>
+                </v-btn>
+              </v-row>
+            </v-card>
+          </div>
+        </v-col>
+        <v-col cols="12">
+          <v-card-actions class="justify-center">
+            <v-btn outlined color="#fc624d" width="300" class="seeMoreBtn">
+              تـحـمـيـل الـمـزيـد
+            </v-btn>
+          </v-card-actions>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -320,8 +338,8 @@ export default {
         },
         breakpoints: {
           1024: {
-            slidesPerView: 6,
-            slidesPerGroup: 6,
+            slidesPerView:8,
+            slidesPerGroup: 8,
           },
           768: {
             slidesPerView: 5,
@@ -426,15 +444,18 @@ export default {
       // border: 1px solid grey;
     }
   }
+  .swiper_card {
+    background: linear-gradient(90deg, #A5D6A7 0%, #E8F5E9 100%);
+  }
   .swiper {
-    height: 300px;
+    height: 280px;
     // padding-bottom: 45px;
     padding-right: 5px !important;
     padding-left: 3px;
   }
 
   ::v-deep .swiper-container-horizontal > .swiper-pagination-progressbar {
-    top: 97% !important;
+    top: 95% !important;
     width: 50px;
     height: 5px;
     left: 50%;
@@ -536,7 +557,7 @@ export default {
 .best-price-tag {
   position: absolute;
   left: 10px;
-  top: 0px;
+  top: -1px;
   clip-path: polygon(
     50% 0%,
     100% 0,
@@ -549,20 +570,19 @@ export default {
     0% 35%,
     0 0
   );
-
-  background-color: #eceff1;
+  background: linear-gradient(140deg, #388e3c 30%, #00e677a8 100%);
   width: 35px;
   height: 40px;
   display: flex;
   justify-content: center;
   // transform: rotate(360deg);
   z-index: 1;
-  border-radius: 0 !important;
+  border-radius: 0 0 3px 3px !important;
 }
 .discountPercent {
-  color: $fontcolor !important;
-  font-weight: 500;
-  font-size: 13px;
+  color: $fontcolorsm !important;
+  font-weight: 600;
+  font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -594,14 +614,15 @@ export default {
   padding: 0 0 2.33em 0px !important;
   top: 0;
   right: -0.51em;
-  background: linear-gradient(90deg, #13c863 15%, #00e676 100%);
+  box-shadow: -1px 0px 0px 0px #00e676;
+  background: #00e676;
   border-radius: 0px 5px 5px 0px !important;
 }
 .ribbon:after {
   position: absolute;
   content: "";
   display: block;
-  width: 0.313em;
+  width: 0.38em;
   height: 0.313em;
   background: rgba(0, 0, 0, 0.35);
   bottom: -0.313em;
@@ -612,7 +633,7 @@ export default {
 .ribbon-swiper {
   position: absolute;
   top: 15px;
-  right: 9px;
+  right: 7.5px;
   z-index: 1;
   padding: 2px 5px;
   width: fit-content;
@@ -634,14 +655,15 @@ export default {
   padding: 0 0 0.52em 0px !important;
   top: 0;
   right: -0.51em;
-  background: linear-gradient(90deg, #13c863 15%, #00e676 100%);
+  background: #00e676;
   border-radius: 0px 5px 5px 0px !important;
+  box-shadow: -1px 0px 0px 0px #00e676;
 }
 .ribbon-swiper:after {
   position: absolute;
   content: "";
   display: block;
-  width: 0.313em;
+  width: 0.38em;
   height: 0.313em;
   background: rgba(0, 0, 0, 0.35);
   bottom: -0.313em;
@@ -699,9 +721,9 @@ export default {
 }
 .v-icon-most-sel {
   position: absolute !important;
-  top: -15px;
-  right: -6px;
-  font-size: 29px !important;
+  top: -4px;
+  right: -5px;
+  font-size: 23px !important;
   color: #ffc400 !important;
   z-index: 800;
 }
